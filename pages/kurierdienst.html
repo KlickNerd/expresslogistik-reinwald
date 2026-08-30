@@ -403,16 +403,19 @@ th.hl{background:var(--green);color:#fff}
 /* Referenzen-Layout mit Score-Karte */
 .rev-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:26px;margin-top:40px;align-items:stretch}
 @media(max-width:860px){.rev-layout{grid-template-columns:1fr}}
-.rev-score{background:linear-gradient(150deg,var(--navy) 0%,#101b33 100%);color:#fff;border-radius:var(--radius);padding:36px 34px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;box-shadow:var(--shadow)}
-.rev-score::after{content:"";position:absolute;right:-90px;bottom:-110px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(79,168,50,.22),transparent 70%);pointer-events:none}
-.rev-score > *{position:relative;z-index:1}
-.rev-score .num{font-size:66px;font-weight:900;line-height:1;letter-spacing:-1px}
-.rev-score .stars{color:#f5a623;font-size:25px;letter-spacing:3px;margin:12px 0 8px}
-.rev-score .cap{color:#c8cfdd;font-size:15.5px;font-weight:700}
-.rev-score .cap b{color:#fff}
-.rev-score .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
-.rev-score .chips span{border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:7px 14px;font-size:12.5px;font-weight:800;color:#c6cede}
-.rev-score .chips b{color:#9fe084}
+.rev-score{background:var(--white);border:1px solid var(--grey-line);border-radius:var(--radius);padding:34px 32px;display:flex;flex-direction:column;justify-content:center;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.rev-score::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--green),var(--green-dark))}
+.rev-score .head{display:flex;align-items:center;gap:18px}
+.rev-score .num{font-size:58px;font-weight:900;color:var(--navy);line-height:1;letter-spacing:-1px}
+.rev-score .stars{color:#f5a623;font-size:23px;letter-spacing:2px}
+.rev-score .cap{color:var(--text-soft);font-size:14.5px;font-weight:700;margin:5px 0 0}
+.rev-score .cap b{color:var(--navy)}
+.rev-score .facts{list-style:none;margin:24px 0 0;border-top:1px solid var(--grey-line);padding-top:20px}
+.rev-score .facts li{display:flex;align-items:center;gap:11px;font-size:14.5px;color:var(--text);font-weight:600;margin-bottom:11px}
+.rev-score .facts li:last-child{margin-bottom:0}
+.rev-score .facts li b{color:var(--navy);font-weight:800}
+.rev-score .facts .ck{width:22px;height:22px;border-radius:50%;background:var(--green);flex:none;display:flex;align-items:center;justify-content:center}
+.rev-score .facts .ck svg{width:12px;height:12px}
 .rev-col{display:flex;flex-direction:column;gap:22px}
 .rev-col .quote{margin:0}
 .quote .who-row{display:flex;align-items:center;gap:12px}
@@ -1274,16 +1277,20 @@ th.hl{background:var(--green);color:#fff}
     </div>
     <div class="rev-layout">
       <div class="rev-score">
-        <span class="num">5,0</span>
-        <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-        <p class="cap"><b>49 Bewertungen</b> bei Google</p>
-        <div class="chips">
-          <span><b>500+</b> aktive Kunden</span>
-          <span><b>ISO 9001</b> zertifiziert</span>
-          <span><b>seit 2005</b> im Einsatz</span>
+        <div class="head">
+          <span class="num">5,0</span>
+          <div>
+            <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+            <p class="cap"><b>49 Bewertungen</b> bei Google</p>
+          </div>
         </div>
+        <ul class="facts">
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span><span><b>500+</b> aktive Kunden</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span><span><b>ISO 9001</b> zertifiziert</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span><span><b>seit 2005</b> im Einsatz</span></li>
+        </ul>
         <!-- TODO: URL durch den exakten Google-Business-Rezensionslink ersetzen -->
-        <a class="btn btn-green" style="margin-top:26px" href="https://www.google.com/maps/search/?api=1&amp;query=Expresslogistik%20Reinwald%20Theilenhofen" target="_blank" rel="noopener">Alle Bewertungen ansehen →</a>
+        <a class="btn btn-green" style="margin-top:24px" href="https://www.google.com/maps/search/?api=1&amp;query=Expresslogistik%20Reinwald%20Theilenhofen" target="_blank" rel="noopener">Alle Bewertungen ansehen →</a>
       </div>
       <div class="rev-carousel">
         <div class="rev-track" id="revTrack">
