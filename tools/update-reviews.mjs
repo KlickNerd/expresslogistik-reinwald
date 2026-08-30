@@ -90,12 +90,13 @@ async function fetchReviews(data) {
   // 2) Auf Ergebnis warten. Zwischenstatus (Created/Handed/In Queue) = weiter warten.
   const IN_PROGRESS = new Set([20100, 40601, 40602]);
   let result = null;
-  for (let i = 0; i < 40; i++) {
+  for (let i = 0; i < 24; i++) {
     await new Promise((res) => setTimeout(res, 5000));
     const get = await fetch(`${API}/task_get/advanced/${taskId}`, { headers }).then((r) => r.json());
+    if (i === 0) console.log('  RAW get[0..600]:', JSON.stringify(get).slice(0, 600));
     const task = get?.tasks?.[0];
     const sc = task?.status_code;
-    if (i % 4 === 0 || (sc && sc !== 20000)) console.log(`  poll ${i}: task ${sc} ${task?.status_message || ''}`);
+    console.log(`  poll ${i}: api ${get?.status_code} ${get?.status_message} | task ${sc} ${task?.status_message || ''} | tasks_count ${get?.tasks_count}`);
     if (sc === 20000 && task?.result?.[0]) { result = task.result[0]; break; }
     if (sc && sc >= 40000 && !IN_PROGRESS.has(sc)) throw new Error('Fetch-Fehler: ' + task.status_message);
   }
