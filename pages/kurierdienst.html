@@ -400,6 +400,25 @@ th.hl{background:var(--green);color:#fff}
 .quote blockquote{font-size:16.5px;color:var(--text);margin:0 0 16px;font-style:italic;position:relative;z-index:1}
 .quote .who{font-size:14.5px;color:var(--text-soft);font-weight:700}
 .quote .who strong{color:var(--navy)}
+/* Referenzen-Layout mit Score-Karte */
+.rev-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:26px;margin-top:40px;align-items:stretch}
+@media(max-width:860px){.rev-layout{grid-template-columns:1fr}}
+.rev-score{background:linear-gradient(150deg,var(--navy) 0%,#101b33 100%);color:#fff;border-radius:var(--radius);padding:36px 34px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.rev-score::after{content:"";position:absolute;right:-90px;bottom:-110px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(79,168,50,.22),transparent 70%);pointer-events:none}
+.rev-score > *{position:relative;z-index:1}
+.rev-score .num{font-size:66px;font-weight:900;line-height:1;letter-spacing:-1px}
+.rev-score .stars{color:#f5a623;font-size:25px;letter-spacing:3px;margin:12px 0 8px}
+.rev-score .cap{color:#c8cfdd;font-size:15.5px;font-weight:700}
+.rev-score .cap b{color:#fff}
+.rev-score .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+.rev-score .chips span{border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:7px 14px;font-size:12.5px;font-weight:800;color:#c6cede}
+.rev-score .chips b{color:#9fe084}
+.rev-col{display:flex;flex-direction:column;gap:22px}
+.rev-col .quote{margin:0}
+.quote .who-row{display:flex;align-items:center;gap:12px}
+.quote .avatar{width:44px;height:44px;border-radius:50%;background:var(--green-light);color:var(--green-dark);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;flex:none}
+.quote .who-row strong{display:block;color:var(--navy);font-size:15px;line-height:1.2}
+.quote .who-row small{display:block;color:var(--text-soft);font-size:13px;font-weight:600}
 .gf-box{display:flex;align-items:center;gap:24px;background:var(--white);border:1px solid var(--grey-line);border-left:6px solid var(--green);border-radius:var(--radius);padding:24px 28px;margin-top:26px;flex-wrap:wrap;box-shadow:0 2px 10px rgba(22,32,56,.05)}
 .gf-box img{width:92px;height:92px;border-radius:50%;object-fit:cover;box-shadow:var(--shadow)}
 .gf-box .txt{flex:1;min-width:240px}
@@ -1242,17 +1261,29 @@ th.hl{background:var(--green);color:#fff}
       <h2>Zuverlässig seit über 20 Jahren: 5,0 Sterne bei Google</h2>
       <p class="lead">Zuverlässigkeit beweist man im Ernstfall. Wir lassen deshalb die sprechen, die uns anrufen, wenn es wirklich brennt.</p>
     </div>
-    <div class="quotes">
-      <article class="quote">
+    <div class="rev-layout">
+      <div class="rev-score">
+        <span class="num">5,0</span>
         <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-        <blockquote>Schnelles Angebot, unkomplizierte Abwicklung, minutengenaue Auslieferung. Klare Empfehlung!</blockquote>
-        <p class="who"><strong>Tobias Albrecht</strong> · Google-Bewertung</p>
-      </article>
-      <article class="quote">
-        <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-        <blockquote>Excellenter Kurierdienst. Egal ob groß ob klein, immer das passende Fahrzeug, mit oder ohne Hebebühne usw. Faire Preise, zuverlässige und geduldige Fahrer. Kann ich jederzeit ohne wenn und aber empfehlen.</blockquote>
-        <p class="who"><strong>Thomas Eber</strong> · Google-Bewertung</p>
-      </article>
+        <p class="cap"><b>49 Bewertungen</b> bei Google</p>
+        <div class="chips">
+          <span><b>500+</b> aktive Kunden</span>
+          <span><b>ISO 9001</b> zertifiziert</span>
+          <span><b>seit 2005</b> im Einsatz</span>
+        </div>
+      </div>
+      <div class="rev-col">
+        <article class="quote">
+          <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+          <blockquote>Schnelles Angebot, unkomplizierte Abwicklung, minutengenaue Auslieferung. Klare Empfehlung!</blockquote>
+          <div class="who-row"><span class="avatar" aria-hidden="true">TA</span><span><strong>Tobias Albrecht</strong><small>Google-Bewertung</small></span></div>
+        </article>
+        <article class="quote">
+          <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+          <blockquote>Excellenter Kurierdienst. Egal ob groß ob klein, immer das passende Fahrzeug, mit oder ohne Hebebühne usw. Faire Preise, zuverlässige und geduldige Fahrer. Kann ich jederzeit ohne wenn und aber empfehlen.</blockquote>
+          <div class="who-row"><span class="avatar" aria-hidden="true">TE</span><span><strong>Thomas Eber</strong><small>Google-Bewertung</small></span></div>
+        </article>
+      </div>
     </div>
     <div class="gf-box">
       <img src="https://expresslogistik-reinwald.de/wp-content/uploads/2024/11/Reinwald-260623-625.png" alt="Tobias Reinwald, Geschäftsführer der Expresslogistik Reinwald GmbH" loading="lazy" decoding="async">
