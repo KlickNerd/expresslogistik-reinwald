@@ -361,10 +361,16 @@ th.hl{background:var(--green);color:#fff}
 .industry-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:40px}
 @media(max-width:1020px){.industry-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:640px){.industry-grid{grid-template-columns:repeat(2,1fr)}}
-.industry{background:var(--white);border:1px solid var(--grey-line);border-radius:var(--radius);padding:22px 16px;text-align:center;font-weight:800;color:var(--navy);font-size:15px;box-shadow:0 2px 10px rgba(22,32,56,.05);transition:transform .15s ease, box-shadow .15s ease}
-.industry:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.industry .ic{width:50px;height:50px;margin:0 auto 12px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center}
-.industry .ic svg{width:26px;height:26px}
+.industry{background:var(--white);border:1px solid var(--grey-line);border-radius:var(--radius);padding:28px 18px 24px;text-align:center;box-shadow:0 2px 10px rgba(22,32,56,.05);transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;position:relative;overflow:hidden}
+.industry::after{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),var(--green-dark));opacity:0;transition:opacity .15s ease}
+.industry:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#d3dae5}
+.industry:hover::after{opacity:1}
+.industry .ic{width:58px;height:58px;margin:0 auto 14px;border-radius:16px;background:var(--green-light);display:flex;align-items:center;justify-content:center;transition:background .15s ease}
+.industry .ic svg{width:28px;height:28px;transition:stroke .15s ease}
+.industry:hover .ic{background:var(--green)}
+.industry:hover .ic svg{stroke:#fff}
+.industry b{display:block;color:var(--navy);font-size:16px;font-weight:800;margin-bottom:3px}
+.industry small{display:block;color:var(--text-soft);font-size:13px;font-weight:600;line-height:1.35}
 /* ================= Städte ================= */
 .cities{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
 @media(max-width:820px){.cities{grid-template-columns:repeat(2,1fr)}}
@@ -1168,16 +1174,16 @@ th.hl{background:var(--green);color:#fff}
       <p class="lead">Ob Automobilindustrie, Eventbranche oder Pharma: Wir verstehen die speziellen Anforderungen verschiedener Branchen und liefern passgenaue Transportlösungen.</p>
     </div>
     <div class="industry-grid">
-      <div class="industry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.01a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.01a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></span>Maschinenbau</div>
-      <div class="industry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round"><path d="M2 20h20M4 20V8l6-4v16M14 20V10l6 3v7"></path></svg></span>Anlagenbau</div>
-      <div class="industry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round"><path d="M5 16l2-6h10l2 6M5 16h14M5 16v3h2v-3M17 16v3h2v-3"></path><circle cx="8" cy="13" r=".5"></circle><circle cx="16" cy="13" r=".5"></circle></svg></span>Automobil</div>
-      <div class="industry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round"><path d="M3 21v-8l9-6 9 6v8M9 21v-6h6v6"></path></svg></span>Messe &amp; Event</div>
-      <div class="industry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round"><path d="M10 2v6L5 18a3 3 0 0 0 3 4h8a3 3 0 0 0 3-4L14 8V2M8 2h8"></path></svg></span>Pharma &amp; Labore</div>
-      <div class="industry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg></span>Kunststoff</div>
-      <div class="industry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a5 5 0 0 0-6.9 6.9L3 18v3h3l4.8-4.8a5 5 0 0 0 6.9-6.9L14 13l-3-3z"></path></svg></span>Werkzeugbau</div>
-      <div class="industry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round"><path d="M2 16l20-9-9 20-2-9z"></path></svg></span>Luft- &amp; Raumfahrt</div>
-      <div class="industry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round"><path d="M12 2a7 7 0 0 1 4 12.7V17H8v-2.3A7 7 0 0 1 12 2zM9 21h6M10 17v4M14 17v4"></path></svg></span>Prototypen</div>
-      <div class="industry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"></path></svg></span>Druckereien</div>
+      <div class="industry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.01a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.01a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></span><b>Maschinenbau</b><small>Ersatzteile &amp; Baugruppen</small></div>
+      <div class="industry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round"><path d="M2 20h20M4 20V8l6-4v16M14 20V10l6 3v7"></path></svg></span><b>Anlagenbau</b><small>Komponenten für Montage</small></div>
+      <div class="industry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round"><path d="M5 16l2-6h10l2 6M5 16h14M5 16v3h2v-3M17 16v3h2v-3"></path><circle cx="8" cy="13" r=".5"></circle><circle cx="16" cy="13" r=".5"></circle></svg></span><b>Automobil</b><small>JIT-Nachschub, kein Bandstopp</small></div>
+      <div class="industry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round"><path d="M3 21v-8l9-6 9 6v8M9 21v-6h6v6"></path></svg></span><b>Messe &amp; Event</b><small>Termingenau zum Aufbau</small></div>
+      <div class="industry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round"><path d="M10 2v6L5 18a3 3 0 0 0 3 4h8a3 3 0 0 0 3-4L14 8V2M8 2h8"></path></svg></span><b>Pharma &amp; Labore</b><small>Sensible &amp; eilige Proben</small></div>
+      <div class="industry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg></span><b>Kunststoff</b><small>Werkzeuge, Muster, Granulate</small></div>
+      <div class="industry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a5 5 0 0 0-6.9 6.9L3 18v3h3l4.8-4.8a5 5 0 0 0 6.9-6.9L14 13l-3-3z"></path></svg></span><b>Werkzeugbau</b><small>Formen &amp; Werkzeuge express</small></div>
+      <div class="industry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round"><path d="M2 16l20-9-9 20-2-9z"></path></svg></span><b>Luft- &amp; Raumfahrt</b><small>Zeitkritische Präzisionsteile</small></div>
+      <div class="industry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round"><path d="M12 2a7 7 0 0 1 4 12.7V17H8v-2.3A7 7 0 0 1 12 2zM9 21h6M10 17v4M14 17v4"></path></svg></span><b>Prototypen</b><small>Vertraulich transportiert</small></div>
+      <div class="industry"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"></path></svg></span><b>Druckereien</b><small>Drucksachen vor dem Termin</small></div>
     </div>
   </div>
 </section>
