@@ -92,7 +92,7 @@ async function fetchReviews(data) {
   let result = null;
   for (let i = 0; i < 24; i++) {
     await new Promise((res) => setTimeout(res, 5000));
-    const get = await fetch(`${API}/task_get/advanced/${taskId}`, { headers }).then((r) => r.json());
+    const get = await fetch(`${API}/task_get/${taskId}`, { headers }).then((r) => r.json());
     if (i === 0) console.log('  RAW get[0..600]:', JSON.stringify(get).slice(0, 600));
     const task = get?.tasks?.[0];
     const sc = task?.status_code;
