@@ -296,13 +296,14 @@ ul.checks li strong{color:var(--navy)}
 .grid-2{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
 @media(max-width:900px){.grid-2{grid-template-columns:1fr;gap:34px}}
 /* ================= Leistungs-Cards ================= */
-.svc-group{margin-top:48px}
-.svc-group + .svc-group{border-top:1px solid var(--grey-line);padding-top:48px}
-.svc-head{display:flex;gap:20px;align-items:flex-start;max-width:860px;margin-bottom:28px}
-.svc-head .num{flex:none;width:46px;height:46px;border-radius:12px;background:var(--navy);color:#9fe084;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;box-shadow:0 6px 14px rgba(22,32,56,.18)}
-.svc-head h3{font-size:23px;margin-bottom:6px}
-.svc-head p{margin:0;font-size:16px;color:var(--text-soft)}
-@media(max-width:560px){.svc-head{gap:14px}.svc-head .num{width:40px;height:40px}}
+.svc-group{margin-top:56px}
+.svc-band{position:relative;border-radius:var(--radius);overflow:hidden;min-height:220px;display:flex;align-items:flex-end;background-size:cover;background-position:center;margin-bottom:30px;box-shadow:var(--shadow)}
+.svc-band::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(22,32,56,.92) 0%,rgba(22,32,56,.62) 42%,rgba(22,32,56,.12) 100%)}
+.svc-band .svc-band-inner{position:relative;z-index:1;display:flex;gap:20px;align-items:flex-start;padding:30px 34px;max-width:780px}
+.svc-band .num{flex:none;width:46px;height:46px;border-radius:12px;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;box-shadow:0 6px 16px rgba(79,168,50,.4)}
+.svc-band h3{color:#fff;font-size:24px;margin-bottom:6px}
+.svc-band p{margin:0;font-size:16px;color:#dfe4ee}
+@media(max-width:560px){.svc-band .svc-band-inner{padding:24px 22px;gap:14px}.svc-band .num{width:40px;height:40px}}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 @media(max-width:940px){.cards{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.cards{grid-template-columns:1fr}}
@@ -829,11 +830,13 @@ th.hl{background:var(--green);color:#fff}
       <p class="lead">Jede Sendung hat ihr eigenes Tempo. Deshalb bekommen Sie bei uns kein Standardprodukt, sondern die Transportart, die zu Ihrer Deadline passt. Von der Direktfahrt bis zur Notfalllogistik, alles aus einer Hand.</p>
     </div>
     <div class="svc-group">
-      <div class="svc-head">
-        <span class="num">01</span>
-        <div>
-          <h3>Express &amp; Direktfahrten</h3>
-          <p>Wenn das Tempo zählt: unsere schnellsten Transportarten für Sendungen mit harter Deadline. Ein Fahrzeug fährt exklusiv für Sie, ohne Umweg über ein Depot.</p>
+      <div class="svc-band" style="background-image:url('assets/img/leistung-express.jpg')">
+        <div class="svc-band-inner">
+          <span class="num">01</span>
+          <div>
+            <h3>Express &amp; Direktfahrten</h3>
+            <p>Wenn das Tempo zählt: unsere schnellsten Transportarten für Sendungen mit harter Deadline. Ein Fahrzeug fährt exklusiv für Sie, ohne Umweg über ein Depot.</p>
+          </div>
         </div>
       </div>
       <div class="cards">
@@ -876,11 +879,13 @@ th.hl{background:var(--green);color:#fff}
       </div>
     </div>
     <div class="svc-group">
-      <div class="svc-head">
-        <span class="num">02</span>
-        <div>
-          <h3>Spezial &amp; Branchenlösungen</h3>
-          <p>Nicht jede Sendung passt in ein Standardmaß. Für besondere Güter, sensible Unterlagen und akute Notfälle haben wir die passende Lösung samt Fahrzeugausstattung.</p>
+      <div class="svc-band" style="background-image:url('assets/img/leistung-spezial.jpg')">
+        <div class="svc-band-inner">
+          <span class="num">02</span>
+          <div>
+            <h3>Spezial &amp; Branchenlösungen</h3>
+            <p>Nicht jede Sendung passt in ein Standardmaß. Für besondere Güter, sensible Unterlagen und akute Notfälle haben wir die passende Lösung samt Fahrzeugausstattung.</p>
+          </div>
         </div>
       </div>
       <div class="cards">
@@ -923,11 +928,13 @@ th.hl{background:var(--green);color:#fff}
       </div>
     </div>
     <div class="svc-group">
-      <div class="svc-head">
-        <span class="num">03</span>
-        <div>
-          <h3>Reichweite</h3>
-          <p>Von der Nachbarstadt bis ins EU-Ausland: dieselbe Direktfahrt ohne Umladung, nur die Strecke wird länger. Deutschland- und europaweit aus einer Hand.</p>
+      <div class="svc-band" style="background-image:url('assets/img/leistung-reichweite.jpg')">
+        <div class="svc-band-inner">
+          <span class="num">03</span>
+          <div>
+            <h3>Reichweite</h3>
+            <p>Von der Nachbarstadt bis ins EU-Ausland: dieselbe Direktfahrt ohne Umladung, nur die Strecke wird länger. Deutschland- und europaweit aus einer Hand.</p>
+          </div>
         </div>
       </div>
       <div class="cards">
