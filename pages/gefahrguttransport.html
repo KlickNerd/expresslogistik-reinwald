@@ -229,7 +229,9 @@ section.alt{background:var(--grey-bg)}
 .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;padding:20px 0 96px}
 @media(max-width:960px){.hero-grid{grid-template-columns:1fr;padding:12px 0 80px}}
 .hero-visual{position:relative;min-height:340px}
-.hero-visual .truck{width:100%;height:auto;display:block;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
+.hero-visual::before{content:"";position:absolute;left:30px;right:-20px;top:26px;bottom:-20px;border-radius:22px;background:linear-gradient(140deg,rgba(79,168,50,.32),rgba(79,168,50,0) 62%),rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);z-index:0;pointer-events:none}
+.hero-visual .truck{position:relative;z-index:1;width:100%;height:auto;display:block;border-radius:16px;border:1px solid rgba(255,255,255,.14);box-shadow:0 34px 55px rgba(0,0,0,.5)}
+.hero-visual .float-card{z-index:3}
 .float-card{position:absolute;background:rgba(255,255,255,.97);border-radius:14px;box-shadow:var(--shadow-lg);padding:14px 20px;display:flex;align-items:center;gap:13px}
 .float-card .ic{width:42px;height:42px;border-radius:11px;flex:none;background:var(--green-light);color:var(--green-dark);display:flex;align-items:center;justify-content:center}
 .float-card .ic svg{width:22px;height:22px}
@@ -1076,6 +1078,7 @@ th.hl{background:var(--green);color:#fff}
       <a href="https://expresslogistik-reinwald.de/kurierdienst-stuttgart/"><span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span><span><b>Stuttgart</b><small>Kurierdienst &amp; Direktfahrt</small></span></a>
       <a href="https://expresslogistik-reinwald.de/kurierdienst-duesseldorf/"><span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span><span><b>Düsseldorf</b><small>Kurierdienst &amp; Direktfahrt</small></span></a>
       <a href="https://expresslogistik-reinwald.de/kurierdienst-nuernberg/"><span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span><span><b>Nürnberg</b><small>Kurierdienst &amp; Direktfahrt</small></span></a>
+      <a href="https://expresslogistik-reinwald.de/kurierdienst-deutschland/"><span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h13M12 5l7 7-7 7"></path></svg></span><span><b>Alle Städte anzeigen</b><small>Komplettes Einzugsgebiet</small></span></a>
     </div>
     <aside class="cta-strip">
       <div class="badge" aria-hidden="true">DE<small>+ EU</small></div>
