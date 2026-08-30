@@ -26,10 +26,21 @@
  * -----------------------------------------------------------------------------
  */
 import { readFile, writeFile } from 'node:fs/promises';
+import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+
+// Lokale .env laden (nur fuer manuelle Laeufe; in der GitHub Action kommen die
+// Werte aus den Secrets). Bereits gesetzte Umgebungsvariablen haben Vorrang.
+const ENV_FILE = join(ROOT, '.env');
+if (existsSync(ENV_FILE)) {
+  for (const line of readFileSync(ENV_FILE, 'utf8').split('\n')) {
+    const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)\s*$/);
+    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim().replace(/^["']|["']$/g, '');
+  }
+}
 const DATA_FILE = join(ROOT, 'data', 'reviews.json');
 const PAGES = [join(ROOT, 'pages', 'kurierdienst.html'), join(ROOT, 'pages', 'index.html')];
 const SLIDER_PAGE = join(ROOT, 'pages', 'kurierdienst.html');
@@ -71,19 +82,24 @@ async function fetchReviews(data) {
       depth: 100,
     }]),
   }).then((r) => r.json());
-  const taskId = post?.tasks?.[0]?.id;
-  if (!taskId) throw new Error('Task-Anlage fehlgeschlagen: ' + JSON.stringify(post?.tasks?.[0]?.status_message || post));
+  const t0 = post?.tasks?.[0];
+  console.log(`task_post: api ${post?.status_code} ${post?.status_message} | task ${t0?.status_code} ${t0?.status_message}`);
+  const taskId = t0?.id;
+  if (!taskId) throw new Error('Task-Anlage fehlgeschlagen: ' + (t0?.status_message || post?.status_message || 'unbekannt'));
 
-  // 2) Auf Ergebnis warten
+  // 2) Auf Ergebnis warten. Zwischenstatus (Created/Handed/In Queue) = weiter warten.
+  const IN_PROGRESS = new Set([20100, 40601, 40602]);
   let result = null;
-  for (let i = 0; i < 30; i++) {
-    await new Promise((res) => setTimeout(res, 6000));
+  for (let i = 0; i < 40; i++) {
+    await new Promise((res) => setTimeout(res, 5000));
     const get = await fetch(`${API}/task_get/advanced/${taskId}`, { headers }).then((r) => r.json());
     const task = get?.tasks?.[0];
-    if (task?.status_code === 20000 && task?.result?.[0]) { result = task.result[0]; break; }
-    if (task?.status_code && task.status_code >= 40000) throw new Error('Fetch-Fehler: ' + task.status_message);
+    const sc = task?.status_code;
+    if (i % 4 === 0 || (sc && sc !== 20000)) console.log(`  poll ${i}: task ${sc} ${task?.status_message || ''}`);
+    if (sc === 20000 && task?.result?.[0]) { result = task.result[0]; break; }
+    if (sc && sc >= 40000 && !IN_PROGRESS.has(sc)) throw new Error('Fetch-Fehler: ' + task.status_message);
   }
-  if (!result) throw new Error('Timeout: keine Rezensionen erhalten.');
+  if (!result) throw new Error('Timeout: keine Rezensionen erhalten (Task evtl. noch in Bearbeitung).');
 
   // 3) Zusammenfassung + Items uebernehmen
   const value = result.rating?.value ?? data.rating;
