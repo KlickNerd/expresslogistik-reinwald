@@ -49,6 +49,8 @@ const INJECT_ONLY = process.argv.includes('--inject-only');
 const API = 'https://api.dataforseo.com/v3/business_data/google/reviews';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+// Gedankenstriche (–/—) sind im sichtbaren Text nicht erlaubt: auf ASCII-Bindestrich normalisieren.
+const clean = (s) => esc(String(s).replace(/[–—]/g, '-').replace(/[ \t]+/g, ' ').trim());
 const stars = (r) => '★'.repeat(Math.max(1, Math.min(5, Math.round(r || 5))));
 const initials = (name) => {
   const p = String(name).trim().split(/\s+/).filter(Boolean);
@@ -88,15 +90,13 @@ async function fetchReviews(data) {
   if (!taskId) throw new Error('Task-Anlage fehlgeschlagen: ' + (t0?.status_message || post?.status_message || 'unbekannt'));
 
   // 2) Auf Ergebnis warten. Zwischenstatus (Created/Handed/In Queue) = weiter warten.
-  const IN_PROGRESS = new Set([20100, 40601, 40602]);
+  const IN_PROGRESS = new Set([20100, 40601, 40602]); // Created / Handed / In Queue
   let result = null;
   for (let i = 0; i < 24; i++) {
     await new Promise((res) => setTimeout(res, 5000));
     const get = await fetch(`${API}/task_get/${taskId}`, { headers }).then((r) => r.json());
-    if (i === 0) console.log('  RAW get[0..600]:', JSON.stringify(get).slice(0, 600));
     const task = get?.tasks?.[0];
     const sc = task?.status_code;
-    console.log(`  poll ${i}: api ${get?.status_code} ${get?.status_message} | task ${sc} ${task?.status_message || ''} | tasks_count ${get?.tasks_count}`);
     if (sc === 20000 && task?.result?.[0]) { result = task.result[0]; break; }
     if (sc && sc >= 40000 && !IN_PROGRESS.has(sc)) throw new Error('Fetch-Fehler: ' + task.status_message);
   }
@@ -119,7 +119,7 @@ async function fetchReviews(data) {
   const next = {
     ...data,
     rating: Number(value) || data.rating,
-    rating_display: String(value ?? data.rating).replace('.', ','),
+    rating_display: (Number(value) || Number(data.rating)).toFixed(1).replace('.', ','),
     count: Number(count) || data.count,
     updated: new Date().toISOString().slice(0, 10),
     reviews,
@@ -136,7 +136,7 @@ function buildCards(reviews) {
     return (
       '          <article class="quote">\n' +
       `            <div class="stars" aria-label="${round} von 5 Sternen">${stars(round)}</div>\n` +
-      `            <blockquote>${esc(r.text)}</blockquote>\n` +
+      `            <blockquote>${clean(r.text)}</blockquote>\n` +
       `            <div class="who-row"><span class="avatar" aria-hidden="true">${esc(initials(r.author))}</span><span><strong>${esc(r.author)}</strong><small>Google-Bewertung</small></span></div>\n` +
       '          </article>'
     );
