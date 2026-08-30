@@ -2,22 +2,60 @@
   "place_id": "ChIJCciFddIzn0cRinUmFcXNKJM",
   "cid": "10603951568990926218",
   "profile_url": "https://search.google.com/local/reviews?placeid=ChIJCciFddIzn0cRinUmFcXNKJM",
-  "rating": 5.0,
-  "rating_display": "5,0",
+  "rating": 5,
+  "rating_display": "5",
   "count": 63,
   "updated": "2026-08-30",
   "max_reviews": 8,
   "min_chars": 40,
   "reviews": [
     {
-      "author": "Tobias Albrecht",
+      "author": "Jasmin Heinen",
       "rating": 5,
-      "text": "Schnelles Angebot, unkomplizierte Abwicklung, minutengenaue Auslieferung. Klare Empfehlung!"
+      "text": "Bin absolut begeistert. Sehr zuverlässig und schnell. Der Fahrer war sogar schon vor der vereinbarten Zeit vor Ort und hat auf uns gewartet. Hier kann man sich wirklich noch auf eine pünktliche Zustellung verlassen. Gerne wieder.",
+      "time": "2026-06-19 07:29:46 +00:00"
     },
     {
-      "author": "Thomas Eber",
+      "author": "Patricia Cihlar",
       "rating": 5,
-      "text": "Excellenter Kurierdienst. Egal ob groß ob klein, immer das passende Fahrzeug, mit oder ohne Hebebühne usw. Faire Preise, zuverlässige und geduldige Fahrer. Kann ich jederzeit ohne wenn und aber empfehlen."
+      "text": "Sehr Kompetent, SCHNELL mit Angebot und Bestätigung.",
+      "time": "2025-10-23 08:24:55 +00:00"
+    },
+    {
+      "author": "Alexandru Miu",
+      "rating": 5,
+      "text": "Freundliches Personal, positive Einstellung.\n\nEs war mir eine Freude, mit Ihnen zusammenzuarbeiten.\n\nViele Grüße von Fastlane, Rumänien!",
+      "time": "2025-09-26 09:49:59 +00:00"
+    },
+    {
+      "author": "Patrick Habbel",
+      "rating": 5,
+      "text": "Die Kommunikation war schnell und professionell, die Lieferung pünktlich und zuverlässig. Besonders beeindruckt hat mich die Flexibilität bei kurzfristigen Transportanfragen. Wer einen zuverlässigen Logistikpartner für Expressversand und Kurierdienste sucht, ist hier genau richtig. Absolute Empfehlung!",
+      "time": "2025-09-03 10:16:36 +00:00"
+    },
+    {
+      "author": "Mario Perticaro",
+      "rating": 5,
+      "text": "Sehr Freundlich !!! Deutschkenntnis gut!!!",
+      "time": "2025-07-01 14:23:46 +00:00"
+    },
+    {
+      "author": "Ninette Frommherz",
+      "rating": 5,
+      "text": "Sehr gute Zusammenarbeit.\nHerzlichstes Dankeschön an alle Beteiligten.\nmfG Maik Frommherz",
+      "time": "2025-05-23 17:37:11 +00:00"
+    },
+    {
+      "author": "Evelyne Brader",
+      "rating": 5,
+      "text": "Super Spediteur! Hat alles einwandfrei geklappt. Gerne wieder. Danke!!",
+      "time": "2025-05-08 12:55:54 +00:00"
+    },
+    {
+      "author": "Martin",
+      "rating": 5,
+      "text": "Hat alles von Buchung über Abholung und Lieferung super geklappt. Sehr freundlicher und hilfsbereiter Fahrer bei der Anlieferung! Preis im Vergleich auch top, gerne wieder!",
+      "time": "2025-01-29 07:44:04 +00:00"
     }
   ]
 }
