@@ -440,16 +440,19 @@ th.hl{background:var(--green);color:#fff}
 .gf-box .txt strong{display:block;font-size:17px;color:var(--navy)}
 /* ================= Wissen ================= */
 .know-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
-@media(max-width:940px){.know-grid{grid-template-columns:1fr}}
-.know{background:var(--white);border:1px solid var(--grey-line);border-radius:var(--radius);overflow:hidden;box-shadow:0 2px 10px rgba(22,32,56,.05);display:flex;flex-direction:column;transition:transform .18s ease, box-shadow .18s ease}
-.know:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-.know .head{background:linear-gradient(135deg,var(--navy),var(--navy-70));color:#fff;padding:18px 24px;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.08em;display:flex;align-items:center;gap:10px}
-.know .head .d{width:9px;height:9px;border-radius:50%;background:var(--green)}
-.know .body{padding:24px;display:flex;flex-direction:column;flex:1}
-.know .body h3{font-size:19px}
-.know .body p{font-size:15px;color:var(--text-soft);flex:1}
-.know .body a{font-weight:800;text-decoration:none;color:var(--green-dark);font-size:15.5px}
-.know .body a:hover{text-decoration:underline}
+@media(max-width:940px){.know-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.know-grid{grid-template-columns:1fr}}
+.know{background:var(--white);border:1px solid var(--grey-line);border-radius:var(--radius);padding:28px 26px;box-shadow:0 2px 10px rgba(22,32,56,.05);display:flex;flex-direction:column;transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;position:relative;overflow:hidden}
+.know::after{content:"";position:absolute;left:0;top:0;right:0;height:4px;background:linear-gradient(90deg,var(--green),var(--green-dark));opacity:0;transition:opacity .18s ease}
+.know:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#d3dae5}
+.know:hover::after{opacity:1}
+.know .know-ic{width:52px;height:52px;border-radius:13px;background:var(--green-light);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.know .know-ic svg{width:26px;height:26px}
+.know .know-cat{display:inline-block;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:var(--green-dark);margin-bottom:8px}
+.know h3{font-size:19px;margin-bottom:8px}
+.know p{font-size:15px;color:var(--text-soft);flex:1;margin-bottom:16px}
+.know a.more{font-weight:800;text-decoration:none;color:var(--green-dark);font-size:15.5px;display:inline-flex;align-items:center;gap:6px;transition:gap .15s ease}
+.know a.more:hover{gap:11px}
 /* ================= CTA-Strip ================= */
 .cta-strip{display:flex;align-items:center;gap:24px;flex-wrap:wrap;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-70) 100%);border-radius:var(--radius);padding:26px 30px;margin-top:38px;color:var(--white);box-shadow:var(--shadow);position:relative;overflow:hidden}
 .cta-strip::after{content:"";position:absolute;right:-90px;top:-90px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(79,168,50,.28) 0%,rgba(79,168,50,0) 70%);pointer-events:none}
@@ -1382,32 +1385,50 @@ mfG Maik Frommherz</blockquote>
     <div class="sec-head center">
       <span class="eyebrow">Ratgeber &amp; Wissen</span>
       <h2>Logistikwissen rund um den Kurierdienst</h2>
-      <p class="lead">Von der Preisberechnung bis zur Fahrzeugwahl: Wir erklären die Themen, die im Versandalltag wirklich weiterhelfen.</p>
+      <p class="lead">Von der Preiskalkulation bis zum Spezialtransport: Wir erklären die Themen, die im Versandalltag wirklich weiterhelfen.</p>
     </div>
     <div class="know-grid">
       <article class="know">
-        <div class="head"><span class="d"></span>Ratgeber</div>
-        <div class="body">
-          <h3>Was kostet ein Kurierdienst?</h3>
-          <p>Welche Faktoren den Preis bestimmen, womit Sie rechnen sollten und wo sich sparen lässt.</p>
-          <a href="https://expresslogistik-reinwald.de/ratgeber/was-kostet-ein-kurierdienst/">Zum Ratgeber →</a>
-        </div>
+        <span class="know-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></span>
+        <span class="know-cat">Ratgeber</span>
+        <h3>Was kostet ein Kurierdienst?</h3>
+        <p>Welche Faktoren den Preis bestimmen, womit Sie rechnen sollten und wo sich sparen lässt.</p>
+        <a class="more" href="https://expresslogistik-reinwald.de/ratgeber/was-kostet-ein-kurierdienst/">Zum Ratgeber →</a>
       </article>
       <article class="know">
-        <div class="head"><span class="d"></span>Ratgeber</div>
-        <div class="body">
-          <h3>Transportkosten berechnen</h3>
-          <p>Was ein Transport pro Kilometer kostet und wie Sie den Preis Ihrer Fahrt selbst kalkulieren.</p>
-          <a href="https://expresslogistik-reinwald.de/ratgeber/transportkosten-berechnen/">Zum Ratgeber →</a>
-        </div>
+        <span class="know-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"></rect><path d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h4"></path></svg></span>
+        <span class="know-cat">Ratgeber</span>
+        <h3>Transportkosten berechnen</h3>
+        <p>Was ein Transport pro Kilometer kostet und wie Sie den Preis Ihrer Fahrt selbst kalkulieren.</p>
+        <a class="more" href="https://expresslogistik-reinwald.de/ratgeber/transportkosten-berechnen/">Zum Ratgeber →</a>
       </article>
       <article class="know">
-        <div class="head"><span class="d"></span>Nachschlagewerk</div>
-        <div class="body">
-          <h3>Logistik-Lexikon</h3>
-          <p>Von Avisierung bis Zollgebühren: die wichtigsten Fachbegriffe aus Transport und Logistik, verständlich erklärt.</p>
-          <a href="https://expresslogistik-reinwald.de/logistik-lexikon/">Zum Lexikon →</a>
-        </div>
+        <span class="know-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><path d="M12 9v4M12 17h.01"></path></svg></span>
+        <span class="know-cat">Ratgeber</span>
+        <h3>Gefahrguttransport</h3>
+        <p>ADR, Kennzeichnung und Verpackung: worauf es beim Transport gefährlicher Güter wirklich ankommt.</p>
+        <a class="more" href="https://expresslogistik-reinwald.de/ratgeber/gefahrguttransport/">Zum Ratgeber →</a>
+      </article>
+      <article class="know">
+        <span class="know-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+        <span class="know-cat">Ratgeber</span>
+        <h3>Nachtexpress</h3>
+        <p>Abends abgeholt, morgens da: wie Nachttransporte ablaufen und wann sie sich für Sie lohnen.</p>
+        <a class="more" href="https://expresslogistik-reinwald.de/ratgeber/nachtexpress/">Zum Ratgeber →</a>
+      </article>
+      <article class="know">
+        <span class="know-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="4" rx="1"></rect><rect x="3" y="10" width="18" height="4" rx="1"></rect><rect x="3" y="16" width="18" height="4" rx="1"></rect></svg></span>
+        <span class="know-cat">Ratgeber</span>
+        <h3>Lademeter berechnen</h3>
+        <p>Formel, Rechner und Praxisbeispiele: so kalkulieren Sie den Platzbedarf Ihrer Sendung richtig.</p>
+        <a class="more" href="https://expresslogistik-reinwald.de/ratgeber/lademeter-berechnen/">Zum Ratgeber →</a>
+      </article>
+      <article class="know">
+        <span class="know-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><path d="M3.27 6.96L12 12l8.73-5.04M12 22V12"></path></svg></span>
+        <span class="know-cat">Ratgeber</span>
+        <h3>Palette versenden</h3>
+        <p>Von der richtigen Verpackung bis zum Fixpreis: so verschicken Sie Paletten schnell und sicher.</p>
+        <a class="more" href="https://expresslogistik-reinwald.de/ratgeber/palette-versenden/">Zum Ratgeber →</a>
       </article>
     </div>
   </div>
