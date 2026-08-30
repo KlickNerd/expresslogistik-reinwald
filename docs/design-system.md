@@ -13,7 +13,7 @@ Quellen: referenz/ratgeber-messelogistik.html (Artikel-Layout) und referenz/stad
 2. LANDINGPAGE (Stadt/Leistung/Startseite): maxw 1200px, Sektionen 64-76px im Wechsel weiss/#f5f7fa, Hero mit Gruen-Glow, cards-Grid, why-Sektion auf Navy, cta-strip, cta-box, mobile Callbar. "Kurz erklaert"-Box NUR auf SEO-Landingpages, NICHT Startseite.
 
 ## Globale Komponenten: Header + Footer (pages/index.html)
-- Sticky-Header .siteheader: Logo, Nav (Leistungen-Mega-Menue 3 Spalten, Standorte, Wissen, Ueber uns, Karriere), Telefon + Direktanfrage-Button
+- Sticky-Header .siteheader: Logo, Nav (Leistungen-Mega-Menue 3 Spalten, Einzugsgebiet, Wissen, Ueber uns, Karriere), Telefon + Direktanfrage-Button
 - CSS-only: Dropdowns hover/focus-within, mobil (<1120px) Checkbox-Burger mit Fullscreen-Panel
 - Footer .sitefooter: f-top (Logo+Claim | Callbox), f-grid 4 Linkspalten, f-bottom (Rechtliches + Badges)
 - Telefon-Icon als Inline-SVG .ic-ph, KEINE Emojis in Buttons
@@ -32,6 +32,8 @@ Logo_vorlaufig_weis-1.png | Group-920 (Fuhrpark, freigestellt) | AdobeStock_9554
 
 ## Redaktions-Regeln
 - KEINE Gedankenstriche im sichtbaren Text; Richtwerte "unverbindlich, Stand <Monat Jahr>"
+- NIE "Standorte" im Nav/Footer/sichtbaren Text: Reinwald hat keine Standorte, nur ein Partnernetzwerk. Nutze "Einzugsgebiet" (Nav-Label + Footer-Ueberschrift), fuer Links "Alle Staedte" bzw. "Ganz Deutschland". Ausnahme: "Standort Theilenhofen" (echter Firmensitz) und "Haben Sie einen Standort in X? Nein ..." bleiben korrekt.
+- KEINE Live-/Echtzeit-/GPS-Sendungsverfolgung behaupten (kein solches Portal); ehrlich: Statusmeldung bei Abholung/Zustellung per Mail/SMS + digitaler Ablieferbeleg (ePOD)
 - CTA-Winkel pro Seite einzigartig (Vergabeliste: produktionsstatus-ratgeber.md)
 - Google-Rezensionen aus Pool, Zweitverwendung tracken (Albrecht + Eber laufen auf Paderborn UND Startseite)
 - Stadtseiten: echte lokale Substanz (Gewerbegebiete, Autobahnen, Ankerfirmen, Branchen, Fahrzeiten-Tabelle, Stadtteil-Liste)
