@@ -223,7 +223,9 @@ section.alt{background:var(--grey-bg)}
   -webkit-mask-image:linear-gradient(115deg, transparent 42%, #000 78%);
   pointer-events:none;
 }
-.hero .wrap{position:relative;z-index:1}
+.hero .wrap{position:relative;z-index:1;max-width:1480px}
+.statband-wrap{max-width:1480px}
+.siteheader .wrap{max-width:1480px}
 .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;padding:20px 0 96px}
 @media(max-width:960px){.hero-grid{grid-template-columns:1fr;padding:12px 0 80px}}
 .hero-visual{position:relative;min-height:340px}
@@ -759,7 +761,7 @@ th.hl{background:var(--green);color:#fff}
   </div>
 </header>
 <!-- ================= KENNZAHLEN ================= -->
-<div class="wrap">
+<div class="wrap statband-wrap">
   <div class="statband" role="list" aria-label="Kennzahlen">
     <div class="stat" role="listitem"><b>20<i>+</i></b><span>Jahre Erfahrung</span></div>
     <div class="stat" role="listitem"><b>500<i>+</i></b><span>aktive Kunden</span></div>
