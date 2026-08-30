@@ -42,7 +42,7 @@ if (existsSync(ENV_FILE)) {
   }
 }
 const DATA_FILE = join(ROOT, 'data', 'reviews.json');
-const PAGES = [join(ROOT, 'pages', 'kurierdienst.html'), join(ROOT, 'pages', 'index.html'), join(ROOT, 'pages', 'leistungen.html'), join(ROOT, 'pages', 'gefahrguttransport.html')];
+const PAGES = [join(ROOT, 'pages', 'kurierdienst.html'), join(ROOT, 'pages', 'index.html'), join(ROOT, 'pages', 'leistungen.html'), join(ROOT, 'pages', 'gefahrguttransport.html'), join(ROOT, 'pages', 'palettenversand.html')];
 const SLIDER_PAGE = join(ROOT, 'pages', 'kurierdienst.html');
 
 const INJECT_ONLY = process.argv.includes('--inject-only');
