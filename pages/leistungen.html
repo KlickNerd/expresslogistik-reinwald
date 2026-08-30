@@ -271,6 +271,17 @@ section.alt{background:var(--grey-bg)}
 .trustbar{display:flex;flex-wrap:wrap;gap:12px 30px;font-weight:700;font-size:15.5px;color:#e8ecf4}
 .trustbar span{display:flex;align-items:center;gap:8px}
 .trustbar .dot{color:var(--green);font-size:18px}
+/* Hero-Kategorie-Kacheln (Leistungen-Uebersicht) */
+.hero-cats{display:flex;flex-direction:column;gap:14px}
+@media(max-width:960px){.hero-cats{margin-top:8px}}
+.hero-cat{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:18px 20px;text-decoration:none;transition:background .15s ease,border-color .15s ease,transform .15s ease}
+.hero-cat:hover{background:rgba(255,255,255,.1);border-color:rgba(79,168,50,.5);transform:translateX(4px)}
+.hero-cat .ic{width:48px;height:48px;border-radius:12px;flex:none;background:rgba(79,168,50,.16);border:1px solid rgba(79,168,50,.4);display:flex;align-items:center;justify-content:center}
+.hero-cat .ic svg{width:24px;height:24px}
+.hero-cat b{display:block;color:#fff;font-size:17px;line-height:1.25}
+.hero-cat span{display:block;color:#aeb8cf;font-size:13.5px;font-weight:700}
+.hero-cat .arw{margin-left:auto;color:#9fe084;font-weight:800;font-size:20px;transition:transform .15s ease}
+.hero-cat:hover .arw{transform:translateX(3px)}
 /* ================= Kurz erklärt (GEO) ================= */
 .kurz{
   background:var(--green-light);
@@ -296,7 +307,7 @@ ul.checks li strong{color:var(--navy)}
 .grid-2{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
 @media(max-width:900px){.grid-2{grid-template-columns:1fr;gap:34px}}
 /* ================= Leistungs-Cards ================= */
-.svc-group{margin-top:56px}
+.svc-group{margin-top:56px;scroll-margin-top:90px}
 .svc-band{position:relative;border-radius:var(--radius);overflow:hidden;min-height:220px;display:flex;align-items:flex-end;background-size:cover;background-position:center;margin-bottom:30px;box-shadow:var(--shadow)}
 .svc-band::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(22,32,56,.92) 0%,rgba(22,32,56,.62) 42%,rgba(22,32,56,.12) 100%)}
 .svc-band .svc-band-inner{position:relative;z-index:1;display:flex;gap:20px;align-items:flex-start;padding:30px 34px;max-width:780px}
@@ -739,16 +750,22 @@ th.hl{background:var(--green);color:#fff}
           <span><span class="dot">✓</span> Direktfahrt ohne Umladung</span>
         </div>
       </div>
-      <div class="hero-visual">
-        <img class="truck" src="https://expresslogistik-reinwald.de/wp-content/uploads/2025/03/Group-920-e1741757033913.png" alt="Fuhrpark von Expresslogistik Reinwald: LKW und Sprinter für Kurierfahrten und Eiltransporte" width="640" height="420" fetchpriority="high">
-        <div class="float-card fc-1">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg></span>
-          <span><b>60 bis 120 Min.</b><span>bis zur Abholung</span></span>
-        </div>
-        <div class="float-card fc-2">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
-          <span><b>Festpreis vorab</b><span>Angebot in 10 Minuten</span></span>
-        </div>
+      <div class="hero-cats">
+        <a class="hero-cat" href="#express">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#9fe084" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7z"></path></svg></span>
+          <span><b>Express &amp; Direktfahrten</b><span>6 Leistungen · sofort abholbereit</span></span>
+          <span class="arw" aria-hidden="true">→</span>
+        </a>
+        <a class="hero-cat" href="#spezial">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#9fe084" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z"></path></svg></span>
+          <span><b>Spezial- &amp; Sondertransporte</b><span>6 Leistungen · für besondere Güter</span></span>
+          <span class="arw" aria-hidden="true">→</span>
+        </a>
+        <a class="hero-cat" href="#reichweite">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#9fe084" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></svg></span>
+          <span><b>Reichweite &amp; Service</b><span>Deutschland- und europaweit</span></span>
+          <span class="arw" aria-hidden="true">→</span>
+        </a>
       </div>
     </div>
   </div>
@@ -779,7 +796,7 @@ th.hl{background:var(--green);color:#fff}
 <!-- ================= ALLE LEISTUNGEN ================= -->
 <section class="alt">
   <div class="wrap">
-    <div class="svc-group">
+    <div class="svc-group" id="express">
       <div class="svc-band" style="background-image:url('assets/img/leistung-express.jpg')">
         <div class="svc-band-inner">
           <span class="num">01</span>
@@ -828,7 +845,7 @@ th.hl{background:var(--green);color:#fff}
         </article>
       </div>
     </div>
-    <div class="svc-group">
+    <div class="svc-group" id="spezial">
       <div class="svc-band" style="background-image:url('assets/img/leistung-spezial.jpg')">
         <div class="svc-band-inner">
           <span class="num">02</span>
@@ -877,7 +894,7 @@ th.hl{background:var(--green);color:#fff}
         </article>
       </div>
     </div>
-    <div class="svc-group">
+    <div class="svc-group" id="reichweite">
       <div class="svc-band" style="background-image:url('assets/img/leistung-reichweite.jpg')">
         <div class="svc-band-inner">
           <span class="num">03</span>
