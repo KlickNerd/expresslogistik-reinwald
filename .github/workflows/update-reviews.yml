@@ -1,0 +1,41 @@
+name: Google-Bewertungen aktualisieren
+
+# Laeuft am 1. und 15. jedes Monats (ca. alle zwei Wochen) und laesst sich
+# jederzeit manuell ueber "Run workflow" ausloesen.
+on:
+  schedule:
+    - cron: '0 5 1,15 * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Bewertungen abrufen und einspielen
+        env:
+          DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
+          DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
+        run: node tools/update-reviews.mjs
+
+      - name: Aenderungen committen
+        run: |
+          git config user.name "reviews-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/reviews.json pages/kurierdienst.html pages/index.html
+          if git diff --staged --quiet; then
+            echo "Keine Aenderungen an den Bewertungen."
+          else
+            git commit -m "chore: Google-Bewertungen automatisch aktualisiert"
+            git push
+          fi
