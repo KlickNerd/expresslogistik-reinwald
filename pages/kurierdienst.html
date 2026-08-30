@@ -401,7 +401,7 @@ th.hl{background:var(--green);color:#fff}
 .quote .who{font-size:14.5px;color:var(--text-soft);font-weight:700}
 .quote .who strong{color:var(--navy)}
 /* Referenzen-Layout mit Score-Karte */
-.rev-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:26px;margin-top:40px;align-items:stretch}
+.rev-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:26px;margin-top:40px;align-items:start}
 @media(max-width:860px){.rev-layout{grid-template-columns:1fr}}
 .rev-score{background:var(--white);border:1px solid var(--grey-line);border-radius:var(--radius);padding:34px 32px;display:flex;flex-direction:column;justify-content:center;box-shadow:var(--shadow);position:relative;overflow:hidden}
 .rev-score::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--green),var(--green-dark))}
@@ -423,8 +423,8 @@ th.hl{background:var(--green);color:#fff}
 .quote .who-row strong{display:block;color:var(--navy);font-size:15px;line-height:1.2}
 .quote .who-row small{display:block;color:var(--text-soft);font-size:13px;font-weight:600}
 /* Rezensions-Slider */
-.rev-carousel{display:flex;flex-direction:column}
-.rev-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-ms-overflow-style:none;scrollbar-width:none;flex:1}
+.rev-carousel{display:flex;flex-direction:column;min-width:0}
+.rev-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-ms-overflow-style:none;scrollbar-width:none;flex:1;min-width:0}
 .rev-track::-webkit-scrollbar{display:none}
 .rev-track .quote{scroll-snap-align:start;flex:0 0 100%;min-width:0}
 .rev-nav{display:flex;align-items:center;gap:12px;margin-top:18px}
@@ -1297,7 +1297,7 @@ th.hl{background:var(--green);color:#fff}
           <!--REVIEWS_START-->
           <article class="quote">
             <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-            <blockquote>Bin absolut begeistert. Sehr zuverlässig und schnell. Der Fahrer war sogar schon vor der vereinbarten Zeit vor Ort und hat auf uns gewartet. Hier kann man sich wirklich noch auf eine pünktliche Zustellung verlassen. Gerne wieder.</blockquote>
+            <blockquote>Bin absolut begeistert. Sehr zuverlässig und schnell. Der Fahrer war sogar schon vor der vereinbarten Zeit vor Ort und hat auf uns gewartet. Hier kann man sich wirklich noch auf eine pünktliche Zustellung verlassen.…</blockquote>
             <div class="who-row"><span class="avatar" aria-hidden="true">JH</span><span><strong>Jasmin Heinen</strong><small>Google-Bewertung</small></span></div>
           </article>
           <article class="quote">
@@ -1316,7 +1316,7 @@ Viele Grüße von Fastlane, Rumänien!</blockquote>
           </article>
           <article class="quote">
             <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-            <blockquote>Die Kommunikation war schnell und professionell, die Lieferung pünktlich und zuverlässig. Besonders beeindruckt hat mich die Flexibilität bei kurzfristigen Transportanfragen. Wer einen zuverlässigen Logistikpartner für Expressversand und Kurierdienste sucht, ist hier genau richtig. Absolute Empfehlung!</blockquote>
+            <blockquote>Die Kommunikation war schnell und professionell, die Lieferung pünktlich und zuverlässig. Besonders beeindruckt hat mich die Flexibilität bei kurzfristigen Transportanfragen. Wer einen zuverlässigen Logistikpartner für…</blockquote>
             <div class="who-row"><span class="avatar" aria-hidden="true">PH</span><span><strong>Patrick Habbel</strong><small>Google-Bewertung</small></span></div>
           </article>
           <article class="quote">

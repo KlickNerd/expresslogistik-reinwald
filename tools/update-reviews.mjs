@@ -51,6 +51,12 @@ const API = 'https://api.dataforseo.com/v3/business_data/google/reviews';
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 // Gedankenstriche (–/—) sind im sichtbaren Text nicht erlaubt: auf ASCII-Bindestrich normalisieren.
 const clean = (s) => esc(String(s).replace(/[–—]/g, '-').replace(/[ \t]+/g, ' ').trim());
+// Lange Rezensionen im Slider auf Teaser-Laenge kuerzen (Volltext steht auf Google).
+const truncate = (s, n = 220) => {
+  const t = String(s).trim();
+  if (t.length <= n) return t;
+  return t.slice(0, n).replace(/\s+\S*$/, '').trimEnd() + '…';
+};
 const stars = (r) => '★'.repeat(Math.max(1, Math.min(5, Math.round(r || 5))));
 const initials = (name) => {
   const p = String(name).trim().split(/\s+/).filter(Boolean);
@@ -136,7 +142,7 @@ function buildCards(reviews) {
     return (
       '          <article class="quote">\n' +
       `            <div class="stars" aria-label="${round} von 5 Sternen">${stars(round)}</div>\n` +
-      `            <blockquote>${clean(r.text)}</blockquote>\n` +
+      `            <blockquote>${clean(truncate(r.text))}</blockquote>\n` +
       `            <div class="who-row"><span class="avatar" aria-hidden="true">${esc(initials(r.author))}</span><span><strong>${esc(r.author)}</strong><small>Google-Bewertung</small></span></div>\n` +
       '          </article>'
     );
