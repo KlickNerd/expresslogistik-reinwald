@@ -4,7 +4,7 @@ Quellen: referenz/ratgeber-messelogistik.html (Artikel-Layout) und referenz/stad
 
 ## Farb-Tokens
 - Navy #162038 (Primaer), Abstufungen #1e2a47 / #1f2c4d / #2c3a5e
-- Gruen #4FA832 (CTA/Akzent), Dunkelgruen #3f8a27 bzw. #3d8526, Gruen-Tint #eaf6e4 bzw. #eef7e9
+- Gruen #4FA832 (CTA/Akzent), Dunkelgruen #3d8526 (Standard fuer Text/Links, WCAG AA 4.58:1; Alt #3f8a27 nur dekorativ), Gruen-Tint #eaf6e4 bzw. #eef7e9
 - Text #2b3346 bzw. #374050, Soft #5a6478 bzw. #6b7385, Linien #e3e8ef, BG #f5f7fa
 - Font "Segoe UI" Stack, Radius 14-16px, Schatten 0 6px 24px rgba(22,32,56,.10), theme-color #162038
 
