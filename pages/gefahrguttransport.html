@@ -271,6 +271,16 @@ section.alt{background:var(--grey-bg)}
 .trustbar{display:flex;flex-wrap:wrap;gap:12px 30px;font-weight:700;font-size:15.5px;color:#e8ecf4}
 .trustbar span{display:flex;align-items:center;gap:8px}
 .trustbar .dot{color:var(--green);font-size:18px}
+.class-chips{display:flex;align-items:center;flex-wrap:wrap;gap:10px 16px;margin-top:28px}
+.class-chips .lbl{font-size:12.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#9fb0c9}
+.class-chips .chips{display:flex;gap:11px;flex-wrap:wrap}
+.chip{position:relative;width:40px;height:40px;flex:none}
+.chip i{position:absolute;inset:0;transform:rotate(45deg);border-radius:9px;background:rgba(255,255,255,.06);border:1.5px solid rgba(159,224,132,.55);transition:background .18s ease,border-color .18s ease}
+.chip b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:#fff;font-style:normal}
+.chip:hover i{background:rgba(79,168,50,.22);border-color:var(--green)}
+.hero-visual::before{content:"";position:absolute;width:72%;height:72%;right:-5%;top:6%;background:radial-gradient(circle,rgba(79,168,50,.38),transparent 68%);filter:blur(34px);z-index:0;pointer-events:none}
+.hero-visual .truck{position:relative;z-index:1;border:1px solid rgba(255,255,255,.12)}
+.hero-visual .float-card{z-index:3}
 /* ================= Kurz erklärt (GEO) ================= */
 .kurz{
   background:var(--green-light);
@@ -763,6 +773,16 @@ th.hl{background:var(--green);color:#fff}
           <span><span class="dot">✓</span> ISO 9001 zertifiziert</span>
           <span><span class="dot">★</span> 5,0 bei Google</span>
           <span><span class="dot">✓</span> 24/7 disponiert</span>
+        </div>
+        <div class="class-chips">
+          <span class="lbl">Klassen im Direktverkehr</span>
+          <div class="chips">
+            <span class="chip" title="Klasse 2: Gase"><i></i><b>2</b></span>
+            <span class="chip" title="Klasse 3: Entzündbare Flüssigkeiten"><i></i><b>3</b></span>
+            <span class="chip" title="Klasse 6: Giftige Stoffe"><i></i><b>6</b></span>
+            <span class="chip" title="Klasse 8: Ätzende Stoffe"><i></i><b>8</b></span>
+            <span class="chip" title="Klasse 9: unter anderem Lithiumbatterien"><i></i><b>9</b></span>
+          </div>
         </div>
       </div>
       <div class="hero-visual">
