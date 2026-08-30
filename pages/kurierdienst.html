@@ -212,18 +212,39 @@ section.alt{background:var(--grey-bg)}
     radial-gradient(900px 480px at 88% 8%, rgba(79,168,50,.20), transparent 65%),
     linear-gradient(135deg,var(--navy) 0%,#101b33 58%,var(--navy-70) 100%);
   color:var(--white);
-  padding:64px 0 120px;
-  clip-path:polygon(0 0,100% 0,100% calc(100% - 66px),0 100%);
   position:relative;
   overflow:hidden;
 }
-.hero::after{
-  content:"";position:absolute;right:-140px;top:-140px;
-  width:520px;height:520px;border-radius:50%;
-  background:radial-gradient(circle,rgba(79,168,50,.22) 0%,rgba(79,168,50,0) 70%);
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size:26px 26px;
+  mask-image:linear-gradient(115deg, transparent 42%, #000 78%);
+  -webkit-mask-image:linear-gradient(115deg, transparent 42%, #000 78%);
   pointer-events:none;
 }
 .hero .wrap{position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;padding:20px 0 96px}
+@media(max-width:960px){.hero-grid{grid-template-columns:1fr;padding:12px 0 80px}}
+.hero-visual{position:relative;min-height:340px}
+.hero-visual .truck{width:100%;height:auto;display:block;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
+.float-card{position:absolute;background:rgba(255,255,255,.97);border-radius:14px;box-shadow:var(--shadow-lg);padding:14px 20px;display:flex;align-items:center;gap:13px}
+.float-card .ic{width:42px;height:42px;border-radius:11px;flex:none;background:var(--green-light);color:var(--green-dark);display:flex;align-items:center;justify-content:center}
+.float-card .ic svg{width:22px;height:22px}
+.float-card b{display:block;color:var(--navy);font-size:16px;line-height:1.2}
+.float-card span{font-size:12.5px;color:var(--text-soft);font-weight:700}
+.fc-1{top:-6px;right:6px}
+.fc-2{bottom:-16px;left:-6px}
+@media(max-width:960px){.hero-visual{min-height:0;max-width:520px;margin-top:6px}.fc-1{top:-10px;right:0}.fc-2{bottom:-10px;left:0}}
+/* Kennzahlen-Band */
+.statband{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-lg);display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;margin:-52px auto 0;position:relative;z-index:3}
+@media(max-width:860px){.statband{grid-template-columns:repeat(2,1fr)}}
+.stat{padding:26px 18px;text-align:center;border-right:1px solid var(--grey-line)}
+.stat:last-child{border-right:none}
+@media(max-width:860px){.stat:nth-child(2){border-right:none}.stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--grey-line)}}
+.stat b{display:block;font-size:clamp(26px,2.6vw,34px);font-weight:900;color:var(--navy);line-height:1.1}
+.stat b i{font-style:normal;color:var(--green)}
+.stat span{font-size:13.5px;font-weight:700;color:var(--text-soft);text-transform:uppercase;letter-spacing:.05em}
 .crumbs{font-size:14px;color:#aeb6c6;padding:6px 0 18px}
 .crumbs a{color:#aeb6c6;text-decoration:none}
 .crumbs a:hover{color:#fff}
@@ -693,50 +714,88 @@ th.hl{background:var(--green);color:#fff}
     <nav class="crumbs" aria-label="Breadcrumb">
       <a href="https://expresslogistik-reinwald.de/">Startseite</a> › Kurierdienst
     </nav>
-    <span class="pill"><span class="pulse"></span>Alles aus einer Hand: ein Anruf, jede Transportart</span>
-    <h1>Kurierdienst für Direktfahrten, <span class="accent">Eiltransporte</span> und Expressversand</h1>
-    <p class="sub">Ihr B2B-Kurierdienst für zeitkritische Sendungen: Abholung in 60 bis 120 Minuten, Direktfahrt ohne Umladung, deutschland- und europaweit. Angebot in 10 Minuten, ein Ansprechpartner für jede Fahrt.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-green" href="tel:+4998347922033"><svg class="ic-ph" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>Jetzt anrufen</a>
-      <a class="btn btn-outline-light" href="https://expresslogistik-reinwald.de/direktanfrage-kurier/">Direktanfrage stellen</a>
-    </div>
-    <div class="trustbar">
-      <span><span class="dot">★</span> 5,0 bei Google</span>
-      <span><span class="dot">✓</span> ISO 9001 zertifiziert</span>
-      <span><span class="dot">✓</span> Über 20 Jahre Erfahrung</span>
-      <span><span class="dot">✓</span> 500+ aktive Kunden</span>
-      <span><span class="dot">✓</span> 24/7 erreichbar</span>
+    <div class="hero-grid">
+      <div>
+        <span class="pill"><span class="pulse"></span>Alles aus einer Hand: ein Anruf, jede Transportart</span>
+        <h1>Kurierdienst für Direktfahrten, <span class="accent">Eiltransporte</span> und Expressversand</h1>
+        <p class="sub">Ihr B2B-Kurierdienst für zeitkritische Sendungen: Abholung in 60 bis 120 Minuten, Direktfahrt ohne Umladung, deutschland- und europaweit. Angebot in 10 Minuten, ein Ansprechpartner für jede Fahrt.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-green" href="tel:+4998347922033"><svg class="ic-ph" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>Jetzt anrufen</a>
+          <a class="btn btn-outline-light" href="https://expresslogistik-reinwald.de/direktanfrage-kurier/">Direktanfrage stellen</a>
+        </div>
+        <div class="trustbar">
+          <span><span class="dot">★</span> 5,0 bei Google</span>
+          <span><span class="dot">✓</span> ISO 9001 zertifiziert</span>
+          <span><span class="dot">✓</span> Direktfahrt ohne Umladung</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img class="truck" src="https://expresslogistik-reinwald.de/wp-content/uploads/2025/03/Group-920-e1741757033913.png" alt="Fuhrpark von Expresslogistik Reinwald: LKW und Sprinter für Kurierfahrten und Eiltransporte" width="640" height="420" fetchpriority="high">
+        <div class="float-card fc-1">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg></span>
+          <span><b>60 bis 120 Min.</b><span>bis zur Abholung</span></span>
+        </div>
+        <div class="float-card fc-2">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3d8526" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+          <span><b>Festpreis vorab</b><span>Angebot in 10 Minuten</span></span>
+        </div>
+      </div>
     </div>
   </div>
 </header>
-<!-- ================= KURZ ERKLÄRT (GEO) ================= -->
+<!-- ================= KENNZAHLEN ================= -->
 <div class="wrap">
-  <aside class="kurz">
-    <strong class="label">Kurz erklärt</strong>
-    <p>Ein Kurierdienst transportiert zeitkritische Sendungen <strong>direkt vom Absender zum Empfänger</strong>, ohne Umweg über Sortierzentren. Expresslogistik Reinwald holt bundesweit in <strong>60 bis 120 Minuten</strong> ab und stellt per <strong>Direktfahrt ohne Umladung</strong> deutschland- und europaweit zu. 24 Stunden am Tag, 365 Tage im Jahr, aus einer Hand disponiert.</p>
-  </aside>
+  <div class="statband" role="list" aria-label="Kennzahlen">
+    <div class="stat" role="listitem"><b>20<i>+</i></b><span>Jahre Erfahrung</span></div>
+    <div class="stat" role="listitem"><b>500<i>+</i></b><span>aktive Kunden</span></div>
+    <div class="stat" role="listitem"><b>5,0 <i>★</i></b><span>bei Google (49 Bewertungen)</span></div>
+    <div class="stat" role="listitem"><b>24<i>/</i>7</b><span>an 365 Tagen erreichbar</span></div>
+  </div>
 </div>
-<!-- ================= WAS IST EIN KURIERDIENST ================= -->
+<!-- ================= WAS IST EIN KURIERDIENST + NETZWERK-INFOGRAFIK ================= -->
 <section>
-  <div class="wrap grid-2">
-    <div>
-      <span class="eyebrow">Grundlagen</span>
-      <h2>Was ist ein Kurierdienst und wann brauchen Sie ihn?</h2>
-      <p>Ein Kurierdienst ist auf eilige, terminkritische Sendungen spezialisiert. Anders als ein Paketdienst sammelt er Ihre Sendung nicht ein, um sie über Sortierzentren und Umschlagslager zu verteilen. Stattdessen fährt ein Fahrzeug exklusiv für Sie: von der Abholung bis zur Zustellung, ohne Umladung und ohne Zwischenstopp.</p>
-      <p>Sinnvoll ist das immer dann, wenn eine Sendung schneller, planbarer oder sicherer ankommen muss, als es der Standardversand leisten kann. Ob wichtige Dokumente, ein fehlendes Ersatzteil an der Produktionslinie, ein Prototyp oder empfindliche Ware: Der Kuriertransport bringt sie oft noch am selben Tag ans Ziel.</p>
-      <p style="font-weight:800;color:var(--navy);margin-bottom:8px">Kurierdienst statt Paketdienst, wenn Sie brauchen:</p>
-      <ul class="checks">
-        <li><strong>Tempo:</strong> Abholung in 60 bis 120 Minuten statt am nächsten Werktag</li>
-        <li><strong>Planbarkeit:</strong> exakte Zeitfenster statt grober Zustelltage</li>
-        <li><strong>Sicherheit:</strong> keine Umladung, damit weniger Handling und weniger Schadensrisiko</li>
-        <li><strong>Direktkontakt:</strong> ein persönlicher Ansprechpartner statt anonymem Portal</li>
-      </ul>
-      <a class="btn btn-green" href="tel:+4998347922033"><svg class="ic-ph" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>Sendung jetzt beauftragen</a>
+  <div class="wrap">
+    <aside class="kurz" style="margin:0 auto 44px;max-width:none">
+      <strong class="label">Kurz erklärt</strong>
+      <p>Ein Kurierdienst transportiert zeitkritische Sendungen <strong>direkt vom Absender zum Empfänger</strong>, ohne Umweg über Sortierzentren. Expresslogistik Reinwald holt bundesweit in <strong>60 bis 120 Minuten</strong> ab und stellt per <strong>Direktfahrt ohne Umladung</strong> deutschland- und europaweit zu. 24 Stunden am Tag, 365 Tage im Jahr, aus einer Hand disponiert.</p>
+    </aside>
+    <div class="grid-2">
+      <div>
+        <span class="eyebrow">Grundlagen</span>
+        <h2>Was ist ein Kurierdienst und wann brauchen Sie ihn?</h2>
+        <p>Ein Kurierdienst ist auf eilige, terminkritische Sendungen spezialisiert. Anders als ein Paketdienst sammelt er Ihre Sendung nicht ein, um sie über Sortierzentren und Umschlagslager zu verteilen. Stattdessen fährt ein Fahrzeug exklusiv für Sie: von der Abholung bis zur Zustellung, ohne Umladung und ohne Zwischenstopp.</p>
+        <p>Sinnvoll ist das immer dann, wenn eine Sendung schneller, planbarer oder sicherer ankommen muss, als es der Standardversand leisten kann. Ob wichtige Dokumente, ein fehlendes Ersatzteil an der Produktionslinie, ein Prototyp oder empfindliche Ware: Der Kuriertransport bringt sie oft noch am selben Tag ans Ziel.</p>
+        <p style="font-weight:800;color:var(--navy);margin-bottom:8px">Kurierdienst statt Paketdienst, wenn Sie brauchen:</p>
+        <ul class="checks">
+          <li><strong>Tempo:</strong> Abholung in 60 bis 120 Minuten statt am nächsten Werktag</li>
+          <li><strong>Planbarkeit:</strong> exakte Zeitfenster statt grober Zustelltage</li>
+          <li><strong>Sicherheit:</strong> keine Umladung, damit weniger Handling und weniger Schadensrisiko</li>
+          <li><strong>Direktkontakt:</strong> ein persönlicher Ansprechpartner statt anonymem Portal</li>
+        </ul>
+        <a class="btn btn-green" href="tel:+4998347922033"><svg class="ic-ph" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>Sendung jetzt beauftragen</a>
+      </div>
+      <figure class="infobox" style="margin:0">
+        <svg viewBox="0 0 480 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ig-netz">
+          <title id="ig-netz">Das Reinwald-Prinzip: das nächstgelegene Fahrzeug fährt</title>
+          <text x="240" y="34" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#162038">Nicht unser Standort entscheidet,</text>
+          <text x="240" y="58" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#162038">sondern Ihre Adresse.</text>
+          <circle cx="240" cy="230" r="120" fill="none" stroke="#e3e8ef" stroke-width="2" stroke-dasharray="5 6"></circle>
+          <circle cx="150" cy="150" r="11" fill="#a9d59a"></circle>
+          <circle cx="345" cy="160" r="11" fill="#a9d59a"></circle>
+          <circle cx="140" cy="300" r="11" fill="#a9d59a"></circle>
+          <circle cx="350" cy="305" r="11" fill="#a9d59a"></circle>
+          <circle cx="245" cy="345" r="11" fill="#a9d59a"></circle>
+          <rect x="222" y="212" width="36" height="36" rx="8" fill="#162038"></rect>
+          <text x="240" y="236" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#fff" font-weight="900">✚</text>
+          <text x="240" y="278" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#162038" font-weight="800">Ihr Standort</text>
+          <circle cx="300" cy="285" r="14" fill="#4FA832"></circle>
+          <line x1="289" y1="276" x2="262" y2="252" stroke="#4FA832" stroke-width="4" stroke-linecap="round"></line>
+          <polygon points="256,247 270,251 264,261" fill="#4FA832"></polygon>
+          <text x="240" y="386" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#3d8526" font-weight="800">Das nächste Fahrzeug fährt: Abholung in 60 bis 120 Minuten.</text>
+        </svg>
+        <figcaption>Ein Depot gegen ein Netzwerk: darum ist Reinwald schneller vor Ort</figcaption>
+      </figure>
     </div>
-    <figure class="photo">
-      <img src="https://expresslogistik-reinwald.de/wp-content/uploads/2025/03/Group-920-e1741757033913.png" alt="Fuhrpark von Expresslogistik Reinwald: LKW und Sprinter für Kurierfahrten und Eiltransporte" width="640" height="420" loading="lazy" decoding="async">
-      <span class="tag">Direktfahrt: <b>ein Fahrzeug, eine Sendung</b></span>
-    </figure>
   </div>
 </section>
 <!-- ================= LEISTUNGEN (Hub) ================= -->
