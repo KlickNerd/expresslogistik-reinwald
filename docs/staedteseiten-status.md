@@ -23,7 +23,9 @@ Vorlage: `referenz/stadtseite-paderborn.html` (aktualisiert = korrigiertes Pader
 - [x] Tier 2 (9): Stuttgart, Hannover, Bremen, Dresden, Leipzig, Nuernberg, Essen, Duisburg, Dortmund — fertig, gepusht, in Automatik
 - [x] Tier 3 (16): Darmstadt, Wiesbaden, Konstanz, Bamberg, Erding, Plauen, Pinneberg, Siegen, Oldenburg, Rosenheim, Bayreuth, Bad-Oeynhausen, Hof, Amberg, Giessen, Regensburg — fertig, gepusht, in Automatik
 
-**32/32 Stadtseiten fertig.** Lokale Winkel Tier 3 u.a.: Erding = Flughafen MUC/Luftfracht, Bad Oeynhausen = HDZ/Medizinlogistik, Konstanz = Bodensee/CH-Grenze, Bamberg/Bayreuth/Amberg/Hof = Franken-Naehe zu Theilenhofen. Preview + gh-pages-Staging (noindex) enthalten alle 32.
+- [x] Tier 4 (10, NEU, datengetriebene Auswahl per DataForSEO aus 45 Kandidaten): Ulm, Bonn, Luebeck, Heilbronn, Pforzheim, Ingolstadt, Augsburg, Muenster, Mannheim, Kassel — fertig, gepusht, in Automatik
+
+**42 Stadtseiten live.** Tier 4 wurde nach SEO-Volumen + Wettbewerb gewaehlt: LOW-Gems Ulm/Heilbronn/Pforzheim, Volumen-Leader Bonn/Luebeck (je 70/Mo), plus B2B-Anker Ingolstadt (Audi), Augsburg, Muenster, Mannheim, Kassel (zentraler Knoten). Preview + gh-pages-Staging (noindex) enthalten alle 42.
 
 ## Naechster Schritt
-Stadtseiten-Phase abgeschlossen. Laut ziel-sitemap.md folgen: ~60 Lexikon-Eintraege, Unternehmensseiten, Blog-Konsolidierung. Build-Muster fuer weitere Staedte bleibt: `scratchpad/build-staedte.sh` (normalisiert cfg automatisch) aus `pages/kurierdienst-dortmund.html` als Gold-Standard.
+Stadtseiten-Phase abgeschlossen (42 live). Weitere Staedte jederzeit per gleichem Muster: DataForSEO-Ranking -> Agenten -> `scratchpad/build-staedte.sh` (normalisiert cfg automatisch) aus `pages/kurierdienst-dortmund.html` als Gold-Standard. Laut ziel-sitemap.md folgen sonst: ~60 Lexikon-Eintraege, Unternehmensseiten, Blog-Konsolidierung.
