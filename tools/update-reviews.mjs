@@ -48,6 +48,8 @@ const PAGES = [
   'gefahrguttransport', 'palettenversand', 'transport-mit-hebebuehne', 'maschinentransport',
   'sperrguttransport', 'eiltransporte', 'lkw-transporte', 'express-kurierdienst-fuhrpark',
   'pharmatransporte', 'sondertransporte', 'messelogistik',
+  // Einzugsgebiet-Uebersicht (URL /kurierdienst-deutschland/)
+  'kurierdienst-deutschland',
   // Kurierdienst-Unterseiten (flach abgelegt, URL /kurierdienst/<slug>/)
   'kurierdienst-direktfahrt-kurier', 'kurierdienst-expresskurier', 'kurierdienst-eilkurier',
   'kurierdienst-same-day-kurierdienst', 'kurierdienst-overnight-kurierdienst', 'kurierdienst-24h-kurierdienst',
