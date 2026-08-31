@@ -56,6 +56,7 @@ const PAGES = [
   'kurierdienst-koeln', 'kurierdienst-frankfurt-am-main', 'kurierdienst-duesseldorf',
   'kurierdienst-stuttgart', 'kurierdienst-hannover', 'kurierdienst-bremen',
   'kurierdienst-dresden', 'kurierdienst-leipzig',
+  'kurierdienst-nuernberg', 'kurierdienst-essen', 'kurierdienst-duisburg',
   // Kurierdienst-Unterseiten (flach abgelegt, URL /kurierdienst/<slug>/)
   'kurierdienst-direktfahrt-kurier', 'kurierdienst-expresskurier', 'kurierdienst-eilkurier',
   'kurierdienst-same-day-kurierdienst', 'kurierdienst-overnight-kurierdienst', 'kurierdienst-24h-kurierdienst',
