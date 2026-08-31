@@ -52,6 +52,8 @@ const PAGES = [
   'kurierdienst-deutschland',
   // Stadtseiten (neu im Design)
   'kurierdienst-paderborn',
+  'kurierdienst-berlin', 'kurierdienst-muenchen', 'kurierdienst-hamburg',
+  'kurierdienst-koeln', 'kurierdienst-frankfurt-am-main', 'kurierdienst-duesseldorf',
   // Kurierdienst-Unterseiten (flach abgelegt, URL /kurierdienst/<slug>/)
   'kurierdienst-direktfahrt-kurier', 'kurierdienst-expresskurier', 'kurierdienst-eilkurier',
   'kurierdienst-same-day-kurierdienst', 'kurierdienst-overnight-kurierdienst', 'kurierdienst-24h-kurierdienst',
