@@ -34,4 +34,13 @@ Alle 46 behalten (bringen den meisten Traffic). Neue Eintraege: Empfaenger [8.10
 - /kurierdienst-leistungen/ -> 301 auf /kurierdienst/
 - EN-Version (~112 Seiten): Phase 2.
 
+### 301-Redirect-Plan beim Livegang (beschlossen 31.08.2026, Dominik)
+Diese Live-Seiten sind inhaltliche Dubletten zu neuen Seiten und werden per 301 umgeleitet
+(Keywords bereits durch die Zielseite abgedeckt, sonst Kannibalisierung):
+- /expressversand/      -> /kurierdienst/expresskurier/      (Keyword expressversand 1.600/Mo dort abgedeckt)
+- /expresstransport/    -> /eiltransporte/                   (Keyword expresstransport 320/Mo dort als H2)
+- /direkttransporte/    -> /kurierdienst/direktfahrt-kurier/ (Keyword direkttransport dort abgedeckt)
+- /maschinentransporte/ -> /maschinentransport/              (Singular hat mehr Volumen, ist die neue Seite)
+Umsetzung erfolgt in WordPress/Server beim Deploy, nicht im statischen Repo.
+
 ## Gesamtumfang Phase 1 (DE): ~165 Seiten
