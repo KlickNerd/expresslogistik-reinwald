@@ -57,6 +57,11 @@ const PAGES = [
   'kurierdienst-stuttgart', 'kurierdienst-hannover', 'kurierdienst-bremen',
   'kurierdienst-dresden', 'kurierdienst-leipzig',
   'kurierdienst-nuernberg', 'kurierdienst-essen', 'kurierdienst-duisburg', 'kurierdienst-dortmund',
+  // Stadtseiten Tier 3 (Bestand, neu im Design)
+  'kurierdienst-darmstadt', 'kurierdienst-wiesbaden', 'kurierdienst-konstanz', 'kurierdienst-bamberg',
+  'kurierdienst-erding', 'kurierdienst-plauen', 'kurierdienst-pinneberg', 'kurierdienst-siegen',
+  'kurierdienst-oldenburg', 'kurierdienst-rosenheim', 'kurierdienst-bayreuth', 'kurierdienst-bad-oeynhausen',
+  'kurierdienst-hof', 'kurierdienst-amberg', 'kurierdienst-giessen', 'kurierdienst-regensburg',
   // Kurierdienst-Unterseiten (flach abgelegt, URL /kurierdienst/<slug>/)
   'kurierdienst-direktfahrt-kurier', 'kurierdienst-expresskurier', 'kurierdienst-eilkurier',
   'kurierdienst-same-day-kurierdienst', 'kurierdienst-overnight-kurierdienst', 'kurierdienst-24h-kurierdienst',

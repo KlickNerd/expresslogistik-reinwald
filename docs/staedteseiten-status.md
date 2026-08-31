@@ -19,12 +19,11 @@ Vorlage: `referenz/stadtseite-paderborn.html` (aktualisiert = korrigiertes Pader
 12. Breadcrumb Startseite > Einzugsgebiet > <Stadt> (Link auf /kurierdienst-deutschland/).
 
 ## Status
-- [x] Paderborn (`kurierdienst-paderborn`) — fertig, gepusht, in Vorschau + Automatik
+- [x] Tier 1 (7): Paderborn, Berlin, Muenchen, Hamburg, Koeln, Frankfurt-am-Main, Duesseldorf — fertig, gepusht, in Automatik
+- [x] Tier 2 (9): Stuttgart, Hannover, Bremen, Dresden, Leipzig, Nuernberg, Essen, Duisburg, Dortmund — fertig, gepusht, in Automatik
+- [ ] Tier 3 (16, in Arbeit / Agenten): Darmstadt, Wiesbaden, Konstanz, Bamberg, Erding, Plauen, Pinneberg, Siegen, Oldenburg, Rosenheim, Bayreuth, Bad-Oeynhausen, Hof, Amberg, Giessen, Regensburg
 
-### Offen (31), nach Tier / Suchvolumen grob:
-Tier 1: Berlin, Muenchen, Hamburg, Koeln, Frankfurt-am-Main, Duesseldorf
-Tier 2: Stuttgart, Hannover, Bremen, Dresden, Nuernberg, Leipzig, Essen, Dortmund, Duisburg
-Weitere (Bestand): Darmstadt, Wiesbaden, Konstanz, Bamberg, Erding, Plauen, Pinneberg, Siegen, Oldenburg, Rosenheim, Bayreuth, Bad-Oeynhausen, Hof, Amberg, Giessen, Regensburg
+Damit sind 16/32 fertig, 16 in Produktion. Lokale Winkel Tier 3 u.a.: Erding = Flughafen MUC/Luftfracht, Bad Oeynhausen = HDZ/Medizinlogistik, Konstanz = Bodensee/CH-Grenze, Bamberg/Bayreuth/Amberg/Hof = Franken-Naehe zu Theilenhofen.
 
 ## Naechster Schritt
-Batch-Neubau wie bei den Leistungsseiten: pro Stadt Live-Text ziehen (Browser, Server blockt Fetcher) + DataForSEO, dann aus der Vorlage bauen. Reihenfolge Tier 1 -> 2 -> Rest.
+Nach Tier-3-Fertigstellung: preview + gh-pages neu bauen, alle Staedte in `tools/update-reviews.mjs` PAGES pruefen. Batch-Muster bleibt: pro Stadt Live-Text (Browser) + DataForSEO, dann aus `pages/kurierdienst-dortmund.html` (Gold-Standard) bauen.
