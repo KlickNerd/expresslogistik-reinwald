@@ -21,9 +21,9 @@ Vorlage: `referenz/stadtseite-paderborn.html` (aktualisiert = korrigiertes Pader
 ## Status
 - [x] Tier 1 (7): Paderborn, Berlin, Muenchen, Hamburg, Koeln, Frankfurt-am-Main, Duesseldorf — fertig, gepusht, in Automatik
 - [x] Tier 2 (9): Stuttgart, Hannover, Bremen, Dresden, Leipzig, Nuernberg, Essen, Duisburg, Dortmund — fertig, gepusht, in Automatik
-- [ ] Tier 3 (16, in Arbeit / Agenten): Darmstadt, Wiesbaden, Konstanz, Bamberg, Erding, Plauen, Pinneberg, Siegen, Oldenburg, Rosenheim, Bayreuth, Bad-Oeynhausen, Hof, Amberg, Giessen, Regensburg
+- [x] Tier 3 (16): Darmstadt, Wiesbaden, Konstanz, Bamberg, Erding, Plauen, Pinneberg, Siegen, Oldenburg, Rosenheim, Bayreuth, Bad-Oeynhausen, Hof, Amberg, Giessen, Regensburg — fertig, gepusht, in Automatik
 
-Damit sind 16/32 fertig, 16 in Produktion. Lokale Winkel Tier 3 u.a.: Erding = Flughafen MUC/Luftfracht, Bad Oeynhausen = HDZ/Medizinlogistik, Konstanz = Bodensee/CH-Grenze, Bamberg/Bayreuth/Amberg/Hof = Franken-Naehe zu Theilenhofen.
+**32/32 Stadtseiten fertig.** Lokale Winkel Tier 3 u.a.: Erding = Flughafen MUC/Luftfracht, Bad Oeynhausen = HDZ/Medizinlogistik, Konstanz = Bodensee/CH-Grenze, Bamberg/Bayreuth/Amberg/Hof = Franken-Naehe zu Theilenhofen. Preview + gh-pages-Staging (noindex) enthalten alle 32.
 
 ## Naechster Schritt
-Nach Tier-3-Fertigstellung: preview + gh-pages neu bauen, alle Staedte in `tools/update-reviews.mjs` PAGES pruefen. Batch-Muster bleibt: pro Stadt Live-Text (Browser) + DataForSEO, dann aus `pages/kurierdienst-dortmund.html` (Gold-Standard) bauen.
+Stadtseiten-Phase abgeschlossen. Laut ziel-sitemap.md folgen: ~60 Lexikon-Eintraege, Unternehmensseiten, Blog-Konsolidierung. Build-Muster fuer weitere Staedte bleibt: `scratchpad/build-staedte.sh` (normalisiert cfg automatisch) aus `pages/kurierdienst-dortmund.html` als Gold-Standard.
