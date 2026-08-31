@@ -42,7 +42,19 @@ if (existsSync(ENV_FILE)) {
   }
 }
 const DATA_FILE = join(ROOT, 'data', 'reviews.json');
-const PAGES = [join(ROOT, 'pages', 'kurierdienst.html'), join(ROOT, 'pages', 'index.html'), join(ROOT, 'pages', 'leistungen.html'), join(ROOT, 'pages', 'gefahrguttransport.html'), join(ROOT, 'pages', 'palettenversand.html')];
+const PAGES = [
+  'kurierdienst', 'index', 'leistungen',
+  // Leistungsseiten (Standalone)
+  'gefahrguttransport', 'palettenversand', 'transport-mit-hebebuehne', 'maschinentransport',
+  'sperrguttransport', 'eiltransporte', 'lkw-transporte', 'express-kurierdienst-fuhrpark',
+  'pharmatransporte', 'sondertransporte', 'messelogistik',
+  // Kurierdienst-Unterseiten (flach abgelegt, URL /kurierdienst/<slug>/)
+  'kurierdienst-direktfahrt-kurier', 'kurierdienst-expresskurier', 'kurierdienst-eilkurier',
+  'kurierdienst-same-day-kurierdienst', 'kurierdienst-overnight-kurierdienst', 'kurierdienst-24h-kurierdienst',
+  'kurierdienst-ersatzteil-kurierdienst', 'kurierdienst-dokumentenkurier', 'kurierdienst-notfalllogistik',
+  'kurierdienst-kurierdienst-deutschlandweit', 'kurierdienst-europaweiter-kurierdienst',
+  'kurierdienst-kurierservice', 'kurierdienst-sonderfahrten-kurierdienst',
+].map((n) => join(ROOT, 'pages', `${n}.html`));
 const SLIDER_PAGE = join(ROOT, 'pages', 'kurierdienst.html');
 
 const INJECT_ONLY = process.argv.includes('--inject-only');
