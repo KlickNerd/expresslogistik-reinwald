@@ -62,6 +62,10 @@ const PAGES = [
   'kurierdienst-erding', 'kurierdienst-plauen', 'kurierdienst-pinneberg', 'kurierdienst-siegen',
   'kurierdienst-oldenburg', 'kurierdienst-rosenheim', 'kurierdienst-bayreuth', 'kurierdienst-bad-oeynhausen',
   'kurierdienst-hof', 'kurierdienst-amberg', 'kurierdienst-giessen', 'kurierdienst-regensburg',
+  // Stadtseiten Tier 4 (datengetriebene Auswahl, SEO-Volumen)
+  'kurierdienst-ulm', 'kurierdienst-bonn', 'kurierdienst-luebeck', 'kurierdienst-heilbronn',
+  'kurierdienst-pforzheim', 'kurierdienst-ingolstadt', 'kurierdienst-augsburg', 'kurierdienst-muenster',
+  'kurierdienst-mannheim', 'kurierdienst-kassel',
   // Kurierdienst-Unterseiten (flach abgelegt, URL /kurierdienst/<slug>/)
   'kurierdienst-direktfahrt-kurier', 'kurierdienst-expresskurier', 'kurierdienst-eilkurier',
   'kurierdienst-same-day-kurierdienst', 'kurierdienst-overnight-kurierdienst', 'kurierdienst-24h-kurierdienst',
