@@ -50,6 +50,8 @@ const PAGES = [
   'pharmatransporte', 'sondertransporte', 'messelogistik',
   // Einzugsgebiet-Uebersicht (URL /kurierdienst-deutschland/)
   'kurierdienst-deutschland',
+  // Stadtseiten (neu im Design)
+  'kurierdienst-paderborn',
   // Kurierdienst-Unterseiten (flach abgelegt, URL /kurierdienst/<slug>/)
   'kurierdienst-direktfahrt-kurier', 'kurierdienst-expresskurier', 'kurierdienst-eilkurier',
   'kurierdienst-same-day-kurierdienst', 'kurierdienst-overnight-kurierdienst', 'kurierdienst-24h-kurierdienst',
