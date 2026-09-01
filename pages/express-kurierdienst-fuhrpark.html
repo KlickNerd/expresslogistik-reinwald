@@ -915,29 +915,93 @@ th.hl{background:var(--green);color:#fff}
     <div class="sec-head">
       <span class="eyebrow">Unser Fuhrpark im Überblick</span>
       <h2>Alle Fahrzeugklassen mit Laderaum, Paletten und Nutzlast</h2>
-      <p class="lead">Von der Handbeladung im PKW bis zu 34 Europaletten im Sattelzug. Die folgende Tabelle zeigt, wie viel jede Klasse fasst, damit wir gemeinsam das richtige Fahrzeug für Ihre Sendung finden.</p>
+      <p class="lead">Von der Handbeladung im PKW bis zu 34 Europaletten im Sattelzug. Die folgende Übersicht zeigt jede Fahrzeugklasse mit Foto, Laderaum, Palettenzahl und Nutzlast, damit wir gemeinsam das richtige Fahrzeug für Ihre Sendung finden.</p>
     </div>
-    <div class="table-scroll">
-      <table>
-        <thead>
-          <tr>
-            <th>Fahrzeug</th>
-            <th class="hl">Laderaum / Paletten</th>
-            <th>Nutzlast</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>PKW</strong></td><td class="hl">Handbeladung, Kleinteile</td><td>150 kg</td></tr>
-          <tr><td><strong>Caddy</strong></td><td class="hl">1 EU-Palette (1,55 × 1,10 × 1,08 m)</td><td>400 kg</td></tr>
-          <tr><td><strong>Sprinter bis 3,5 t</strong></td><td class="hl">5 EU-Paletten (bis 4,20 × 1,75 × 1,80 m)</td><td>1.200 kg</td></tr>
-          <tr><td><strong>Planensprinter bis 3,5 t</strong></td><td class="hl">9 EU-Paletten, gestapelt bis 18 (bis 4,85 × 2,20 × 2,50 m)</td><td>1.100 kg</td></tr>
-          <tr><td><strong>Planensprinter mit Anhänger</strong></td><td class="hl">14 EU-Paletten, gestapelt bis 28</td><td>1.100 kg + 1.600 kg</td></tr>
-          <tr><td><strong>Planensprinter bis 4,5 t</strong></td><td class="hl">15 EU-Paletten, gestapelt bis 30 (6,00 × 2,40 × 2,50 m)</td><td>1.500 kg</td></tr>
-          <tr><td><strong>Lkw bis 7,5 t</strong></td><td class="hl">15 EU-Paletten, gestapelt bis 30 (6,00 × 2,40 × 2,50 m)</td><td>2.500 kg</td></tr>
-          <tr><td><strong>Lkw bis 12 t</strong></td><td class="hl">18 EU-Paletten, gestapelt bis 36 (6,00 bis 7,20 × 2,45 × 2,50 m)</td><td>bis 5.000 kg</td></tr>
-          <tr><td><strong>Lkw bis 40 t (Sattelzug)</strong></td><td class="hl">34 EU-Paletten, gestapelt bis 102 (bis 13,60 × 2,48 × 3,00 m)</td><td>24.000 kg</td></tr>
-        </tbody>
-      </table>
+    <style>
+      .fleetgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px;margin-top:6px}
+      .vcard{background:#fff;border:1px solid rgba(22,32,56,.10);border-radius:16px;overflow:hidden;box-shadow:0 6px 22px rgba(22,32,56,.07);display:flex;flex-direction:column}
+      .vcard .vimg{background:#f3f6fb;display:flex;align-items:center;justify-content:center;padding:16px;height:158px}
+      .vcard .vimg img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+      .vcard .vbody{padding:16px 18px 18px}
+      .vcard h3{margin:0 0 12px;font-size:18px;line-height:1.25;color:var(--navy,#162038)}
+      .vspecs{margin:0;display:grid;gap:8px}
+      .vspecs>div{display:grid;grid-template-columns:84px 1fr;gap:10px;align-items:baseline}
+      .vspecs dt{margin:0;font-size:11.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--text-soft,#5b6577);font-weight:700}
+      .vspecs dd{margin:0;font-size:14px;line-height:1.4;color:var(--navy,#162038)}
+      .vspecs dd.load{font-weight:800;color:var(--green-dark,#3d8526)}
+    </style>
+    <div class="fleetgrid">
+      <article class="vcard">
+        <div class="vimg"><img src="assets/img/fleet/Fahrzeug_PKW-e1742349302891-1024x348.png" alt="Reinwald Express Kurierdienst PKW" width="1024" height="348" loading="lazy" decoding="async"></div>
+        <div class="vbody"><h3>PKW</h3><dl class="vspecs">
+          <div><dt>Laderaum</dt><dd>Handbeladung, Kleinteile</dd></div>
+          <div><dt>Nutzlast</dt><dd class="load">150 kg</dd></div>
+        </dl></div>
+      </article>
+      <article class="vcard">
+        <div class="vimg"><img src="assets/img/fleet/Fahrzeug_Caddy-e1742349405675-1024x473.png" alt="Reinwald Express Kurierdienst Caddy" width="1024" height="473" loading="lazy" decoding="async"></div>
+        <div class="vbody"><h3>Caddy</h3><dl class="vspecs">
+          <div><dt>Laderaum</dt><dd>1 EU-Palette</dd></div>
+          <div><dt>Maße</dt><dd>1,55 × 1,10 × 1,08 m</dd></div>
+          <div><dt>Nutzlast</dt><dd class="load">400 kg</dd></div>
+        </dl></div>
+      </article>
+      <article class="vcard">
+        <div class="vimg"><img src="assets/img/fleet/Fahrzeug_Sprinter-e1742349437538-1024x421.png" alt="Reinwald Express Kurierdienst Sprinter bis 3,5 Tonnen" width="1024" height="421" loading="lazy" decoding="async"></div>
+        <div class="vbody"><h3>Sprinter bis 3,5 t</h3><dl class="vspecs">
+          <div><dt>Laderaum</dt><dd>5 EU-Paletten</dd></div>
+          <div><dt>Maße</dt><dd>bis 4,20 × 1,75 × 1,80 m</dd></div>
+          <div><dt>Nutzlast</dt><dd class="load">1.200 kg</dd></div>
+        </dl></div>
+      </article>
+      <article class="vcard">
+        <div class="vimg"><img src="assets/img/fleet/Fahrzeug_Planensprinter-e1742349471864-1024x485.png" alt="Reinwald Express Kurierdienst Planensprinter bis 3,5 Tonnen" width="1024" height="485" loading="lazy" decoding="async"></div>
+        <div class="vbody"><h3>Planensprinter bis 3,5 t</h3><dl class="vspecs">
+          <div><dt>Laderaum</dt><dd>9 EU-Paletten (gestapelt bis 18)</dd></div>
+          <div><dt>Maße</dt><dd>bis 4,85 × 2,20 × 2,50 m</dd></div>
+          <div><dt>Nutzlast</dt><dd class="load">1.100 kg</dd></div>
+        </dl></div>
+      </article>
+      <article class="vcard">
+        <div class="vimg"><img src="assets/img/fleet/Fahrzeug_Planensprinter-Anhanger-e1742349486153-1024x316.png" alt="Reinwald Express Kurierdienst Planensprinter mit Anhänger" width="1024" height="316" loading="lazy" decoding="async"></div>
+        <div class="vbody"><h3>Planensprinter mit Anhänger</h3><dl class="vspecs">
+          <div><dt>Laderaum</dt><dd>14 EU-Paletten (gestapelt bis 28)</dd></div>
+          <div><dt>Maße</dt><dd>Zug bis 4,20 m, Hänger bis 4,10 m</dd></div>
+          <div><dt>Nutzlast</dt><dd class="load">1.100 kg + 1.600 kg</dd></div>
+        </dl></div>
+      </article>
+      <article class="vcard">
+        <div class="vimg"><img src="assets/img/fleet/Fahrzeug_45_Planensprinter-e1742349505121-1024x430.png" alt="Reinwald Express Kurierdienst Planensprinter bis 4,5 Tonnen" width="1024" height="430" loading="lazy" decoding="async"></div>
+        <div class="vbody"><h3>Planensprinter bis 4,5 t</h3><dl class="vspecs">
+          <div><dt>Laderaum</dt><dd>15 EU-Paletten (gestapelt bis 30)</dd></div>
+          <div><dt>Maße</dt><dd>6,00 × 2,40 × 2,50 m</dd></div>
+          <div><dt>Nutzlast</dt><dd class="load">1.500 kg</dd></div>
+        </dl></div>
+      </article>
+      <article class="vcard">
+        <div class="vimg"><img src="assets/img/fleet/Fahrzeug_75to_LKW-e1742349531601-1024x465.png" alt="Reinwald Express Kurierdienst Lkw bis 7,5 Tonnen" width="1024" height="465" loading="lazy" decoding="async"></div>
+        <div class="vbody"><h3>Lkw bis 7,5 t</h3><dl class="vspecs">
+          <div><dt>Laderaum</dt><dd>15 EU-Paletten (gestapelt bis 30)</dd></div>
+          <div><dt>Maße</dt><dd>6,00 × 2,40 × 2,50 m</dd></div>
+          <div><dt>Nutzlast</dt><dd class="load">2.500 kg</dd></div>
+        </dl></div>
+      </article>
+      <article class="vcard">
+        <div class="vimg"><img src="assets/img/fleet/Fahrzeug_125to_LKW-e1742349552609-1024x393.png" alt="Reinwald Express Kurierdienst Lkw bis 12 Tonnen" width="1024" height="393" loading="lazy" decoding="async"></div>
+        <div class="vbody"><h3>Lkw bis 12 t</h3><dl class="vspecs">
+          <div><dt>Laderaum</dt><dd>18 EU-Paletten (gestapelt bis 36)</dd></div>
+          <div><dt>Maße</dt><dd>6,00 bis 7,20 × 2,45 × 2,50 m</dd></div>
+          <div><dt>Nutzlast</dt><dd class="load">bis 5.000 kg</dd></div>
+        </dl></div>
+      </article>
+      <article class="vcard">
+        <div class="vimg"><img src="assets/img/fleet/Fahrzeug_40to_LKW-e1742349568120-1024x264.png" alt="Reinwald Express Kurierdienst Lkw bis 40 Tonnen Sattelzug" width="1024" height="264" loading="lazy" decoding="async"></div>
+        <div class="vbody"><h3>Lkw bis 40 t (Sattelzug)</h3><dl class="vspecs">
+          <div><dt>Laderaum</dt><dd>34 EU-Paletten (gestapelt bis 102)</dd></div>
+          <div><dt>Maße</dt><dd>bis 13,60 × 2,48 × 3,00 m</dd></div>
+          <div><dt>Nutzlast</dt><dd class="load">24.000 kg</dd></div>
+        </dl></div>
+      </article>
     </div>
     <p style="font-size:14px;color:var(--text-soft)">Richtwerte, unverbindlich, Stand August 2026. Maße und Nutzlast können je nach Aufbau leicht abweichen. Nicht sicher, welche Klasse passt? Nennen Sie uns Gewicht, Maße und Palettenzahl, wir empfehlen das passende Fahrzeug. Mehr zu einzelnen Einsätzen unter <a href="https://expresslogistik-reinwald.de/palettenversand/">Palettenversand</a> und <a href="https://expresslogistik-reinwald.de/transport-mit-hebebuehne/">Transport mit Hebebühne</a>.</p>
   </div>
