@@ -27,5 +27,13 @@ Vorlage: `referenz/stadtseite-paderborn.html` (aktualisiert = korrigiertes Pader
 
 **42 Stadtseiten live.** Tier 4 wurde nach SEO-Volumen + Wettbewerb gewaehlt: LOW-Gems Ulm/Heilbronn/Pforzheim, Volumen-Leader Bonn/Luebeck (je 70/Mo), plus B2B-Anker Ingolstadt (Audi), Augsburg, Muenster, Mannheim, Kassel (zentraler Knoten). Preview + gh-pages-Staging (noindex) enthalten alle 42.
 
+## Anti-Doorway-Optimierung (01.09.2026) -- alle 42 Seiten
+Nach Doorway-Analyse (Templating-Quote zu hoch) alle 42 Stadtseiten vertieft:
+- Bewertungs-Slider je Stadt rotiert (4 aus 7er-Pool, deterministisch): 24 distinkte Kombinationen statt 1 identischem Set. (Achtung: update-reviews.mjs spielt Slider nur auf kurierdienst.html ein, Stadtslider bleiben statisch -> Rotation bleibt erhalten.)
+- 6 Leistungs-Cards je Stadt auf ECHTE lokale Anker localisiert (reale Firmen/Werke/Kliniken/Haefen/Messen), Card-Titel + Links unveraendert.
+- neuer einzigartiger lokaler Block je Stadt (Messe/Klinik/Hafen/Flughafen + konkrete Autobahn-Korridore).
+- Ergebnis: city-unique Saetze Median 38% -> 43%; paarweise Aehnlichkeit Median 52% -> 41% (max 63% -> 51%). Woerter ~2700-2930/Seite.
+- Geteilte "Warum-wir"/Prozess/FAQ-Bloecke bewusst ehrlich-generisch gelassen (kein Spinning). Anti-Doorway-Grundpfeiler bleiben: echte lokale Substanz, Ehrlichkeits-FAQ, Service-Schema (kein Fake-LocalBusiness).
+
 ## Naechster Schritt
-Stadtseiten-Phase abgeschlossen (42 live). Weitere Staedte jederzeit per gleichem Muster: DataForSEO-Ranking -> Agenten -> `scratchpad/build-staedte.sh` (normalisiert cfg automatisch) aus `pages/kurierdienst-dortmund.html` als Gold-Standard. Laut ziel-sitemap.md folgen sonst: ~60 Lexikon-Eintraege, Unternehmensseiten, Blog-Konsolidierung.
+Stadtseiten-Phase abgeschlossen (42 live + Anti-Doorway-optimiert). Weitere Staedte jederzeit per gleichem Muster: DataForSEO-Ranking -> Agenten -> `scratchpad/build-staedte.sh` (normalisiert cfg automatisch) aus `pages/kurierdienst-dortmund.html` als Gold-Standard; neue Seiten direkt mit lokalen Card-Ankern + lokalem Block bauen. Laut ziel-sitemap.md folgen sonst: Ratgeber-Neuthemen (Lexikon gestrichen), Unternehmensseiten, Blog-Konsolidierung.
