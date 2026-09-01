@@ -1,6 +1,6 @@
 # Ziel-Sitemap Redesign expresslogistik-reinwald.de (beschlossen 28.08.2026)
 
-Datenbasis: DataForSEO Labs (Ranked Keywords: 423 KW, ETV ~495/Monat; nur 32 von ~133 Seiten haben Rankings), Google Ads Suchvolumen (DE), Konkurrenz-Gap vs. zipmend.com (ETV 9.280) und dagoexpress.com (ETV 12.897). Fast der gesamte Traffic kommt aus Lexikon + Ratgeber; kommerzielle Seiten und Stadtseiten ranken kaum.
+Datenbasis: DataForSEO Labs (Ranked Keywords: 423 KW, ETV ~495/Monat; nur 32 von ~133 Seiten haben Rankings), Google Ads Suchvolumen (DE), Konkurrenz-Gap vs. zipmend.com (ETV 9.280) und dagoexpress.com (ETV 12.897). Fast der gesamte Traffic kam aus Lexikon + Ratgeber; kommerzielle Seiten und Stadtseiten ranken kaum. WICHTIG (01.09.2026): Das Lexikon wird gestrichen (siehe D) -- der informationale Nicht-Kunden-Traffic ist nicht das Ziel; Fokus auf Money-Pages. Traffic wird per 301 in die kommerziellen Seiten geleitet.
 
 ENTSCHEIDUNGEN (Dominik, 28.08.2026): EN-Version -> Phase 2. Neue Stadtseiten -> Top 16. Duenne Blogposts -> streichen + 301. NEU (28.08.): /kurierdienst-deutschland/ wird Standorte-Uebersichtsseite (statt 301) - Nav + Footer verlinken darauf.
 
@@ -23,16 +23,23 @@ Startseite | /kurierdienst/ Hub + 13 Unterseiten (24h, direktfahrt-kurier, dokum
 - NEU (Top 16): Bonn 70, Ulm 70, Augsburg, Muenster, Bochum, Wuppertal, Kiel, Chemnitz, Mannheim, Freiburg, Kassel, Bielefeld (je 50), Karlsruhe, Aachen, Regensburg, Magdeburg (je 40)
 - zipmend-Learning: Stadtseiten decken auch "spedition <stadt>" / "kurier <stadt>" ab.
 
-## D. Logistik-Lexikon -- REVIDIERT 01.09.2026 (DataForSEO-Intent-Check)
-Die 46 Bestand-Eintraege BEHALTEN (rebuild im neuen Design) -- sie bringen den meisten Traffic und sind die aktuelle Sichtbarkeits-Basis. NICHT streichen.
+## D. Logistik-Lexikon -- GESTRICHEN (Entscheidung Dominik + Daten, 01.09.2026)
+Das Logistik-Lexikon wird NICHT ins neue Design uebernommen und beim Relaunch komplett abgebaut. Begruendung (Dominik, von Daten gestuetzt):
+- Der aktuelle Lexikon-Traffic ist NICHT der Traffic, den wir wollen: rein informational, 0 Kaufabsicht. Er verwaessert das Themen-Signal der Domain (Google sieht uns fuer Begriffe, die nichts bringen), waehrend die Money-Keywords auf der Strecke bleiben. Fuer eine kleine Firmen-Domain ist Themenschaerfe (Kurierdienst + Leistungen + Staedte) wertvoller als Encyclopaedie-Breite.
+- Risiko-Profil asymmetrisch: Cutten (mit 301) kostet fast nichts, Behalten ist bestenfalls neutral, schlimmstenfalls schaedlich.
 
-Aber: die ~15 geplanten NEU-Eintraege groesstenteils VERWERFEN. Intent-Check zeigt, dass es reine informational/Woerterbuch- bzw. autoritaetsdominierte Begriffe sind -- viel Volumen, aber 0 Kaufabsicht und faktisch unrankbar; ausserdem verwaessern sie das Themen-Signal eines Kurierdiensts:
-- CUT (informational, konvertiert nicht, unrankbar): Empfaenger [8.100, Duden-Terrain], Ladungssicherung [4.400, Konkurrenz Ø 437 Backlinks], Frachtbrief [1.600 HIGH], Importeur/Transporteur [je 720], Frachtkosten [590], Kofferaufbau/Limited Quantities [je 480], Selbstabholer, Auftragsnummer [1.600].
-- Proof of Delivery / Abliefernachweis / Ablieferbeleg [210-1.000, informational]: NICHT als eigene Lexikon-Seiten, sondern als FAQ-Block auf /kurierdienst/ (stuetzt "digitale Empfangsbestaetigung").
-- Avisierung [720, informational]: als FAQ auf /kurierdienst/ statt eigener Seite.
-- BEHALTEN als Neu-Eintrag (service-relevant + Snippet-Chance): Gefahrgutklassen [1.600, KD niedrig] und Thermotransport -- beide verlinken aktiv in gefahrguttransport bzw. pharmatransporte.
+Struktur live (Stand 01.09.2026, aus Sitemap/Crawl):
+- Hub-Seite /logistik-lexikon/ + ~46 Unterseiten /logistik-lexikon/<slug>/.
+- Inhalt = ultra-nischige, programmatische Insider-Q&As ohne Kaufabsicht, z.B. "wie-planen-kurierdienste-relaisfahrten-unter-einhaltung-gesetzlicher-ruhezeiten", "wie-treffen-kurierdienst-disponenten-echtzeit-entscheidungen-bei-laufenden-touren", "kurier-und-expresslogistik-kpis", "dynamisches-routing", "white-label-kurierauftrag", "professionelles-auftragsmonitoring", "kalkulierung-zuschlaege", "planensprinter".
+- Sauber vom /ratgeber/-Pillar getrennt -> Abbau beruehrt die Ratgeber NICHT.
 
-HAUPT-HEBEL (statt Lexikon-Ausbau): Die 46 Traffic-starken Lexikon-Eintraege kontextuell in die kommerziellen Seiten (Leistungs- + Stadtseiten) verlinken. Genau das loest das Sitemap-Problem "kommerzielle Seiten ranken kaum" -- die Autoritaet/den Traffic aus dem Lexikon in die Money-Pages leiten.
+301-Plan beim Relaunch:
+- Vollstaendige Slug-Liste aus WP-Export/Crawl ziehen (die 46 Unterseiten stehen nicht komplett in der XML-Sitemap).
+- Default: /logistik-lexikon/ und /logistik-lexikon/* -> 301 auf /kurierdienst/ (faengt Link-Equity ab, keine 404, keine Traffic-Klippe).
+- Thematische Ausnahmen, wo eindeutig: routing/disposition/fahrzeuggroesse-Themen -> /kurierdienst/ bzw. passende Leistungsseite; sprinter/planensprinter -> /transport-mit-hebebuehne/ bzw. /eiltransporte/.
+- Nach Relaunch in der Search Console gegenpruefen, ob die Money-Pages besser ranken (Validierung der Fokus-These).
+
+Die wenigen wirklich nuetzlichen Definitionen als FAQ auf Leistungsseiten retten (Direktfahrt, Same-Day, Avisierung, Ablieferbeleg, Gefahrgutklassen) -- siehe Abschnitt E. Kein Lexikon-Neuausbau (die frueher geplanten ~15 Neu-Eintraege wie Empfaenger [8.100]/Ladungssicherung [4.400]/Frachtbrief entfallen ersatzlos).
 
 ## E. Content-Bereiche
 - Ratgeber: 21 Artikel behalten. Artikel 8 ist live als /ratgeber/was-kostet-ein-kurierdienst/ (rankt Top10 "kurierdienst kosten").
@@ -70,6 +77,7 @@ Diese Live-Seiten sind inhaltliche Dubletten zu neuen Seiten und werden per 301 
 - /expresstransport/    -> /eiltransporte/                   (Keyword expresstransport 320/Mo dort als H2)
 - /direkttransporte/    -> /kurierdienst/direktfahrt-kurier/ (Keyword direkttransport dort abgedeckt)
 - /maschinentransporte/ -> /maschinentransport/              (Singular hat mehr Volumen, ist die neue Seite)
+- /logistik-lexikon/ + /logistik-lexikon/* -> /kurierdienst/  (Lexikon gestrichen, siehe D; thematische Ausnahmen dort)
 Umsetzung erfolgt in WordPress/Server beim Deploy, nicht im statischen Repo.
 
-## Gesamtumfang Phase 1 (DE): ~165 Seiten
+## Gesamtumfang Phase 1 (DE): ~105 Seiten (ohne Lexikon; frueher ~165 inkl. ~60 Lexikon)
