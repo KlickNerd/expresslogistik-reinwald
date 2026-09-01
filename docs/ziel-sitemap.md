@@ -44,6 +44,7 @@ Die wenigen wirklich nuetzlichen Definitionen als FAQ auf Leistungsseiten retten
 ## E. Content-Bereiche
 - Ratgeber: 21 Artikel behalten. Artikel 8 ist live als /ratgeber/was-kostet-ein-kurierdienst/ (rankt Top10 "kurierdienst kosten").
 - Blog + News zusammenlegen. Behalten: teilladung, kurierfahrt-preise, just-in-time (Top10!), was-ist-ein-kurierdienst, vorteile-kurierdienst, nachhaltiger-transport (pruefen). Streichen + 301: logistik-trends-2024, lkw-maut, ki-und-big-data, e-commerce; sondertransporte-Post geht in Leistungsseite auf.
+- ENTSCHEIDUNG 01.09.2026 (Dominik): "Wissen"-Nav hat nur noch EINEN Hub = Ratgeber. Nav-Punkte "Blog" und "Logistik-Lexikon" entfernt (aus Header + Footer aller Seiten). Grund: /blog/ enthaelt reine Ratgeber-/Definitionsartikel (Teilladung, Just-in-Time, Kurierdienst-Preise, Was-ist-ein-Kurierdienst, Vorteile, Sondertransporte) -> dieselbe Content-Art wie /ratgeber/, verwirrt Nutzer + kannibalisiert Keywords. Die guten Blog-Posts als /ratgeber/-Beitraege uebernehmen (Dubletten mergen), Rest 301. Wissen-Dropdown behaelt Ratgeber + FAQ + Downloads.
 
 ### Ratgeber-Neuthemen statt Lexikon-Ausbau (DataForSEO 01.09.2026, nach Volumen x Winnability x Kaufabsicht)
 Freies Content-Budget vom gestrichenen Lexikon-Ausbau hierhin. Jeder Ratgeber verlinkt in die genannte Leistungsseite. (Dubletten zu Bestand-Blog wie just-in-time/kurierfahrt-preise NICHT neu bauen, nur optimieren.)
@@ -78,6 +79,7 @@ Diese Live-Seiten sind inhaltliche Dubletten zu neuen Seiten und werden per 301 
 - /direkttransporte/    -> /kurierdienst/direktfahrt-kurier/ (Keyword direkttransport dort abgedeckt)
 - /maschinentransporte/ -> /maschinentransport/              (Singular hat mehr Volumen, ist die neue Seite)
 - /logistik-lexikon/ + /logistik-lexikon/* -> /kurierdienst/  (Lexikon gestrichen, siehe D; thematische Ausnahmen dort)
+- /blog/ + /blog/* -> /ratgeber/  (Blog aus Nav entfernt; gute Posts als /ratgeber/-Beitraege uebernehmen, Dubletten mergen; siehe E)
 Umsetzung erfolgt in WordPress/Server beim Deploy, nicht im statischen Repo.
 
 ## Gesamtumfang Phase 1 (DE): ~105 Seiten (ohne Lexikon; frueher ~165 inkl. ~60 Lexikon)
