@@ -849,43 +849,46 @@ th.hl{background:var(--green);color:#fff}
   </div>
 </header>
 <!-- ================= HERO ================= -->
-<section class="rg-hero">
+<header class="hero">
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb">
       <a href="https://expresslogistik-reinwald.de/">Startseite</a> &rsaquo; Ratgeber
     </nav>
-    <span class="rg-eyebrow"><span class="pulse"></span>Wissen rund um Express- und Direkttransport</span>
-    <h1>Ratgeber: <span class="accent">Express-, Direkt- und Kurierlogistik</span> verständlich erklärt</h1>
-    <p class="rg-sub">Von der Kostenkalkulation über Gefahrgut bis zu Dokumenten und Fristen: In unseren Ratgebern erklären wir die Themen rund um Express-, Direkt- und Kurierlogistik aus der Praxis. Damit Sie für jede Sendung die richtige Transportart wählen, bevor der Fahrer losfährt.</p>
-    <div class="rg-hero-ctas">
-      <a class="btn btn-green" href="tel:+4998347922033"><svg class="ic-ph" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>Jetzt anrufen</a>
-      <a class="btn btn-outline-dark" href="https://expresslogistik-reinwald.de/direktanfrage-kurier/">Direktanfrage stellen</a>
-    </div>
-    <div class="rg-chips">
-      <a href="#rg-transportarten">Transportarten</a>
-      <a href="#rg-kosten">Kosten &amp; Kalkulation</a>
-      <a href="#rg-zeitkritisch">Zeitkritische Logistik</a>
-      <a href="#rg-spezial">Spezial- &amp; Schwertransport</a>
-      <a href="#rg-dokumente">Maße, Dokumente &amp; International</a>
+    <div class="hero-grid">
+      <div>
+        <span class="pill"><span class="pulse"></span>Wissen rund um Express- und Direkttransport</span>
+        <h1>Ratgeber: <span class="accent">Express-, Direkt- und Kurierlogistik</span> verständlich erklärt</h1>
+        <p class="sub">Von der Kostenkalkulation über Gefahrgut bis zu Dokumenten und Fristen: In unseren Ratgebern erklären wir die Themen rund um Express-, Direkt- und Kurierlogistik aus der Praxis. Damit Sie für jede Sendung die richtige Transportart wählen, bevor der Fahrer losfährt.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-green" href="tel:+4998347922033"><svg class="ic-ph" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>Jetzt anrufen</a>
+          <a class="btn btn-outline-light" href="https://expresslogistik-reinwald.de/direktanfrage-kurier/">Direktanfrage stellen</a>
+        </div>
+        <ul class="hero-usps">
+          <li><span class="dot">&#9733;</span> 5,0 bei Google</li>
+          <li><span class="dot">&#10003;</span> 20+ Jahre Praxis</li>
+          <li><span class="dot">&#10003;</span> Ehrlich beraten, 24/7</li>
+        </ul>
+      </div>
+      <div class="hero-visual">
+        <img class="truck" src="assets/img/group-920.png" alt="Fuhrpark von Expresslogistik Reinwald: LKW und Sprinter f&uuml;r Eiltransporte" width="640" height="420" fetchpriority="high">
+        <div class="float-card fc-1">
+          <span class="ic">&#9733;</span>
+          <span><b>Aus der Praxis</b><span>von der Disposition</span></span>
+        </div>
+        <div class="float-card fc-2">
+          <span class="ic">&#10003;</span>
+          <span><b>Ehrlich erkl&auml;rt</b><span>keine Verkaufsprosa</span></span>
+        </div>
+      </div>
     </div>
   </div>
-</section>
+</header>
 
 <style>
   .rg-intro{padding:44px 0 8px}
-  .rg-hero{background:radial-gradient(1100px 460px at 88% -12%, rgba(79,168,50,.12), transparent 62%), linear-gradient(180deg,#edf5ee 0%, #f7f9fc 70%);padding:32px 0 48px;border-bottom:1px solid rgba(22,32,56,.06)}
-  .rg-hero .crumbs{margin-bottom:20px}
-  .rg-hero .crumbs, .rg-hero .crumbs a{color:var(--text-soft,#5b6577)}
-  .rg-hero .crumbs a{text-decoration:none}
-  .rg-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--green-dark,#3d8526);background:#fff;border:1px solid rgba(79,168,50,.32);border-radius:999px;padding:7px 15px}
-  .rg-eyebrow .pulse{width:8px;height:8px;border-radius:50%;background:var(--green,#4FA832);box-shadow:0 0 0 4px rgba(79,168,50,.18)}
-  .rg-hero h1{margin:20px 0 0;font-size:clamp(30px,4.6vw,50px);line-height:1.1;letter-spacing:-.01em;color:var(--navy,#162038)}
-  .rg-hero h1 .accent{color:var(--green,#4FA832)}
-  .rg-sub{margin:16px 0 0;max-width:680px;font-size:18px;line-height:1.65;color:var(--text-soft,#5b6577)}
-  .rg-hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
-  .rg-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-  .rg-chips a{display:inline-flex;align-items:center;font-size:14px;font-weight:600;color:var(--navy,#162038);background:#fff;border:1px solid rgba(22,32,56,.12);border-radius:999px;padding:9px 16px;text-decoration:none;transition:border-color .15s ease,color .15s ease,box-shadow .15s ease}
-  .rg-chips a:hover{border-color:var(--green,#4FA832);color:var(--green-dark,#3d8526);box-shadow:0 6px 16px rgba(79,168,50,.15)}
+  .hero-usps{list-style:none;display:flex;flex-wrap:wrap;gap:10px 26px;font-weight:700;font-size:15px;color:#e8ecf4;margin:22px 0 0;padding:0}
+  .hero-usps li{display:flex;align-items:center;gap:9px}
+  .hero-usps .dot{color:var(--green);font-size:17px}
   .rg-cat{scroll-margin-top:96px}
   .artgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;margin-top:6px}
   .artcard{display:flex;flex-direction:column;background:#fff;border:1px solid rgba(22,32,56,.10);border-radius:16px;padding:22px 22px 20px;text-decoration:none;box-shadow:0 6px 22px rgba(22,32,56,.06);transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
