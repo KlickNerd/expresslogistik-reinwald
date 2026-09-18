@@ -1022,19 +1022,22 @@ ul.checks li strong{color:var(--navy)}
   .pl-card p{margin:0;color:var(--text-soft);font-size:14.5px;line-height:1.6}
 
   /* Vorteile (Money-Section) */
-  .pl-adv{margin-top:8px}
-  .pl-advitem{display:grid;grid-template-columns:66px 1fr;gap:24px;padding:28px 0;border-top:1px solid var(--grey-line)}
-  .pl-advitem:first-child{border-top:0;padding-top:6px}
-  @media(max-width:640px){.pl-advitem{grid-template-columns:1fr;gap:12px}}
-  .pl-advitem .ic{width:58px;height:58px;border-radius:15px;background:var(--green-light);color:var(--green-dark);display:flex;align-items:center;justify-content:center}
-  .pl-advitem .ic svg{width:28px;height:28px}
-  .pl-advitem h3{margin:0 0 9px;color:var(--navy);font-size:21px;line-height:1.25}
-  .pl-advitem p{margin:0;color:var(--text);font-size:16px;line-height:1.75;max-width:760px}
+  .pl-adv{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px;align-items:stretch}
+  @media(max-width:820px){.pl-adv{grid-template-columns:1fr}}
+  .pl-advitem{background:var(--white);border:1px solid var(--grey-line);border-radius:16px;padding:30px 32px;box-shadow:0 8px 22px rgba(12,22,44,.05);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
+  .pl-advitem::after{content:"";position:absolute;left:0;top:0;right:0;height:4px;background:linear-gradient(90deg,var(--green),var(--green-dark));opacity:0;transition:opacity .16s ease}
+  .pl-advitem:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(12,22,44,.1);border-color:#d3dae5}
+  .pl-advitem:hover::after{opacity:1}
+  .pl-advitem.wide{grid-column:1/-1}
+  .pl-advitem .ic{width:56px;height:56px;border-radius:15px;background:var(--green-light);color:var(--green-dark);display:flex;align-items:center;justify-content:center;margin-bottom:16px;flex:none}
+  .pl-advitem .ic svg{width:27px;height:27px}
+  .pl-advitem h3{margin:0 0 10px;color:var(--navy);font-size:20px;line-height:1.28}
+  .pl-advitem p{margin:0;color:var(--text);font-size:15.5px;line-height:1.72}
   .pl-advitem p .hl{color:var(--navy);font-weight:700}
   .pl-advitem p a{color:var(--green-dark);font-weight:700}
 
   /* Ehrlichkeit */
-  .pl-note{background:var(--green-light);border:1px solid #cfe8c3;border-radius:14px;padding:12px 18px;margin-top:14px;display:inline-block}
+  .pl-note{background:var(--green-light);border:1px solid #cfe8c3;border-left:4px solid var(--green);border-radius:12px;padding:14px 18px;margin-top:16px}
   .pl-note b{color:var(--green-dark)}
   .pl-note span{color:#33502a}
 
@@ -1072,7 +1075,9 @@ ul.checks li strong{color:var(--navy)}
   .pl-faq .a{padding:0 22px 20px;color:var(--text-soft);font-size:15.5px;line-height:1.65}
   .pl-faq .a a{color:var(--green-dark);font-weight:700}
 
-  .pl-cta-band{background:radial-gradient(700px 360px at 88% -20%, rgba(79,168,50,.18), transparent 60%),linear-gradient(135deg,#162038,#0f1a30);color:#fff;text-align:center}
+  .pl-cta-sec{background:var(--white)}
+  .pl-cta-band{background:radial-gradient(700px 360px at 88% -20%, rgba(79,168,50,.22), transparent 60%),linear-gradient(135deg,#162038,#0f1a30);color:#fff;text-align:center;border-radius:24px;padding:60px 44px;box-shadow:0 24px 60px rgba(12,22,44,.22);position:relative;overflow:hidden}
+  @media(max-width:560px){.pl-cta-band{padding:44px 24px}}
   .pl-cta-band h2{color:#fff;margin:0 0 10px}
   .pl-cta-band p{color:#cfd6e2;max-width:660px;margin:0 auto 24px;font-size:17px;line-height:1.6}
   .pl-cta-band .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
@@ -1221,7 +1226,7 @@ ul.checks li strong{color:var(--navy)}
           <p>Im Ernstfall wollen Sie nicht erkl&auml;ren, warum es eilig ist. Bei uns kennt Ihr Ansprechpartner Ihre Anforderungen, denkt mit und &uuml;bernimmt Verantwortung. Kurze Wege, schnelle Entscheidungen, ein Gesicht statt einer Warteschleife. Als Familienbetrieb mit flachen Hierarchien treffen wir Entscheidungen dann, wenn sie n&ouml;tig sind: sofort.</p>
         </div>
       </div>
-      <div class="pl-advitem">
+      <div class="pl-advitem wide">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div>
         <div>
           <h3>Deutschland- und europaweit, aus einem starken Netzwerk</h3>
@@ -1404,8 +1409,9 @@ ul.checks li strong{color:var(--navy)}
 </section>
 
 <!-- ================= CTA ================= -->
-<section class="pl-cta-band">
+<section class="pl-cta-sec">
   <div class="wrap">
+    <div class="pl-cta-band">
     <h2>Ihre Sendung ist zu wichtig f&uuml;r ein Vielleicht.</h2>
     <p>Rufen Sie an oder stellen Sie eine Direktanfrage. Sie bekommen in Minuten einen Festpreis und ein Zeitfenster, auf das Sie sich verlassen k&ouml;nnen. 24/7, deutschland- und europaweit.</p>
     <div class="cta">
@@ -1417,6 +1423,7 @@ ul.checks li strong{color:var(--navy)}
       <a href="https://expresslogistik-reinwald.de/gefahrguttransport/">Gefahrguttransport</a>
       <a href="https://expresslogistik-reinwald.de/eiltransporte/">Eiltransporte</a>
       <a href="https://expresslogistik-reinwald.de/kurierdienst/">Kurierdienst</a>
+    </div>
     </div>
   </div>
 </section>
