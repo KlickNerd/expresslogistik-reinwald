@@ -99,8 +99,8 @@ section.alt{background:var(--grey-bg)}
 /* ================= HERO ================= */
 .hero{
   background:
-    radial-gradient(900px 480px at 88% 8%, rgba(79,168,50,.20), transparent 65%),
-    linear-gradient(135deg,var(--navy) 0%,#101b33 58%,var(--navy-70) 100%);
+    linear-gradient(100deg, rgba(16,27,51,.95) 0%, rgba(16,27,51,.88) 34%, rgba(16,27,51,.62) 62%, rgba(16,27,51,.38) 100%),
+    url('assets/img/hero-autobahn.jpg') center/cover no-repeat;
   color:var(--white);
   position:relative;
   overflow:hidden;
@@ -181,6 +181,18 @@ section.alt{background:var(--grey-bg)}
 .float-card span{font-size:12.5px;color:var(--text-soft);font-weight:700}
 .fc-1{top:-6px;right:6px}
 .fc-2{bottom:-16px;left:-6px}
+.hero-badges{display:flex;align-items:flex-end;justify-content:center;gap:14px;margin-bottom:22px;flex-wrap:wrap}
+.hero-badges .badge{background:#fff;border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.30)}
+.badge-tuev{height:76px;width:auto;padding:8px 12px;object-fit:contain}
+.badge-top{height:132px;width:auto;border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.30)}
+.badge-google{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:12px 16px;min-width:150px}
+.badge-google .bg-top{display:flex;align-items:center;gap:8px}
+.badge-google .bg-top b{color:#202124;font-size:22px;font-weight:800;line-height:1}
+.badge-google .bg-stars{color:#fbbc05;font-size:15px;letter-spacing:1px}
+.badge-google small{color:#5f6368;font-size:12px;margin:5px 0 6px}
+.badge-google .bg-pw{color:#5f6368;font-size:12px}
+.badge-google .bg-pw em{font-style:normal;font-weight:700;background:linear-gradient(90deg,#4285F4 0%,#EA4335 35%,#FBBC05 60%,#34A853 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+@media(max-width:960px){.hero-badges{justify-content:flex-start}}
 @media(max-width:960px){
   .hero-visual{min-height:0;max-width:560px}
   .fc-1{top:-10px;right:0}
@@ -871,15 +883,16 @@ ul.checks li strong{color:var(--navy)}
         </ul>
       </div>
       <div class="hero-visual">
+        <div class="hero-badges">
+          <img class="badge badge-tuev" src="assets/img/siegel-tuev.webp" alt="TÜV SÜD ISO 9001 zertifiziertes Qualitätsmanagementsystem" width="488" height="234" loading="lazy">
+          <div class="badge badge-google">
+            <div class="bg-top"><b>5,0</b><span class="bg-stars">★★★★★</span></div>
+            <small>Basierend auf 49 Bewertungen</small>
+            <span class="bg-pw">powered by <em>Google</em></span>
+          </div>
+          <img class="badge badge-top" src="assets/img/siegel-top.webp" alt="Top Kurierdienst: termingerechte Lieferung, 100 % Kundenzufriedenheit, Angebot in 10 Minuten" width="513" height="1024" loading="lazy">
+        </div>
         <img class="truck" src="assets/img/group-920.png" alt="Fuhrpark von Expresslogistik Reinwald: LKW und Sprinter für Eiltransporte" width="640" height="420" fetchpriority="high">
-        <div class="float-card fc-1">
-          <span class="ic">⏱</span>
-          <span><b>60-120 Min.</b><span>bis zur Abholung</span></span>
-        </div>
-        <div class="float-card fc-2">
-          <span class="ic">✓</span>
-          <span><b>Festpreis vorab</b><span>Angebot in 10 Minuten</span></span>
-        </div>
       </div>
     </div>
   </div>
