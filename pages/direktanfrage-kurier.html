@@ -917,6 +917,10 @@ ul.checks li strong{color:var(--navy)}
   /* honeypot */
   .da-hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}
 
+  /* Bedingte Felder */
+  .da-cond{margin:14px 0 0;padding:16px 18px;border:1px dashed #cfd8e6;border-radius:10px;background:#f7faf5}
+  .da-cond .da-field{margin:0}
+
   /* Nav */
   .da-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:24px;padding-top:20px;border-top:1px solid #eef1f6}
   .da-prev{background:none;border:0;color:#5b6577;font-weight:700;font-size:15px;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
@@ -1051,6 +1055,13 @@ ul.checks li strong{color:var(--navy)}
                 <div class="da-tip" role="tooltip" hidden><b>Edscha</b>Kranverladung von oben.</div>
               </div>
             </div>
+          </div>
+
+          <div class="da-cond" id="cond-versicherung" hidden>
+            <div class="da-field"><label>Zu versichernder Warenwert (EUR) <span class="req">*</span></label><input type="number" id="warenwert" min="0" inputmode="numeric" placeholder="z.B. 15000"><span class="da-err">Bitte Warenwert angeben</span></div>
+          </div>
+          <div class="da-cond" id="cond-gefahrgut" hidden>
+            <div class="da-field"><label>Anzahl Gefahrgutpunkte <span class="req">*</span></label><input type="number" id="gefahrgutpunkte" min="0" inputmode="numeric" placeholder="Summe der Gefahrgutpunkte"><span class="da-err">Bitte angeben</span></div>
           </div>
 
           <div class="da-nav"><span></span><button type="button" class="btn btn-green da-next">Weiter</button></div>
@@ -1253,6 +1264,7 @@ ul.checks li strong{color:var(--navy)}
     var anrede=(form.querySelector('input[name="anrede"]:checked')||{}).value||'';
     return {
       positionen:positionen, extras:extras,
+      extras_details:{warenwert:v('warenwert'),gefahrgutpunkte:v('gefahrgutpunkte')},
       abholung:{plz:v('ab_plz'),ort:v('ab_ort'),land:v('ab_land'),datum:v('ab_datum'),uhrzeit_von:v('ab_von'),uhrzeit_bis:v('ab_bis')},
       zustellung:{plz:v('zu_plz'),ort:v('zu_ort'),land:v('zu_land'),datum:v('zu_datum'),uhrzeit_von:v('zu_von'),uhrzeit_bis:v('zu_bis')},
       kontakt:{firma:v('k_firma'),anrede:anrede,name:v('k_name'),strasse:v('k_strasse'),adresszusatz:v('k_zusatz'),plz:v('k_plz'),ort:v('k_ort'),land:v('k_land'),telefon:v('k_tel'),email:v('k_email'),referenz:v('k_ref'),anmerkungen:v('k_anm')},
@@ -1265,6 +1277,12 @@ ul.checks li strong{color:var(--navy)}
   function toggleTip(btn){var tip=btn.parentNode.querySelector('.da-tip');var open=tip.hidden;closeTips();tip.hidden=!open;btn.setAttribute('aria-expanded',open?'true':'false');}
   document.addEventListener('click',function(e){if(!e.target.closest('.da-check-row'))closeTips();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeTips();});
+
+  /* Bedingte Felder (Warenwert / Gefahrgutpunkte) */
+  function setCond(wrapId,inputId,on){var w=document.getElementById(wrapId),i=document.getElementById(inputId);if(!w||!i)return;w.hidden=!on;i.required=on;if(!on){i.value='';var fl=i.closest('.da-field');if(fl)fl.classList.remove('is-error');}}
+  function toggleCond(){var q=function(v){var el=form.querySelector('input[name="extras"][value="'+v+'"]');return !!(el&&el.checked);};setCond('cond-versicherung','warenwert',q('Zusatz-Transportversicherung'));setCond('cond-gefahrgut','gefahrgutpunkte',q('Gefahrgut'));}
+  form.addEventListener('change',function(e){if(e.target.name==='extras')toggleCond();});
+  toggleCond();
 
   form.addEventListener('submit',function(e){
     e.preventDefault();
