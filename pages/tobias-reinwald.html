@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Startseite | Musterseite Redesign v2 -->
 <title>Tobias Reinwald | Gesch&auml;ftsf&uuml;hrer der Expresslogistik Reinwald GmbH</title>
-<meta name="description" content="Tobias Reinwald, Geschaeftsfuehrer der Expresslogistik Reinwald GmbH: Werdegang, Ausbildung und Kompetenzen. Verkehrsleiter seit 2015, Geschaeftsfuehrer seit 2021. Familienbetrieb in zweiter Generation aus Theilenhofen.">
+<meta name="description" content="Tobias Reinwald, Geschaeftsfuehrer der Expresslogistik Reinwald GmbH: Portraet, Werdegang, Verantwortungsbereiche, Ausbildung und Kompetenzen. Verkehrsleiter seit 2015, Geschaeftsfuehrer seit 2021. Familienbetrieb in zweiter Generation aus Theilenhofen.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://expresslogistik-reinwald.de/tobias-reinwald/">
 <meta name="theme-color" content="#162038">
@@ -10,7 +10,7 @@
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Expresslogistik Reinwald GmbH">
 <meta property="og:title" content="Tobias Reinwald | Geschaeftsfuehrer Expresslogistik Reinwald">
-<meta property="og:description" content="Werdegang, Ausbildung und Kompetenzen des Geschaeftsfuehrers. Familienbetrieb in zweiter Generation aus Theilenhofen.">
+<meta property="og:description" content="Mit dem Unternehmen gross geworden: Portraet, Werdegang und Verantwortung des Geschaeftsfuehrers. Familienbetrieb in zweiter Generation.">
 <meta property="og:url" content="https://expresslogistik-reinwald.de/tobias-reinwald/">
 <meta property="og:image" content="assets/img/transporter.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -965,18 +965,48 @@ ul.checks li strong{color:var(--navy)}
 </header>
 <style>
   /* ====== Tobias Reinwald (tr-) ====== */
-  .tr-hero{background:radial-gradient(760px 420px at 90% -18%, rgba(79,168,50,.16), transparent 62%),linear-gradient(135deg,#162038 0%,#101b33 60%,#0d1730 100%);color:#fff;padding:30px 0 46px}
+  .tr-hero{background:radial-gradient(760px 420px at 90% -18%, rgba(79,168,50,.16), transparent 62%),linear-gradient(135deg,#162038 0%,#101b33 60%,#0d1730 100%);color:#fff;padding:30px 0 48px}
   .tr-hero .crumbs,.tr-hero .crumbs a{color:rgba(255,255,255,.82);text-decoration:none;font-size:14px}
-  .tr-grid{display:grid;grid-template-columns:1fr 300px;gap:44px;align-items:center;margin-top:8px}
-  @media(max-width:820px){.tr-grid{grid-template-columns:1fr;gap:26px}.tr-portrait{order:-1;max-width:220px}}
+  .tr-grid{display:grid;grid-template-columns:1fr 320px;gap:46px;align-items:center;margin-top:8px}
+  @media(max-width:820px){.tr-grid{grid-template-columns:1fr;gap:28px}.tr-portrait{order:-1;max-width:240px}}
   .tr-hero .pill{margin-bottom:16px}
-  .tr-hero h1{color:#fff;margin:0;font-size:clamp(34px,5vw,54px);line-height:1.05;letter-spacing:-.01em}
+  .tr-hero h1{color:#fff;margin:0;font-size:clamp(34px,5vw,56px);line-height:1.04;letter-spacing:-.01em}
   .tr-role{color:var(--green);font-weight:800;font-size:17px;margin:12px 0 0}
   .tr-role span{color:#aeb8cf;font-weight:600}
   .tr-intro{color:#cfd6e2;max-width:640px;margin:16px 0 0;font-size:16.5px;line-height:1.7}
-  .tr-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+  .tr-chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+  .tr-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:600;color:#e8ecf4}
+  .tr-chip .d{width:7px;height:7px;border-radius:50%;background:var(--green);flex:none}
+  .tr-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
   .tr-portrait img{width:100%;height:auto;border-radius:20px;border:1px solid rgba(255,255,255,.16);box-shadow:0 30px 60px rgba(0,0,0,.4);display:block}
 
+  /* Split Text+Bild */
+  .tr-split{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center;margin-top:6px}
+  @media(max-width:860px){.tr-split{grid-template-columns:1fr;gap:26px}.tr-split .im{order:-1}}
+  .tr-split .im img{width:100%;height:auto;border-radius:18px;box-shadow:0 24px 50px rgba(12,22,44,.16);display:block}
+  .tr-split h2{margin:0 0 16px}
+  .tr-split p{color:var(--text);font-size:16.5px;line-height:1.78;margin:0 0 15px}
+  .tr-split p:last-child{margin-bottom:0}
+  .tr-split .kicker{color:var(--navy);font-weight:700}
+
+  /* Leitgedanke-Band */
+  .tr-band{background:radial-gradient(760px 400px at 50% -30%, rgba(79,168,50,.20), transparent 60%),linear-gradient(135deg,#162038,#0f1a30);color:#fff;text-align:center}
+  .tr-band .eyebrow{color:#bfe6ac}
+  .tr-band .quote{font-size:clamp(23px,3vw,34px);font-weight:800;line-height:1.3;max-width:920px;margin:16px auto 0;color:#fff}
+  .tr-band .quote .accent{color:var(--green)}
+  .tr-band .by{margin:22px auto 0;color:#aeb8cf;font-weight:700;font-size:15px}
+  .tr-band .by b{color:#fff}
+
+  /* Verantwortungsbereiche */
+  .tr-resp{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
+  @media(max-width:860px){.tr-resp{grid-template-columns:1fr}}
+  .tr-respcard{background:var(--white);border:1px solid var(--grey-line);border-radius:var(--radius);padding:24px 26px;box-shadow:0 8px 22px rgba(12,22,44,.05)}
+  .tr-respcard .ic{width:46px;height:46px;border-radius:12px;background:var(--green-light);color:var(--green-dark);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .tr-respcard .ic svg{width:23px;height:23px}
+  .tr-respcard h3{margin:0 0 7px;color:var(--navy);font-size:17.5px}
+  .tr-respcard p{margin:0;color:var(--text-soft);font-size:14.5px;line-height:1.6}
+
+  /* Werdegang */
   .tr-cv{position:relative;max-width:840px;margin:8px auto 0}
   .tr-cv::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:var(--grey-line)}
   .tr-cv li{list-style:none;position:relative;padding:0 0 28px 46px}
@@ -987,6 +1017,7 @@ ul.checks li strong{color:var(--navy)}
   .tr-cv .org{font-size:14.5px;color:var(--text-soft);font-weight:600}
   .tr-cv .desc{font-size:14.5px;color:var(--text);line-height:1.6;margin:9px 0 0;max-width:640px}
 
+  /* Ausbildung + Kompetenzen */
   .tr-edu{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
   @media(max-width:720px){.tr-edu{grid-template-columns:1fr}}
   .tr-educard{background:var(--white);border:1px solid var(--grey-line);border-radius:var(--radius);padding:24px 26px;box-shadow:0 8px 22px rgba(12,22,44,.05)}
@@ -994,7 +1025,6 @@ ul.checks li strong{color:var(--navy)}
   .tr-educard h3{margin:5px 0 3px;color:var(--navy);font-size:18px}
   .tr-educard .org{color:var(--text-soft);font-size:14.5px;font-weight:600}
   .tr-educard p{margin:10px 0 0;color:var(--text);font-size:14.5px;line-height:1.6}
-
   .tr-comp{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
   @media(max-width:860px){.tr-comp{grid-template-columns:1fr}}
   .tr-compcard{background:var(--white);border:1px solid var(--grey-line);border-radius:var(--radius);padding:26px;box-shadow:0 8px 22px rgba(12,22,44,.05)}
@@ -1004,15 +1034,23 @@ ul.checks li strong{color:var(--navy)}
   .tr-tags{display:flex;flex-wrap:wrap;gap:8px}
   .tr-tag{background:#f2f5f9;color:var(--navy);border:1px solid var(--grey-line);border-radius:999px;padding:6px 13px;font-size:13.5px;font-weight:600}
 
-  .tr-langs{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:720px;margin:8px auto 0}
-  @media(max-width:560px){.tr-langs{grid-template-columns:1fr}}
-  .tr-lang{background:var(--white);border:1px solid var(--grey-line);border-radius:14px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 8px 22px rgba(12,22,44,.04)}
-  .tr-lang b{color:var(--navy);font-size:17px}
-  .tr-lang span{color:var(--green-dark);font-weight:700;font-size:14px;background:var(--green-light);padding:5px 12px;border-radius:999px}
+  /* Auf einen Blick (Factsheet) */
+  .tr-sheet{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;background:var(--white);border:1px solid var(--grey-line);border-radius:var(--radius);padding:14px 34px;box-shadow:0 10px 30px rgba(12,22,44,.05);max-width:900px;margin:8px auto 0}
+  @media(max-width:640px){.tr-sheet{grid-template-columns:1fr}}
+  .tr-sheet .row{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid #eef1f6}
+  .tr-sheet .row span{color:var(--text-soft);font-size:14px;font-weight:600;flex:none}
+  .tr-sheet .row b{color:var(--navy);font-size:14.5px;text-align:right}
+  .tr-sheet .row b a{color:var(--green-dark)}
+
+  /* Verbindung zum Unternehmen */
+  .tr-linkcard{display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;background:linear-gradient(135deg,#eef7ea,#f5faf2);border:1px solid #d8eccd;border-radius:var(--radius);padding:30px 36px}
+  .tr-linkcard h2{margin:0 0 6px;color:var(--navy);font-size:23px}
+  .tr-linkcard p{margin:0;color:var(--text);font-size:15.5px;line-height:1.6;max-width:620px}
+  .tr-linkcard .btn{flex:none}
 
   .tr-cta-band{background:radial-gradient(700px 360px at 88% -20%, rgba(79,168,50,.18), transparent 60%),linear-gradient(135deg,#162038,#0f1a30);color:#fff;text-align:center}
   .tr-cta-band h2{color:#fff;margin:0 0 10px}
-  .tr-cta-band p{color:#cfd6e2;max-width:620px;margin:0 auto 24px;font-size:17px;line-height:1.6}
+  .tr-cta-band p{color:#cfd6e2;max-width:640px;margin:0 auto 24px;font-size:17px;line-height:1.6}
   .tr-cta-band .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 </style>
 
@@ -1025,7 +1063,13 @@ ul.checks li strong{color:var(--navy)}
         <span class="pill"><span class="pulse"></span>Gesch&auml;ftsf&uuml;hrung</span>
         <h1>Tobias Reinwald</h1>
         <p class="tr-role">Gesch&auml;ftsf&uuml;hrer <span>&middot; Expresslogistik Reinwald GmbH &middot; Theilenhofen</span></p>
-        <p class="tr-intro">Tobias Reinwald ist in der Welt der Expresslogistik aufgewachsen. Was seine Eltern 2005 gegr&uuml;ndet haben, f&uuml;hrt er heute in zweiter Generation. Nach Ausbildung zum Industriekaufmann und einem BWL-Studium mit Schwerpunkt Logistik sammelte er unter anderem bei der Bosch Rexroth AG Erfahrung in Logistikplanung und Industrie 4.0. Seit 2015 verantwortet er als Verkehrsleiter den operativen Kern des Unternehmens, seit 2021 f&uuml;hrt er die Expresslogistik Reinwald GmbH. Sein Anspruch: Logistik, die verl&auml;sslich ist und pers&ouml;nlich bleibt.</p>
+        <p class="tr-intro">Manche wachsen in ein Unternehmen hinein. Tobias Reinwald ist mit ihm gro&szlig; geworden. Heute f&uuml;hrt er den Familienbetrieb in zweiter Generation, mit dem Kopf eines Betriebswirts und der Haltung eines Kurierfahrers: schnell, verl&auml;sslich und immer ansprechbar.</p>
+        <div class="tr-chips">
+          <span class="tr-chip"><span class="d"></span>Gesch&auml;ftsf&uuml;hrer seit 2021</span>
+          <span class="tr-chip"><span class="d"></span>Verkehrsleiter nach EU-VO 1071/2009</span>
+          <span class="tr-chip"><span class="d"></span>B.A. Betriebswirtschaft</span>
+          <span class="tr-chip"><span class="d"></span>2. Generation</span>
+        </div>
         <div class="tr-links">
           <a class="btn btn-green" href="tel:+4998347922033"><svg class="ic-ph" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>Jetzt anrufen</a>
           <a class="btn btn-outline-light" href="https://www.linkedin.com/in/tobias-reinwald-49792a290/" target="_blank" rel="noopener">LinkedIn</a>
@@ -1039,8 +1083,75 @@ ul.checks li strong{color:var(--navy)}
   </div>
 </section>
 
-<!-- ================= WERDEGANG ================= -->
+<!-- ================= KURZPORTRAET ================= -->
 <section>
+  <div class="wrap">
+    <div class="tr-split">
+      <div>
+        <span class="eyebrow">Wer ist Tobias Reinwald?</span>
+        <h2>Mit dem Unternehmen gro&szlig; geworden</h2>
+        <p><span class="kicker">Als seine Eltern Gerhard und Karin 2005 den Kurierdienst gr&uuml;nden, ist die Expresslogistik von klein auf Teil seines Alltags.</span> Statt den bequemen Weg zu gehen, lernt Tobias Reinwald das Gesch&auml;ft von Grund auf, und von au&szlig;en: Ausbildung zum Industriekaufmann, BWL-Studium mit Schwerpunkt Produktionsmanagement und Logistik, dazu Praxis in der Logistikplanung eines Industriekonzerns, wo er sich mit Industrie 4.0, RFID und schlanken Prozessen besch&auml;ftigt.</p>
+        <p>Dieses Wissen bringt er zur&uuml;ck in den Familienbetrieb. Seit 2015 verantwortet er als Verkehrsleiter nach EU-Verordnung den operativen Kern: Disposition, Fahrzeuge, Netzwerk. Seit 2021 f&uuml;hrt er das Unternehmen als Gesch&auml;ftsf&uuml;hrer, gemeinsam mit Gr&uuml;nder Gerhard Reinwald.</p>
+        <p>Was ihn antreibt, ist eine einfache &Uuml;berzeugung: Logistik ist Vertrauenssache. Deshalb setzt er auf moderne Technik und klare Prozesse, ohne das zu verlieren, was einen Familienbetrieb ausmacht: dass am anderen Ende der Leitung ein Mensch sitzt, der Verantwortung &uuml;bernimmt.</p>
+      </div>
+      <div class="im"><img src="assets/img/reinwald-385.jpg" alt="Blick in die Disposition von Expresslogistik Reinwald" loading="lazy" decoding="async"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LEITGEDANKE ================= -->
+<section class="tr-band">
+  <div class="wrap">
+    <span class="eyebrow">Sein Leitgedanke</span>
+    <p class="quote">Logistik ist Vertrauenssache. Wer uns braucht, soll einen Menschen erreichen, der <span class="accent">zuh&ouml;rt und handelt</span>, keine Warteschleife.</p>
+    <p class="by">Der Anspruch von <b>Tobias Reinwald</b> an die Expresslogistik Reinwald GmbH</p>
+  </div>
+</section>
+
+<!-- ================= VERANTWORTUNG ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">Als Gesch&auml;ftsf&uuml;hrer</span>
+      <h2>Wof&uuml;r Tobias Reinwald Verantwortung tr&auml;gt</h2>
+    </div>
+    <div class="tr-resp">
+      <div class="tr-respcard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h13M12 5l7 7-7 7"/></svg></div>
+        <h3>Strategie &amp; Ausrichtung</h3>
+        <p>Kurs und Weiterentwicklung des Unternehmens, mit Fokus auf zeitkritische Direktfahrten und europaweite Express-Logistik.</p>
+      </div>
+      <div class="tr-respcard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Disposition &amp; Netzwerk</h3>
+        <p>Effizienter Einsatz von eigenem Fuhrpark und Partnernetzwerk, damit deutschlandweit in 60 bis 120 Minuten abgeholt wird.</p>
+      </div>
+      <div class="tr-respcard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Qualit&auml;t</h3>
+        <p>Verantwortung f&uuml;r ein Qualit&auml;tsmanagement nach ISO 9001 und dessen kontinuierliche Verbesserung.</p>
+      </div>
+      <div class="tr-respcard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></div>
+        <h3>Nachhaltigkeit</h3>
+        <p>Engagement im Umwelt- und Klimapakt Bayern: Verantwortung &uuml;bernehmen, &uuml;ber die Stra&szlig;e hinaus.</p>
+      </div>
+      <div class="tr-respcard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg></div>
+        <h3>Kundenn&auml;he</h3>
+        <p>Pers&ouml;nlich erreichbar, egal aus welcher Region: ein fester Ansprechpartner statt anonymem Callcenter.</p>
+      </div>
+      <div class="tr-respcard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+        <h3>Team &amp; Kultur</h3>
+        <p>Flache Hierarchien, kurze Wege und ein eingespieltes Team: schnelle Entscheidungen genau dann, wenn es z&auml;hlt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WERDEGANG ================= -->
+<section class="alt">
   <div class="wrap">
     <div class="sec-head center">
       <span class="eyebrow">Beruflicher Werdegang</span>
@@ -1059,7 +1170,7 @@ ul.checks li strong{color:var(--navy)}
         <span class="when">seit August 2015</span>
         <div class="role">Verkehrsleiter</div>
         <div class="org">Expresslogistik Reinwald GmbH</div>
-        <p class="desc">Verantwortlicher Verkehrsleiter nach EU-Verordnung (EG) Nr. 1071/2009.</p>
+        <p class="desc">Verantwortlicher Verkehrsleiter nach EU-Verordnung (EG) Nr. 1071/2009, zust&auml;ndig f&uuml;r den ordnungsgem&auml;&szlig;en Betrieb des Fuhrparks.</p>
       </li>
       <li>
         <span class="dot"></span>
@@ -1084,11 +1195,11 @@ ul.checks li strong{color:var(--navy)}
   </div>
 </section>
 
-<!-- ================= AUSBILDUNG ================= -->
-<section class="alt">
+<!-- ================= AUSBILDUNG + KOMPETENZEN ================= -->
+<section>
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow">Akademische &amp; schulische Ausbildung</span>
+      <span class="eyebrow">Ausbildung</span>
       <h2>Fundierte Basis in Wirtschaft und Logistik</h2>
     </div>
     <div class="tr-edu">
@@ -1105,13 +1216,8 @@ ul.checks li strong{color:var(--navy)}
         <p>Schwerpunkt Wirtschaft.</p>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ================= KERNKOMPETENZEN ================= -->
-<section>
-  <div class="wrap">
-    <div class="sec-head center">
+    <div class="sec-head center" style="margin-top:64px">
       <span class="eyebrow">Kernkompetenzen</span>
       <h2>Wo Tobias Reinwald zuhause ist</h2>
     </div>
@@ -1137,7 +1243,7 @@ ul.checks li strong{color:var(--navy)}
         </div>
       </div>
       <div class="tr-compcard">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h.01M6 12h.01M6 16h.01"/><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M10 8h8M10 12h8M10 16h5"/></svg></div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M10 8h8M10 12h8M10 16h5M6 8h.01M6 12h.01M6 16h.01"/></svg></div>
         <h3>Technologie &amp; RFID</h3>
         <div class="tr-tags">
           <span class="tr-tag">Transportkanban via RFID</span>
@@ -1149,16 +1255,35 @@ ul.checks li strong{color:var(--navy)}
   </div>
 </section>
 
-<!-- ================= SPRACHEN ================= -->
+<!-- ================= AUF EINEN BLICK ================= -->
 <section class="alt">
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow">Sprachen</span>
-      <h2>Verhandlungssicher in zwei Sprachen</h2>
+      <span class="eyebrow">Auf einen Blick</span>
+      <h2>Factsheet Tobias Reinwald</h2>
     </div>
-    <div class="tr-langs">
-      <div class="tr-lang"><b>Deutsch</b><span>Muttersprache (C2)</span></div>
-      <div class="tr-lang"><b>Englisch</b><span>Flie&szlig;end (C1)</span></div>
+    <div class="tr-sheet">
+      <div class="row"><span>Position</span><b>Gesch&auml;ftsf&uuml;hrer</b></div>
+      <div class="row"><span>Unternehmen</span><b>Expresslogistik Reinwald GmbH</b></div>
+      <div class="row"><span>Standort</span><b>Theilenhofen, Deutschland</b></div>
+      <div class="row"><span>Gesch&auml;ftsf&uuml;hrer seit</span><b>Februar 2021</b></div>
+      <div class="row"><span>Verkehrsleiter seit</span><b>August 2015 (EU-VO 1071/2009)</b></div>
+      <div class="row"><span>Studium</span><b>B.A. Betriebswirtschaft, Hochschule Ansbach</b></div>
+      <div class="row"><span>Sprachen</span><b>Deutsch (C2), Englisch (C1)</b></div>
+      <div class="row"><span>Profile</span><b><a href="https://www.linkedin.com/in/tobias-reinwald-49792a290/" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://www.xing.com/profile/Tobias_Reinwald" target="_blank" rel="noopener">XING</a></b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VERBINDUNG ZUM UNTERNEHMEN ================= -->
+<section>
+  <div class="wrap">
+    <div class="tr-linkcard">
+      <div>
+        <h2>Teil einer gr&ouml;&szlig;eren Geschichte</h2>
+        <p>Vom Kinderzimmer 2005 zum europaweiten Kuriernetzwerk: Erfahren Sie mehr &uuml;ber den Familienbetrieb, den Tobias Reinwald heute f&uuml;hrt.</p>
+      </div>
+      <a class="btn btn-green" href="https://expresslogistik-reinwald.de/ueber-uns/">Zur Unternehmensgeschichte &rarr;</a>
     </div>
   </div>
 </section>
