@@ -110,7 +110,7 @@ section.alt{background:var(--grey-bg)}
 .siteheader .brand{display:inline-flex;align-items:center;text-decoration:none;flex:none}
 .siteheader .brand img{height:40px;width:auto;display:block}
 .mainnav{flex:1}
-.mainnav > ul{list-style:none;display:flex;gap:4px;align-items:center;justify-content:center}
+.mainnav > ul{list-style:none;display:flex;gap:6px;align-items:center;justify-content:flex-end}
 .mainnav > ul > li{position:relative}
 .mainnav > ul > li > a{
   display:flex;align-items:center;gap:7px;
@@ -161,14 +161,14 @@ section.alt{background:var(--grey-bg)}
 .mainnav li:focus-within > .drop.mega{display:grid}
 .drop.mega .all{grid-column:1/-1}
 .sh-cta{display:flex;align-items:center;gap:18px;flex:none;margin-left:auto}
-.topbar{background:#0e182e;border-bottom:1px solid rgba(255,255,255,.07)}
-.topbar .tb-row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:9px 0;flex-wrap:wrap}
+.utilbar{background:#0e182e;border-bottom:1px solid rgba(255,255,255,.07)}
+.utilbar .tb-row{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:10px 0;flex-wrap:wrap}
 .tb-tag{color:#8f9ab3;font-size:13px;font-weight:700}
 .tb-contact{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
 .tb-contact a{display:inline-flex;align-items:center;gap:8px;color:#dfe5ee;text-decoration:none;font-size:13.5px;font-weight:700}
 .tb-contact a:hover{color:#fff}
 .tb-contact a svg{width:16px;height:16px;fill:var(--green);flex:none}
-@media(max-width:640px){.tb-tag{display:none}.topbar .tb-row{justify-content:center}.tb-contact{gap:16px}.tb-contact a{font-size:12.5px}}
+@media(max-width:640px){.tb-tag{display:none}.utilbar .tb-row{justify-content:center}.tb-contact{gap:16px}.tb-contact a{font-size:12.5px}}
 .sh-cta .ph{
   display:inline-flex;align-items:center;gap:9px;
   color:#fff;text-decoration:none;font-weight:800;font-size:15.5px;white-space:nowrap;
@@ -681,7 +681,7 @@ th.hl{background:var(--green);color:#fff}
 </script>
 <!-- ================= GLOBAL HEADER ================= -->
 <header class="siteheader">
-  <div class="topbar">
+  <div class="utilbar">
     <div class="wrap tb-row">
       <span class="tb-tag">Schnell. Zuverl&auml;ssig. Flexibel. Unkompliziert.</span>
       <div class="tb-contact">
