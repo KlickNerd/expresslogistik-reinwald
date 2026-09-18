@@ -893,6 +893,17 @@ ul.checks li strong{color:var(--navy)}
   .da-check:hover{border-color:var(--green,#4FA832)}
   .da-check input{width:18px;height:18px;accent-color:var(--green,#4FA832);flex:none}
 
+  /* Extra-Info-Tooltips */
+  .da-check-row{position:relative;display:flex;align-items:center;border:1px solid #e0e6ef;border-radius:10px;background:#fff}
+  .da-check-row:hover{border-color:var(--green,#4FA832)}
+  .da-check-row .da-check{flex:1;border:0;background:none}
+  .da-info{flex:none;width:20px;height:20px;margin:0 12px 0 4px;border-radius:50%;border:0;background:var(--green,#4FA832);color:#fff;font-size:12px;font-weight:800;font-style:italic;font-family:Georgia,serif;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .da-info:hover{background:var(--green-dark,#2c6f1f)}
+  .da-info[aria-expanded="true"]{background:var(--navy,#162038)}
+  .da-tip{position:absolute;z-index:30;top:calc(100% + 9px);right:0;width:min(340px,86vw);background:#fff;border:1px solid #e2e8f1;border-radius:12px;box-shadow:0 20px 44px rgba(12,22,44,.20);padding:14px 16px;font-size:13px;line-height:1.55;color:#404a5c}
+  .da-tip b{display:block;color:var(--navy,#162038);font-size:13.5px;margin:0 0 5px}
+  .da-tip::before{content:"";position:absolute;top:-7px;right:14px;width:12px;height:12px;background:#fff;border-left:1px solid #e2e8f1;border-top:1px solid #e2e8f1;transform:rotate(45deg)}
+
   /* Anrede radios */
   .da-radios{display:flex;gap:10px;flex-wrap:wrap}
   .da-radio{display:flex;align-items:center;gap:8px;border:1px solid #d5dce6;border-radius:10px;padding:10px 16px;cursor:pointer;font-size:14px;color:var(--navy,#162038)}
@@ -1014,11 +1025,31 @@ ul.checks li strong{color:var(--navy)}
           <div class="da-extras">
             <b>Ben&ouml;tigen Sie Extras?</b>
             <div class="da-checks">
-              <label class="da-check"><input type="checkbox" name="extras" value="Zusatz-Transportversicherung"> Zusatz-Transportversicherung</label>
-              <label class="da-check"><input type="checkbox" name="extras" value="Seitliche Beladung"> Seitliche Beladung</label>
-              <label class="da-check"><input type="checkbox" name="extras" value="Gefahrgut"> Gefahrgut</label>
-              <label class="da-check"><input type="checkbox" name="extras" value="Hebeb&uuml;hne"> Hebeb&uuml;hne</label>
-              <label class="da-check"><input type="checkbox" name="extras" value="Edscha-Verdeck"> Edscha-Verdeck</label>
+              <div class="da-check-row">
+                <label class="da-check"><input type="checkbox" name="extras" value="Zusatz-Transportversicherung"> Zusatz-Transportversicherung</label>
+                <button type="button" class="da-info" aria-expanded="false" aria-label="Erkl&auml;rung zu Zusatz-Transportversicherung">i</button>
+                <div class="da-tip" role="tooltip" hidden><b>Zusatz-Transportversicherung</b>Ihre Ware ist gem&auml;&szlig; ADSp mit mindestens 8,33 SZR/kg versichert. Lassen Sie uns wissen, sollten Sie eine Zusatz-Transportversicherung ben&ouml;tigen. Bei einer Zusatz-Transportversicherung geben Sie bitte den zu versichernden Warenwert an.</div>
+              </div>
+              <div class="da-check-row">
+                <label class="da-check"><input type="checkbox" name="extras" value="Seitliche Beladung"> Seitliche Beladung</label>
+                <button type="button" class="da-info" aria-expanded="false" aria-label="Erkl&auml;rung zu Seitliche Beladung">i</button>
+                <div class="da-tip" role="tooltip" hidden><b>Seitliche Beladung</b>LKW sind alle seitlich beladbar. Im Sprinterbereich k&ouml;nnen Kastensprinter von hinten beladen werden und Planensprinter von der Seite.</div>
+              </div>
+              <div class="da-check-row">
+                <label class="da-check"><input type="checkbox" name="extras" value="Gefahrgut"> Gefahrgut</label>
+                <button type="button" class="da-info" aria-expanded="false" aria-label="Erkl&auml;rung zu Gefahrgut">i</button>
+                <div class="da-tip" role="tooltip" hidden><b>Gefahrgut</b>Bei Gefahrgut-Transporten ben&ouml;tigen wir die Anzahl der Gefahrgutpunkte und bei Transporten &gt;1000 Punkten alle Details zum Gefahrgut.</div>
+              </div>
+              <div class="da-check-row">
+                <label class="da-check"><input type="checkbox" name="extras" value="Hebeb&uuml;hne"> Hebeb&uuml;hne</label>
+                <button type="button" class="da-info" aria-expanded="false" aria-label="Erkl&auml;rung zu Hebeb&uuml;hne">i</button>
+                <div class="da-tip" role="tooltip" hidden><b>Hebeb&uuml;hne</b>Steht f&uuml;r die Be- oder Entladung kein Hebeger&auml;t (z.B. Stapler) zur Verf&uuml;gung, k&ouml;nnen Sie gegen Aufpreis eine Hebeb&uuml;hne hinzubuchen.</div>
+              </div>
+              <div class="da-check-row">
+                <label class="da-check"><input type="checkbox" name="extras" value="Edscha"> Edscha</label>
+                <button type="button" class="da-info" aria-expanded="false" aria-label="Erkl&auml;rung zu Edscha">i</button>
+                <div class="da-tip" role="tooltip" hidden><b>Edscha</b>Kranverladung von oben.</div>
+              </div>
             </div>
           </div>
 
@@ -1189,6 +1220,7 @@ ul.checks li strong{color:var(--navy)}
     var t=e.target;
     if(t.closest('.da-next')){e.preventDefault(); if(validate(steps[cur])) show(Math.min(cur+1,steps.length-1));}
     else if(t.closest('.da-prev')){e.preventDefault(); show(Math.max(cur-1,0));}
+    else if(t.closest('.da-info')){e.preventDefault(); e.stopPropagation(); toggleTip(t.closest('.da-info'));}
     else if(t.closest('.da-addpos')){e.preventDefault(); addPos();}
     else if(t.closest('.da-delpos')){e.preventDefault(); t.closest('.da-pos').remove(); renumber();}
   });
@@ -1227,6 +1259,12 @@ ul.checks li strong{color:var(--navy)}
       meta:{quelle:'direktanfrage-kurier',gesendet:new Date().toISOString(),seite:location.href}
     };
   }
+
+  /* Info-Tooltips fuer Extras */
+  function closeTips(){document.querySelectorAll('.da-tip').forEach(function(tp){tp.hidden=true;var b=tp.parentNode.querySelector('.da-info');if(b)b.setAttribute('aria-expanded','false');});}
+  function toggleTip(btn){var tip=btn.parentNode.querySelector('.da-tip');var open=tip.hidden;closeTips();tip.hidden=!open;btn.setAttribute('aria-expanded',open?'true':'false');}
+  document.addEventListener('click',function(e){if(!e.target.closest('.da-check-row'))closeTips();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeTips();});
 
   form.addEventListener('submit',function(e){
     e.preventDefault();
