@@ -131,7 +131,7 @@ section.alt{background:var(--grey-bg)}
   align-items:center;
   padding:64px 0 96px;
 }
-@media(max-width:960px){.hero-grid{grid-template-columns:1fr;padding:48px 0 80px}}
+@media(max-width:960px){.hero-grid{grid-template-columns:1fr;padding:48px 0 20px}}
 .hero .pill{
   display:inline-flex;align-items:center;gap:9px;
   background:rgba(79,168,50,.16);
@@ -194,8 +194,16 @@ section.alt{background:var(--grey-bg)}
 .badge-google .bg-pw{color:#5f6368;font-size:12px}
 .badge-google .bg-pw em{font-style:normal;font-weight:700;background:linear-gradient(90deg,#4285F4 0%,#EA4335 35%,#FBBC05 60%,#34A853 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 @media(max-width:960px){
-  .hero-badges{position:static;justify-content:flex-start;flex-wrap:wrap;margin:22px 0 0}
-  .hero-truck{position:static;width:100%;margin:18px 0 -8px;right:auto;filter:drop-shadow(0 16px 24px rgba(0,0,0,.4))}
+  .hero-badges{position:static;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin:24px 0 0}
+  .hero-badges .badge{box-shadow:0 10px 24px rgba(0,0,0,.22)}
+  .badge-tuev{height:50px;padding:5px 8px}
+  .badge-top{height:74px}
+  .badge-google{min-width:0;padding:8px 11px}
+  .badge-google .bg-top b{font-size:18px}
+  .badge-google .bg-stars{font-size:13px}
+  .badge-google small{font-size:11px;margin:3px 0 3px}
+  .badge-google .bg-pw{font-size:11px}
+  .hero-truck{position:static;display:block;width:100%;max-width:540px;margin:20px auto -6px;right:auto;filter:drop-shadow(0 14px 22px rgba(0,0,0,.35))}
 }
 @media(max-width:960px){
   .hero-visual{min-height:0;max-width:560px}
