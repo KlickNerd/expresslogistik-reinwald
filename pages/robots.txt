@@ -1,0 +1,5 @@
+# robots.txt fuer expresslogistik-reinwald.de
+User-agent: *
+Allow: /
+
+Sitemap: https://expresslogistik-reinwald.de/sitemap.xml
