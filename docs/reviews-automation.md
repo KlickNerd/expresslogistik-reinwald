@@ -9,13 +9,26 @@ von Google ins Repo, ganz ohne WordPress-Widget. Alles bleibt statisches HTML.
 - `.github/workflows/update-reviews.yml` — GitHub Action, laeuft am 1. und 15. jedes Monats (~alle 2 Wochen) und committet die Aenderungen selbst.
 
 ## Was das Skript in die Seiten schreibt
-- **Rezensions-Slider** in `pages/kurierdienst.html` zwischen den Markern
-  `<!--REVIEWS_START-->` und `<!--REVIEWS_END-->` (eine `.quote`-Karte je Rezension).
-- **Bewertungs-Anzahl** ueberall: `"<n> Bewertungen"`, `"Alle <n> auf Google"`.
-- **JSON-LD**: `reviewCount` und `ratingValue` (auf Hub und Startseite).
+- **Rezensions-Slider** zwischen den Markern `<!--REVIEWS_START-->` /
+  `<!--REVIEWS_END-->` (eine `.quote`-Karte je Rezension). Welche Seiten einen
+  Slider bekommen und mit welchem Ausschnitt, steht in `SLIDER_SPECS` in
+  `tools/update-reviews.mjs`: `kurierdienst.html` zeigt den vollen Satz, die
+  Branchen-/Money-Pages je eine **rotierte Auswahl** (eigener `offset`), damit
+  nicht ueberall dieselben Stimmen stehen.
+- **Bewertungs-Anzahl** auf allen Seiten der `PAGES`-Liste: `"<n> Bewertungen"`,
+  `"Alle <n> auf Google"`.
+- **JSON-LD**: `reviewCount` und `ratingValue` (wo vorhanden).
 - **Score-Karten-Rating**: `<span class="num" data-rating>`.
 
-Die Anzahl aendert sich also nie wieder von Hand (aktuell z. B. 49 -> 63).
+Die Anzahl aendert sich also nie wieder von Hand (aktuell z. B. 49 -> 64). Der
+Workflow committet alle geaenderten Seiten (`git add data/reviews.json pages`).
+
+### Neue Seite in die Rotation aufnehmen
+1. Review-Modul einbauen und die Karten mit `<!--REVIEWS_START-->` /
+   `<!--REVIEWS_END-->` umschliessen.
+2. Basenamen in die `PAGES`-Liste aufnehmen (fuer die Zahl-Aktualisierung).
+3. Fuer einen eigenen Slider einen Eintrag in `SLIDER_SPECS` mit `offset`/`count`
+   ergaenzen.
 
 ## Einmalige Einrichtung (GitHub)
 Repo -> **Settings -> Secrets and variables -> Actions -> New repository secret**:
