@@ -91,6 +91,7 @@ const SLIDER_SPECS = {
   'anlagenbau-logistik': { offset: 6, count: 4 },
   'prototypen-logistik': { offset: 7, count: 4 },
   'druckerei-logistik': { offset: 2, count: 4 },
+  'messelogistik': { offset: 5, count: 4 },
   'kontakt': { offset: 3, count: 4 },
 };
 
