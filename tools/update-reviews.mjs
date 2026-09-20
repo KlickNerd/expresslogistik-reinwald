@@ -43,7 +43,7 @@ if (existsSync(ENV_FILE)) {
 }
 const DATA_FILE = join(ROOT, 'data', 'reviews.json');
 const PAGES = [
-  'kurierdienst', 'index', 'leistungen',
+  'kurierdienst', 'index', 'leistungen', 'faq', 'kontakt',
   // Leistungsseiten (Standalone)
   'gefahrguttransport', 'palettenversand', 'transport-mit-hebebuehne', 'maschinentransport',
   'sperrguttransport', 'eiltransporte', 'lkw-transporte', 'express-kurierdienst-fuhrpark',
@@ -91,6 +91,7 @@ const SLIDER_SPECS = {
   'anlagenbau-logistik': { offset: 6, count: 4 },
   'prototypen-logistik': { offset: 7, count: 4 },
   'druckerei-logistik': { offset: 2, count: 4 },
+  'kontakt': { offset: 3, count: 4 },
 };
 
 const INJECT_ONLY = process.argv.includes('--inject-only');
