@@ -1,3 +1,6 @@
+<!doctype html>
+<html lang="de">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Kurierdienst Hub | Musterseite Redesign -->
@@ -763,6 +766,32 @@ th.hl{background:var(--green);color:#fff}
 }
 </script>
 <!-- ================= GLOBAL HEADER ================= -->
+<style>
+/* ===== Stadtseiten-Hero: eigenes Design (Standortkarte statt Foto) ===== */
+.hero.city{clip-path:polygon(0 0,100% 0,100% calc(100% - 60px),0 100%)}
+.hero.city .hero-visual::before{display:none}
+.hero.city .hero-visual{min-height:0}
+.loc-card{position:relative;z-index:1;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.13);border-radius:20px;padding:26px 26px 22px;box-shadow:0 24px 50px rgba(0,0,0,.35)}
+.loc-card .loc-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.loc-card .pinwrap{width:56px;height:56px;border-radius:14px;background:rgba(79,168,50,.18);border:1px solid rgba(79,168,50,.45);display:flex;align-items:center;justify-content:center;flex:none}
+.loc-card .pinwrap svg{width:30px;height:30px}
+.loc-card .loc-head b{display:block;color:#fff;font-size:22px;line-height:1.15;font-weight:900}
+.loc-card .loc-head em{color:#aeb8cf;font-size:14px;font-weight:700;font-style:normal}
+.loc-rows{display:flex;flex-direction:column;gap:11px}
+.loc-row{display:flex;align-items:center;gap:12px;color:#e8ecf4;font-size:15.5px;font-weight:700}
+.loc-row .ck{width:26px;height:26px;border-radius:8px;background:var(--green);flex:none;display:flex;align-items:center;justify-content:center}
+.loc-row .ck svg{width:15px;height:15px}
+.loc-districts{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);color:#aeb8cf;font-size:13.5px;line-height:1.7}
+.loc-districts b{color:#cdd5e4;font-weight:800}
+/* Mobile Anruf-Leiste */
+.callbar{display:none}
+@media(max-width:760px){.callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--navy);padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px;box-shadow:0 -4px 18px rgba(22,32,56,.25)}.callbar a{flex:1;text-align:center;padding:13px 10px;font-size:15.5px}body{padding-bottom:74px}}
+/* Statische Referenz-Kacheln */
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px}
+@media(max-width:820px){.quotes{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
 <header class="siteheader">
   <div class="utilbar">
     <div class="wrap tb-row">
@@ -838,30 +867,6 @@ th.hl{background:var(--green);color:#fff}
     </div>
   </div>
 </header>
-<style>
-/* ===== Stadtseiten-Hero: eigenes Design (Standortkarte statt Foto) ===== */
-.hero.city{clip-path:polygon(0 0,100% 0,100% calc(100% - 60px),0 100%)}
-.hero.city .hero-visual::before{display:none}
-.hero.city .hero-visual{min-height:0}
-.loc-card{position:relative;z-index:1;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.13);border-radius:20px;padding:26px 26px 22px;box-shadow:0 24px 50px rgba(0,0,0,.35)}
-.loc-card .loc-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
-.loc-card .pinwrap{width:56px;height:56px;border-radius:14px;background:rgba(79,168,50,.18);border:1px solid rgba(79,168,50,.45);display:flex;align-items:center;justify-content:center;flex:none}
-.loc-card .pinwrap svg{width:30px;height:30px}
-.loc-card .loc-head b{display:block;color:#fff;font-size:22px;line-height:1.15;font-weight:900}
-.loc-card .loc-head em{color:#aeb8cf;font-size:14px;font-weight:700;font-style:normal}
-.loc-rows{display:flex;flex-direction:column;gap:11px}
-.loc-row{display:flex;align-items:center;gap:12px;color:#e8ecf4;font-size:15.5px;font-weight:700}
-.loc-row .ck{width:26px;height:26px;border-radius:8px;background:var(--green);flex:none;display:flex;align-items:center;justify-content:center}
-.loc-row .ck svg{width:15px;height:15px}
-.loc-districts{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);color:#aeb8cf;font-size:13.5px;line-height:1.7}
-.loc-districts b{color:#cdd5e4;font-weight:800}
-/* Mobile Anruf-Leiste */
-.callbar{display:none}
-@media(max-width:760px){.callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--navy);padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px;box-shadow:0 -4px 18px rgba(22,32,56,.25)}.callbar a{flex:1;text-align:center;padding:13px 10px;font-size:15.5px}body{padding-bottom:74px}}
-/* Statische Referenz-Kacheln */
-.quotes{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px}
-@media(max-width:820px){.quotes{grid-template-columns:1fr}}
-</style>
 <!-- ================= HERO (Stadtseite) ================= -->
 <header class="hero city">
   <div class="wrap">
@@ -1435,3 +1440,5 @@ th.hl{background:var(--green);color:#fff}
   <a class="btn btn-green" href="https://expresslogistik-reinwald.de/direktanfrage-kurier/">Direktanfrage</a>
   <a class="btn btn-outline-light" href="tel:+4998347922033"><svg class="ic-ph" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>Jetzt anrufen</a>
 </nav>
+</body>
+</html>

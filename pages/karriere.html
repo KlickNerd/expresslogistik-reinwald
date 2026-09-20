@@ -1,3 +1,6 @@
+<!doctype html>
+<html lang="de">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Startseite | Musterseite Redesign v2 -->
@@ -829,6 +832,45 @@ ul.checks li strong{color:var(--navy)}
 }
 </script>
 <!-- ================= GLOBAL HEADER ================= -->
+<style>
+  /* ====== Karriere (kar-) ====== */
+  .kar-hero{background:radial-gradient(760px 400px at 90% -18%, rgba(79,168,50,.16), transparent 62%),linear-gradient(135deg,#162038 0%,#101b33 60%,#0d1730 100%);color:#fff;padding:30px 0 44px}
+  .kar-hero .crumbs,.kar-hero .crumbs a{color:rgba(255,255,255,.82);text-decoration:none;font-size:14px}
+  .kar-hero .pill{margin-top:14px}
+  .kar-hero h1{color:#fff;margin:16px 0 0;font-size:clamp(30px,4.4vw,48px);line-height:1.1;letter-spacing:-.01em}
+  .kar-hero h1 .accent{color:var(--green,#4FA832)}
+  .kar-sub{color:#cfd6e2;max-width:720px;margin:16px 0 0;font-size:17.5px;line-height:1.65}
+  .kar-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+
+  .job{background:var(--white);border:1px solid var(--grey-line);border-radius:var(--radius);box-shadow:0 10px 30px rgba(12,22,44,.06);padding:30px 32px;margin-top:8px;border-left:6px solid var(--green)}
+  .job-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .job-badge{display:inline-block;background:var(--green-light);color:var(--green-dark);font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+  .job-head h3{margin:12px 0 4px;font-size:24px;color:var(--navy)}
+  .job-loc{color:var(--text-soft);font-size:14.5px;font-weight:600;margin:0}
+  .job-head .btn{flex:none;white-space:nowrap}
+  .job-intro{color:var(--text);font-size:16.5px;line-height:1.6;margin:20px 0 0;max-width:820px}
+  .job-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin:26px 0 0;border-top:1px solid var(--grey-line);padding-top:24px}
+  .job-col h4{margin:0 0 12px;font-size:16px;color:var(--navy);display:flex;align-items:center;gap:9px}
+  .job-col h4 .dot{width:8px;height:8px;border-radius:50%;background:var(--green);flex:none}
+  .job-col ul{list-style:none;margin:0;padding:0}
+  .job-col li{position:relative;padding:0 0 11px 26px;font-size:14.5px;line-height:1.5;color:var(--text)}
+  .job-col li svg{position:absolute;left:0;top:3px;width:16px;height:16px;color:var(--green)}
+  .job-foot{margin:26px 0 0;border-top:1px solid var(--grey-line);padding-top:22px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .job-foot p{margin:0;color:var(--text-soft);font-size:15px;line-height:1.6;max-width:640px}
+  .job-foot p a{color:var(--green-dark);font-weight:700}
+  .job-foot .btn{flex:none}
+
+  .kar-init{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;background:var(--white);border:1px solid var(--grey-line);border-radius:var(--radius);box-shadow:0 10px 30px rgba(12,22,44,.05);padding:32px 34px}
+  .kar-init h2{margin:0 0 8px;font-size:24px;color:var(--navy)}
+  .kar-init p{margin:0;color:var(--text-soft);font-size:15.5px;line-height:1.6;max-width:640px}
+  .kar-init p a{color:var(--green-dark);font-weight:700}
+  .kar-init .btn{flex:none}
+
+  @media(max-width:860px){.job-cols{grid-template-columns:1fr;gap:22px}}
+  @media(max-width:640px){.job{padding:24px 20px}.job-head .btn{width:100%;justify-content:center}}
+</style>
+</head>
+<body>
 <header class="siteheader">
   <div class="utilbar">
     <div class="wrap tb-row">
@@ -904,43 +946,6 @@ ul.checks li strong{color:var(--navy)}
     </div>
   </div>
 </header>
-<style>
-  /* ====== Karriere (kar-) ====== */
-  .kar-hero{background:radial-gradient(760px 400px at 90% -18%, rgba(79,168,50,.16), transparent 62%),linear-gradient(135deg,#162038 0%,#101b33 60%,#0d1730 100%);color:#fff;padding:30px 0 44px}
-  .kar-hero .crumbs,.kar-hero .crumbs a{color:rgba(255,255,255,.82);text-decoration:none;font-size:14px}
-  .kar-hero .pill{margin-top:14px}
-  .kar-hero h1{color:#fff;margin:16px 0 0;font-size:clamp(30px,4.4vw,48px);line-height:1.1;letter-spacing:-.01em}
-  .kar-hero h1 .accent{color:var(--green,#4FA832)}
-  .kar-sub{color:#cfd6e2;max-width:720px;margin:16px 0 0;font-size:17.5px;line-height:1.65}
-  .kar-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
-
-  .job{background:var(--white);border:1px solid var(--grey-line);border-radius:var(--radius);box-shadow:0 10px 30px rgba(12,22,44,.06);padding:30px 32px;margin-top:8px;border-left:6px solid var(--green)}
-  .job-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap}
-  .job-badge{display:inline-block;background:var(--green-light);color:var(--green-dark);font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
-  .job-head h3{margin:12px 0 4px;font-size:24px;color:var(--navy)}
-  .job-loc{color:var(--text-soft);font-size:14.5px;font-weight:600;margin:0}
-  .job-head .btn{flex:none;white-space:nowrap}
-  .job-intro{color:var(--text);font-size:16.5px;line-height:1.6;margin:20px 0 0;max-width:820px}
-  .job-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin:26px 0 0;border-top:1px solid var(--grey-line);padding-top:24px}
-  .job-col h4{margin:0 0 12px;font-size:16px;color:var(--navy);display:flex;align-items:center;gap:9px}
-  .job-col h4 .dot{width:8px;height:8px;border-radius:50%;background:var(--green);flex:none}
-  .job-col ul{list-style:none;margin:0;padding:0}
-  .job-col li{position:relative;padding:0 0 11px 26px;font-size:14.5px;line-height:1.5;color:var(--text)}
-  .job-col li svg{position:absolute;left:0;top:3px;width:16px;height:16px;color:var(--green)}
-  .job-foot{margin:26px 0 0;border-top:1px solid var(--grey-line);padding-top:22px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-  .job-foot p{margin:0;color:var(--text-soft);font-size:15px;line-height:1.6;max-width:640px}
-  .job-foot p a{color:var(--green-dark);font-weight:700}
-  .job-foot .btn{flex:none}
-
-  .kar-init{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;background:var(--white);border:1px solid var(--grey-line);border-radius:var(--radius);box-shadow:0 10px 30px rgba(12,22,44,.05);padding:32px 34px}
-  .kar-init h2{margin:0 0 8px;font-size:24px;color:var(--navy)}
-  .kar-init p{margin:0;color:var(--text-soft);font-size:15.5px;line-height:1.6;max-width:640px}
-  .kar-init p a{color:var(--green-dark);font-weight:700}
-  .kar-init .btn{flex:none}
-
-  @media(max-width:860px){.job-cols{grid-template-columns:1fr;gap:22px}}
-  @media(max-width:640px){.job{padding:24px 20px}.job-head .btn{width:100%;justify-content:center}}
-</style>
 
 <!-- ================= HERO ================= -->
 <section class="kar-hero">
@@ -1112,3 +1117,5 @@ ul.checks li strong{color:var(--navy)}
   <a class="btn btn-green" href="https://expresslogistik-reinwald.de/direktanfrage-kurier/">Direktanfrage</a>
   <a class="btn btn-outline-light" href="tel:+4998347922033"><svg class="ic-ph" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>Jetzt anrufen</a>
 </nav>
+</body>
+</html>
