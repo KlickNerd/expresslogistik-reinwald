@@ -28,7 +28,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
+import { dirname, join, basename } from 'node:path';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -48,6 +48,10 @@ const PAGES = [
   'gefahrguttransport', 'palettenversand', 'transport-mit-hebebuehne', 'maschinentransport',
   'sperrguttransport', 'eiltransporte', 'lkw-transporte', 'express-kurierdienst-fuhrpark',
   'pharmatransporte', 'sondertransporte', 'messelogistik',
+  // Branchen-/Money-Pages (neues Design, mit rotierendem Slider)
+  'pharmalogistik', 'automotive-logistik', 'maschinenbau-logistik', 'anlagenbau-logistik',
+  'kunststoff-logistik', 'werkzeugbau-logistik', 'luft-und-raumfahrt-logistik',
+  'prototypen-logistik', 'druckerei-logistik',
   // Einzugsgebiet-Uebersicht (URL /kurierdienst-deutschland/)
   'kurierdienst-deutschland',
   // Stadtseiten (neu im Design)
@@ -73,7 +77,21 @@ const PAGES = [
   'kurierdienst-kurierdienst-deutschlandweit', 'kurierdienst-europaweiter-kurierdienst',
   'kurierdienst-kurierservice', 'kurierdienst-sonderfahrten-kurierdienst',
 ].map((n) => join(ROOT, 'pages', `${n}.html`));
-const SLIDER_PAGE = join(ROOT, 'pages', 'kurierdienst.html');
+// Seiten mit Rezensions-Slider (zwischen den REVIEWS-Markern). kurierdienst.html
+// zeigt den vollen Satz; die Branchen-/Money-Pages je eine rotierte Auswahl mit
+// eigenem Offset, damit nicht ueberall dieselben Stimmen stehen.
+const SLIDER_SPECS = {
+  'kurierdienst': { offset: 0, count: 8 },
+  'pharmalogistik': { offset: 0, count: 4 },
+  'kunststoff-logistik': { offset: 1, count: 4 },
+  'automotive-logistik': { offset: 2, count: 4 },
+  'werkzeugbau-logistik': { offset: 3, count: 4 },
+  'maschinenbau-logistik': { offset: 4, count: 4 },
+  'luft-und-raumfahrt-logistik': { offset: 5, count: 4 },
+  'anlagenbau-logistik': { offset: 6, count: 4 },
+  'prototypen-logistik': { offset: 7, count: 4 },
+  'druckerei-logistik': { offset: 2, count: 4 },
+};
 
 const INJECT_ONLY = process.argv.includes('--inject-only');
 const API = 'https://api.dataforseo.com/v3/business_data/google/reviews';
@@ -88,6 +106,14 @@ const truncate = (s, n = 220) => {
   return t.slice(0, n).replace(/\s+\S*$/, '').trimEnd() + '…';
 };
 const stars = (r) => '★'.repeat(Math.max(1, Math.min(5, Math.round(r || 5))));
+// Rotiertes Fenster aus dem Rezensions-Pool (mit Umbruch), damit jede Seite
+// eine andere Auswahl echter Bewertungen zeigt.
+const rotate = (arr, offset = 0, size = arr.length) => {
+  if (!arr.length) return arr;
+  const out = [];
+  for (let i = 0; i < Math.min(size, arr.length); i++) out.push(arr[(offset + i) % arr.length]);
+  return out;
+};
 const initials = (name) => {
   const p = String(name).trim().split(/\s+/).filter(Boolean);
   return ((p[0]?.[0] || '') + (p.length > 1 ? p[p.length - 1][0] : '')).toUpperCase() || 'GK';
@@ -179,14 +205,15 @@ function buildCards(reviews) {
   }).join('\n');
 }
 
-async function injectPage(file, data, { slider }) {
+async function injectPage(file, data, sliderSpec) {
   let html = await readFile(file, 'utf8');
   const before = html;
   const count = data.count;
   const ratingLd = (Number(data.rating) || 5).toFixed(1);
 
-  if (slider) {
-    const cards = buildCards(data.reviews);
+  if (sliderSpec) {
+    const chosen = rotate(data.reviews, sliderSpec.offset || 0, sliderSpec.count || data.reviews.length);
+    const cards = buildCards(chosen);
     html = html.replace(
       /<!--REVIEWS_START-->[\s\S]*?<!--REVIEWS_END-->/,
       `<!--REVIEWS_START-->\n${cards}\n          <!--REVIEWS_END-->`
@@ -216,7 +243,7 @@ async function injectPage(file, data, { slider }) {
     catch (e) { console.error('! Fetch fehlgeschlagen, nutze vorhandene data/reviews.json:', e.message); }
   }
   for (const file of PAGES) {
-    await injectPage(file, data, { slider: file === SLIDER_PAGE });
+    await injectPage(file, data, SLIDER_SPECS[basename(file, '.html')] || null);
   }
   console.log('Fertig.');
 })().catch((e) => { console.error(e); process.exit(1); });
