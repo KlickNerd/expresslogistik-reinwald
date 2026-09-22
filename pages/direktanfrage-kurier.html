@@ -1289,6 +1289,8 @@ ul.checks li strong{color:var(--navy)}
     var extras_full=(extras.length?extras.join(', '):'keine')+(zusatzArr.length?' ('+zusatzArr.join(', ')+')':'');
     var deDate=function(s){var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(s||'');return m?m[3]+'.'+m[2]+'.'+m[1]:(s||'');};
     var ab_datum=v('ab_datum'), zu_datum=v('zu_datum');
+    var jetzt=new Date();
+    var gesendet_de=jetzt.toLocaleString('de-DE',{timeZone:'Europe/Berlin',day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'});
     return {
       positionen:positionen, extras:extras,
       positionen_text:positionen_text, extras_text:extras_text, extras_full:extras_full,
@@ -1296,7 +1298,7 @@ ul.checks li strong{color:var(--navy)}
       abholung:{plz:v('ab_plz'),ort:v('ab_ort'),land:v('ab_land'),datum:ab_datum,datum_de:deDate(ab_datum),uhrzeit_von:v('ab_von'),uhrzeit_bis:v('ab_bis')},
       zustellung:{plz:v('zu_plz'),ort:v('zu_ort'),land:v('zu_land'),datum:zu_datum,datum_de:deDate(zu_datum),uhrzeit_von:v('zu_von'),uhrzeit_bis:v('zu_bis')},
       kontakt:{firma:v('k_firma'),anrede:anrede,name:v('k_name'),strasse:v('k_strasse'),adresszusatz:v('k_zusatz'),plz:v('k_plz'),ort:v('k_ort'),land:v('k_land'),telefon:v('k_tel'),email:v('k_email'),referenz:v('k_ref'),anmerkungen:v('k_anm')},
-      meta:{quelle:'direktanfrage-kurier',gesendet:new Date().toISOString(),seite:location.href}
+      meta:{quelle:'direktanfrage-kurier',gesendet:jetzt.toISOString(),gesendet_de:gesendet_de,seite:location.href}
     };
   }
 
