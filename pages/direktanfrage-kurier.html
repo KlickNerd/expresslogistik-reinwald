@@ -1278,11 +1278,19 @@ ul.checks li strong{color:var(--navy)}
     var extras=[].slice.call(form.querySelectorAll('input[name="extras"]:checked')).map(function(c){return c.value;});
     var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
     var anrede=(form.querySelector('input[name="anrede"]:checked')||{}).value||'';
+    var positionen_text=positionen.map(function(p,i){
+      return '#'+(i+1)+': '+(p.anzahl||'?')+'x '+(p.ladungstraeger||'')+' '+(p.inhalt||'')
+        +' ('+(p.laenge_cm||'?')+'x'+(p.breite_cm||'?')+'x'+(p.hoehe_cm||'?')+' cm, '+(p.gewicht_kg||'?')+' kg, stapelbar: '+(p.stapelbar||'?')+')';
+    }).join('<br>')||'keine Position angegeben';
+    var extras_text=extras.length?extras.join(', '):'keine';
+    var deDate=function(s){var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(s||'');return m?m[3]+'.'+m[2]+'.'+m[1]:(s||'');};
+    var ab_datum=v('ab_datum'), zu_datum=v('zu_datum');
     return {
       positionen:positionen, extras:extras,
+      positionen_text:positionen_text, extras_text:extras_text,
       extras_details:{warenwert:v('warenwert'),gefahrgutpunkte:v('gefahrgutpunkte')},
-      abholung:{plz:v('ab_plz'),ort:v('ab_ort'),land:v('ab_land'),datum:v('ab_datum'),uhrzeit_von:v('ab_von'),uhrzeit_bis:v('ab_bis')},
-      zustellung:{plz:v('zu_plz'),ort:v('zu_ort'),land:v('zu_land'),datum:v('zu_datum'),uhrzeit_von:v('zu_von'),uhrzeit_bis:v('zu_bis')},
+      abholung:{plz:v('ab_plz'),ort:v('ab_ort'),land:v('ab_land'),datum:ab_datum,datum_de:deDate(ab_datum),uhrzeit_von:v('ab_von'),uhrzeit_bis:v('ab_bis')},
+      zustellung:{plz:v('zu_plz'),ort:v('zu_ort'),land:v('zu_land'),datum:zu_datum,datum_de:deDate(zu_datum),uhrzeit_von:v('zu_von'),uhrzeit_bis:v('zu_bis')},
       kontakt:{firma:v('k_firma'),anrede:anrede,name:v('k_name'),strasse:v('k_strasse'),adresszusatz:v('k_zusatz'),plz:v('k_plz'),ort:v('k_ort'),land:v('k_land'),telefon:v('k_tel'),email:v('k_email'),referenz:v('k_ref'),anmerkungen:v('k_anm')},
       meta:{quelle:'direktanfrage-kurier',gesendet:new Date().toISOString(),seite:location.href}
     };
