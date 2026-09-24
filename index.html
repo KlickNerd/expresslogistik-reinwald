@@ -790,6 +790,12 @@ ul.checks li strong{color:var(--navy)}
   }
   body{padding-bottom:74px}
 }
+
+/* == Ganze Karte klickbar (stretched link) == */
+.card{position:relative}
+.card .more::after{content:"";position:absolute;inset:0;z-index:1}
+.card a:not(.more){position:relative;z-index:2}
+.card:has(.more){cursor:pointer}
 </style>
 <script type="application/ld+json">
 {
