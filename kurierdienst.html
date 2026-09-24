@@ -568,6 +568,9 @@ a.industry{color:inherit;text-decoration:none;display:block}
 .card .more::after{content:"";position:absolute;inset:0;z-index:1}
 .card a:not(.more){position:relative;z-index:2}
 .card:has(.more){cursor:pointer}
+
+/* 6-Kachel-Grid auf Desktop ausgewogen (3+3 statt 5+1) */
+@media(min-width:1021px){.industry-grid:has(> :last-child:nth-child(6)){grid-template-columns:repeat(3,1fr)}}
 </style>
 <script type="application/ld+json">
 {
