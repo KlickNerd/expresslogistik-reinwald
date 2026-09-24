@@ -568,6 +568,31 @@ a.industry{color:inherit;text-decoration:none;display:block}
 .card .more::after{content:"";position:absolute;inset:0;z-index:1}
 .card a:not(.more){position:relative;z-index:2}
 .card:has(.more){cursor:pointer}
+
+/* == Kosten-Sektion (Faktoren + Preis-Band) == */
+.kt-subhead{font-size:13px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:#162038;text-align:center;margin:22px 0 16px}
+.kt-factors{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.kt-factor{background:#fff;border:1px solid #e3e8ef;border-radius:14px;padding:18px 16px;text-align:center;box-shadow:0 2px 10px rgba(22,32,56,.05)}
+.kt-factor .fi{width:46px;height:46px;margin:0 auto 12px;border-radius:13px;background:#eaf6e4;display:flex;align-items:center;justify-content:center}
+.kt-factor .fi svg{width:22px;height:22px}
+.kt-factor b{display:block;color:#162038;font-size:15.5px;margin-bottom:4px}
+.kt-factor p{margin:0;font-size:13px;color:#5a6478;line-height:1.5}
+.kt-band{margin-top:26px;background:radial-gradient(900px 320px at 90% -10%,rgba(79,168,50,.20),transparent 60%),linear-gradient(150deg,#162038 0%,#101b33 100%);border-radius:22px;padding:32px 34px;color:#fff;box-shadow:0 22px 60px rgba(22,32,56,.16)}
+.kt-promise{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:center}
+.kt-pleft .k{font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:#9fe08a}
+.kt-pleft h3{margin:10px 0 12px;font-size:26px;font-weight:900;color:#fff;line-height:1.2;letter-spacing:-.3px}
+.kt-pleft p{margin:0 0 22px;font-size:15px;color:#c8d2e4;line-height:1.6}
+.kt-btn{display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:15px;text-decoration:none;border-radius:11px;padding:14px 28px;background:#368020;color:#fff;box-shadow:0 6px 18px rgba(79,168,50,.35);transition:background .15s}
+.kt-btn:hover{background:#2f6e1c}
+.kt-vitem{display:flex;gap:13px;align-items:flex-start;padding:15px 0;border-top:1px solid rgba(255,255,255,.12)}
+.kt-vitem:first-child{border-top:0;padding-top:0}
+.kt-vitem .ck{flex:none;width:30px;height:30px;border-radius:9px;background:rgba(79,168,50,.22);display:flex;align-items:center;justify-content:center}
+.kt-vitem .ck svg{width:17px;height:17px;stroke:#9fe08a;fill:none}
+.kt-vitem b{display:block;color:#fff;font-size:15px;margin-bottom:3px}
+.kt-vitem span{font-size:13.5px;color:#b9c3d6;line-height:1.5}
+.kt-fine{font-size:13px;color:#5a6478;line-height:1.55;margin:20px 2px 0;text-align:center}
+.kt-fine a{color:#3d8526;font-weight:600}
+@media(max-width:820px){.kt-promise{grid-template-columns:1fr;gap:22px}}
 </style>
 <script type="application/ld+json">
 {
@@ -1020,24 +1045,28 @@ a.industry{color:inherit;text-decoration:none;display:block}
       <h2>Was kostet ein Pharmatransport?</h2>
       <p class="lead">Pharmatransporte sind sensibler als Standardfahrten, deshalb kalkulieren wir jeden Auftrag individuell. Nach der Klassifizierung Ihrer Sendung erhalten Sie in rund 10 Minuten einen schriftlichen Festpreis, inklusive Equipment und Dokumentation.</p>
     </div>
-    <div class="cards">
-      <article class="card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4FA832" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.5a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0z"></path><path d="M10 9h4"></path></svg></div>
-        <h3 style="font-size:20px">Temperaturbereich &amp; Equipment</h3>
-        <p>Ob aktive Kühlbox, Kühlfahrzeug oder Trockeneis nötig ist, richtet sich nach Produkt und geforderter Temperatur.</p>
-      </article>
-      <article class="card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4FA832" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h13M12 5l7 7-7 7"></path></svg></div>
-        <h3 style="font-size:20px">Strecke</h3>
-        <p>Kilometer von der Abholadresse bis zum Empfänger, innerdeutsch oder grenzüberschreitend in der EU.</p>
-      </article>
-      <article class="card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4FA832" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg></div>
-        <h3 style="font-size:20px">Zeitfenster &amp; Anforderungen</h3>
-        <p>Direktfahrt am gleichen Tag, Begleitfahrer oder verkürzte Anlieferung kommen bei Bedarf hinzu.</p>
-      </article>
+    <p class="kt-subhead">Woraus sich Ihr Preis zusammensetzt</p>
+    <div class="kt-factors">
+      <div class="kt-factor"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="#4FA832" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.5a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0z"></path><path d="M10 9h4"></path></svg></span><b>Temperaturbereich &amp; Equipment</b><p>Ob aktive Kühlbox, Kühlfahrzeug oder Trockeneis nötig ist, richtet sich nach Produkt und geforderter Temperatur.</p></div>
+      <div class="kt-factor"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="#4FA832" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h13M12 5l7 7-7 7"></path></svg></span><b>Strecke</b><p>Kilometer von der Abholadresse bis zum Empfänger, innerdeutsch oder grenzüberschreitend in der EU.</p></div>
+      <div class="kt-factor"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="#4FA832" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg></span><b>Zeitfenster &amp; Anforderungen</b><p>Direktfahrt am gleichen Tag, Begleitfahrer oder verkürzte Anlieferung kommen bei Bedarf hinzu.</p></div>
     </div>
-    <p style="font-size:14px;color:var(--text-soft)">Zur Orientierung: eine innerdeutsche Kühlketten-Direktfahrt (2 bis 8 °C, Sprinter) liegt bei etwa 2,20 bis 2,80 EUR/km netto (Richtwert, unverbindlich, Stand August 2026). Ihren verbindlichen Festpreis nennen wir nach Klassifizierung der Sendung. Hintergründe im Ratgeber <a href="https://expresslogistik-reinwald.de/ratgeber/was-kostet-ein-kurierdienst/">Was kostet ein Kurierdienst</a>.</p>
+    <div class="kt-band">
+      <div class="kt-promise">
+        <div class="kt-pleft">
+          <span class="k">Ihr Preis</span>
+          <h3>Verbindlicher Festpreis in rund 10 Minuten</h3>
+          <p>Nach Ihrer Direktanfrage nennen wir Ihnen einen festen Preis, unverbindlich und ohne Zonentabelle. Sagen Sie zu, ist der Fahrer in 60 bis 120 Minuten bei Ihnen und lädt.</p>
+          <a class="kt-btn" href="https://expresslogistik-reinwald.de/direktanfrage-kurier/">Jetzt Festpreis anfragen →</a>
+        </div>
+        <div class="kt-pright">
+          <div class="kt-vitem"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span><div><b>Vorab und verbindlich</b><span>Ihr Festpreis steht schon vor der Beauftragung fest.</span></div></div>
+          <div class="kt-vitem"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span><div><b>Keine versteckten Kosten</b><span>Keine Zonentabelle, keine Zuschläge, keine Nachberechnung.</span></div></div>
+          <div class="kt-vitem"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span><div><b>Unverbindlich</b><span>Sie entscheiden in Ruhe, ganz ohne Verpflichtung.</span></div></div>
+        </div>
+      </div>
+    </div>
+    <p class="kt-fine">Individuelle Kalkulation, Festpreis vor der Beauftragung, unverbindlich. Zeiten sind Richtwerte, Abholung deutschland- und europaweit, 24/7. Hintergründe im Ratgeber <a href="https://expresslogistik-reinwald.de/ratgeber/was-kostet-ein-kurierdienst/">Was kostet ein Kurierdienst</a>.</p>
   </div>
 </section>
 <!-- ================= ABLAUF ================= -->
