@@ -292,6 +292,44 @@
     .hero{padding:34px 0 110px}
     .author{flex-direction:column}
   }
+
+/* == Rechner-Styles (KlickNerd) == */
+.calc{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 6px 22px rgba(22,32,56,.07);overflow:hidden;margin:26px 0}
+.calc-head{display:flex;align-items:center;gap:10px;background:var(--navy);color:#fff;font-weight:800;font-size:16px;padding:15px 20px}
+.calc-head .ic{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:var(--green);color:#fff;font-weight:900;font-size:15px;flex:none}
+.calc>h3{margin:0;background:var(--navy);color:#fff;font-size:16px;font-weight:800;padding:15px 20px}
+.calc-body{padding:2px 20px}
+.calc .fields{padding:16px 20px 0}
+.calc .row{display:grid;grid-template-columns:1fr 190px;gap:10px 18px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}
+.calc .row:last-child{border-bottom:0}
+.calc .field{display:flex;flex-direction:column;gap:6px;padding:0 0 14px}
+.calc .row-label,.calc .row>label,.calc .field>label{display:flex;flex-direction:column;gap:2px;font-size:14.5px;color:var(--navy);font-weight:700}
+.calc .row-label b{font-weight:700;color:var(--navy)}
+.calc .row-label span,.calc label small{font-weight:400;font-size:12.5px;color:var(--muted)}
+.calc input[type=number],.calc input[type=text],.calc select{width:100%;font:inherit;font-size:15px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;transition:border-color .15s,box-shadow .15s;-webkit-appearance:none;appearance:none}
+.calc select{background-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='12'%20height='8'%20viewBox='0%200%2012%208'%3E%3Cpath%20fill='%236b7385'%20d='M1%201l5%205%205-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:34px}
+.calc input:focus,.calc select:focus{outline:0;border-color:var(--green);box-shadow:0 0 0 3px rgba(79,168,50,.18)}
+.calc .check-row{display:flex}
+.calc input[type=checkbox]{width:22px;height:22px;accent-color:var(--green);cursor:pointer}
+.calc button{margin:16px 20px 4px;display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;font-weight:800;font-size:15px;border:0;border-radius:10px;padding:11px 22px;cursor:pointer;transition:background .15s,box-shadow .15s}
+.calc button:hover{background:var(--green-dark);box-shadow:0 4px 14px rgba(79,168,50,.3)}
+.calc .result{display:flex;flex-wrap:wrap;gap:10px;background:var(--navy-tint);border-top:1px solid var(--line);padding:18px 20px}
+.calc .r-item{flex:1;min-width:120px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-align:center}
+.calc .r-item:last-child{border-color:var(--green);box-shadow:0 3px 12px rgba(79,168,50,.14)}
+.calc .r-val{font-size:23px;font-weight:900;color:var(--navy);line-height:1.1}
+.calc .r-item:last-child .r-val{color:var(--green-dark)}
+.calc .r-val small{font-size:15px;font-weight:800;color:var(--muted)}
+.calc .r-lab{margin-top:5px;font-size:12.5px;color:var(--muted);line-height:1.35}
+.calc .result .headline{width:100%;font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--green-dark)}
+.calc .result .big{width:100%;font-size:20px;font-weight:900;color:var(--navy);line-height:1.25}
+.calc .result>p{width:100%;margin:0;font-size:14.5px;color:var(--ink);line-height:1.55}
+.calc .out{background:var(--navy-tint);border-top:1px solid var(--line);padding:16px 20px;margin:0;font-size:14.5px;color:var(--ink);line-height:1.55}
+.calc .out:empty{display:none}
+.calc .out b{color:var(--navy)}
+.calc .hint{font-size:13px;color:var(--muted);line-height:1.55;padding:13px 20px;margin:0}
+.calc>p.hint{padding:0 20px 4px}
+@media(max-width:560px){.calc .row{grid-template-columns:1fr;gap:6px}.calc .result{flex-direction:column}}
+
 </style>
 <!-- ============ HERO ============ -->
 </head>
@@ -661,6 +699,28 @@ function init(){var b=document.getElementById("cookieConsent");if(!b)return;var 
 b.addEventListener("click",function(e){var t=e.target.closest("[data-cc]");if(t){save(t.getAttribute("data-cc")==="all")}});
 document.querySelectorAll("[data-cc-open]").forEach(function(el){el.addEventListener("click",function(e){e.preventDefault();b.hidden=false})})}
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",init)}else{init()}})();
+</script>
+<script>
+/* Transportkosten-Rechner (Richtwerte) */
+(function(){
+  var km=document.getElementById('tk-km'),veh=document.getElementById('tk-veh'),rate=document.getElementById('tk-rate'),wait=document.getElementById('tk-wait'),exp=document.getElementById('tk-express');
+  if(!km||!veh||!rate) return;
+  var maut={sprinter:0,planensprinter:0,lkw75:0.17,lkw12:0.22,sattel:0.32};
+  function fmt(n){return Math.round(n).toLocaleString('de-DE');}
+  function calc(){
+    var k=parseFloat(km.value)||0,r=parseFloat(rate.value)||0;
+    var base=k>0?Math.max(k*r,90):0;
+    var toll=k*0.8*(maut[veh.value]||0);
+    var w=(parseFloat(wait.value)||0)*60;
+    var e=(exp&&exp.checked)?base*0.25:0;
+    var total=base+toll+w+e;
+    document.getElementById('tk-base').innerHTML=fmt(base)+' <small>\u20AC</small>';
+    document.getElementById('tk-toll').innerHTML=fmt(toll)+' <small>\u20AC</small>';
+    document.getElementById('tk-total').innerHTML=fmt(total)+' <small>\u20AC</small>';
+  }
+  ['input','change'].forEach(function(ev){[km,veh,rate,wait,exp].forEach(function(el){if(el)el.addEventListener(ev,calc);});});
+  calc();
+})();
 </script>
 </body>
 </html>
