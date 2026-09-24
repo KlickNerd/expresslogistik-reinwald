@@ -562,6 +562,12 @@ th.hl{background:var(--green);color:#fff}
 }
 
 a.industry{color:inherit;text-decoration:none;display:block}
+
+/* == Ganze Karte klickbar (stretched link) == */
+.card{position:relative}
+.card .more::after{content:"";position:absolute;inset:0;z-index:1}
+.card a:not(.more){position:relative;z-index:2}
+.card:has(.more){cursor:pointer}
 </style>
 <script type="application/ld+json">
 {
