@@ -686,5 +686,25 @@ b.addEventListener("click",function(e){var t=e.target.closest("[data-cc]");if(t)
 document.querySelectorAll("[data-cc-open]").forEach(function(el){el.addEventListener("click",function(e){e.preventDefault();b.hidden=false})})}
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",init)}else{init()}})();
 </script>
+<script>
+/* Stillstandskosten-Rechner */
+(function(){
+  function g(i){return document.getElementById(i);}
+  var p=g('ms-personal'),d=g('ms-db'),f=g('ms-fix'),du=g('ms-dauer'),fo=g('ms-folge');
+  if(!p) return;
+  function n(x){return parseFloat(x&&x.value)||0;}
+  function fmt(v){return Math.round(v).toLocaleString('de-DE');}
+  function calc(){
+    var stunde=n(p)+n(d)+n(f);
+    var basis=stunde*n(du);
+    var gesamt=basis*((fo&&fo.checked)?1.4:1);
+    g('ms-stunde').innerHTML=fmt(stunde)+' <small>€</small>';
+    g('ms-basis').innerHTML=fmt(basis)+' <small>€</small>';
+    g('ms-gesamt').innerHTML=fmt(gesamt)+' <small>€</small>';
+  }
+  ['input','change'].forEach(function(ev){[p,d,f,du,fo].forEach(function(el){if(el)el.addEventListener(ev,calc);});});
+  calc();
+})();
+</script>
 </body>
 </html>

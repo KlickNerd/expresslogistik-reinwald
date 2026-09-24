@@ -686,6 +686,17 @@
 .cc-pri{background:#4FA832;color:#fff}
 .cc-pri:hover{background:#438e2b}
 @media(max-width:640px){.cc-actions{width:100%}.cc-btn{flex:1}}
+
+/* == Rechner Lademeter-spezifisch == */
+.calc .row:has(.row-ldm){grid-template-columns:1fr 110px auto}
+.calc .row-ldm{font-size:12.5px;color:var(--muted);white-space:nowrap;align-self:center;text-align:right}
+.calc .custom-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.calc .custom-grid label{display:block;font-size:12.5px;color:var(--muted);margin-bottom:4px}
+.calc .stack-row{display:flex;align-items:center;gap:12px;padding:13px 0;border-top:1px solid var(--line)}
+.calc .stack-row label{font-size:14.5px;color:var(--navy);white-space:nowrap}
+.calc .stack-row select{flex:1;max-width:300px}
+.calc .vehicle{background:var(--green-tint);border-top:1px solid var(--line);padding:14px 20px;font-size:14px;color:var(--ink);line-height:1.5}
+@media(max-width:560px){.calc .row:has(.row-ldm){grid-template-columns:1fr auto}.calc .custom-grid{grid-template-columns:1fr 1fr}}
 </style>
 <script>
 (function(){var KEY="elr_consent";
@@ -696,6 +707,34 @@ function init(){var b=document.getElementById("cookieConsent");if(!b)return;var 
 b.addEventListener("click",function(e){var t=e.target.closest("[data-cc]");if(t){save(t.getAttribute("data-cc")==="all")}});
 document.querySelectorAll("[data-cc-open]").forEach(function(el){el.addEventListener("click",function(e){e.preventDefault();b.hidden=false})})}
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",init)}else{init()}})();
+</script>
+<script>
+/* Lademeter-Rechner */
+(function(){
+  function g(i){return document.getElementById(i);}
+  var ids=['c-euro','c-indu','c-halb','c-gibo','c-len','c-wid','c-cnt','c-stack'],el={};
+  ids.forEach(function(i){el[i]=g(i);});
+  if(!el['c-euro']) return;
+  function n(x){return parseFloat(x&&x.value)||0;}
+  function fmt(v,d){return v.toLocaleString('de-DE',{minimumFractionDigits:d,maximumFractionDigits:d});}
+  function calc(){
+    var stack=n(el['c-stack'])||1;
+    var floor=n(el['c-euro'])*0.40+n(el['c-indu'])*0.50+n(el['c-halb'])*0.20+n(el['c-gibo'])*0.43;
+    floor+=(n(el['c-len'])*n(el['c-wid'])/2.4)*n(el['c-cnt']);
+    var ldm=floor/stack, kg=Math.round(ldm*1750);
+    g('r-ldm').innerHTML=fmt(ldm,2)+' <small>LDM</small>';
+    g('r-kg').innerHTML=kg.toLocaleString('de-DE')+' <small>kg</small>';
+    var t;
+    if(ldm<=0){t='Geben Sie Ihre Ladungsträger ein, um eine Fahrzeugempfehlung zu erhalten.';}
+    else if(ldm<=2.5){t='Empfehlung: Sprinter oder Transporter. Bis rund 2,5 Lademeter passt Ihre Sendung in ein kleines Fahrzeug.';}
+    else if(ldm<=7){t='Empfehlung: 7,5-Tonner. Ihre Sendung belegt rund '+fmt(ldm,1)+' Lademeter.';}
+    else if(ldm<=13.6){t='Empfehlung: Sattelzug (Komplettladung bis 13,6 Lademeter). Ihre Sendung belegt rund '+fmt(ldm,1)+' Lademeter.';}
+    else{t='Ihre Sendung belegt rund '+fmt(ldm,1)+' Lademeter, mehr als eine Komplettladung. Bitte aufteilen oder als Sondertransport anfragen.';}
+    g('r-vehicle').textContent=t;
+  }
+  ['input','change'].forEach(function(ev){ids.forEach(function(i){if(el[i])el[i].addEventListener(ev,calc);});});
+  calc();
+})();
 </script>
 </body>
 </html>
