@@ -724,12 +724,13 @@ if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded"
     var ldm=floor/stack, kg=Math.round(ldm*1750);
     g('r-ldm').innerHTML=fmt(ldm,2)+' <small>LDM</small>';
     g('r-kg').innerHTML=kg.toLocaleString('de-DE')+' <small>kg</small>';
-    var t;
+    var t, both='Ihre Sendung belegt rund '+fmt(ldm,1)+' Lademeter bei '+kg.toLocaleString('de-DE')+' kg frachtpflichtig. ';
     if(ldm<=0){t='Geben Sie Ihre Ladungsträger ein, um eine Fahrzeugempfehlung zu erhalten.';}
-    else if(ldm<=2.5){t='Empfehlung: Sprinter oder Transporter. Bis rund 2,5 Lademeter passt Ihre Sendung in ein kleines Fahrzeug.';}
-    else if(ldm<=7){t='Empfehlung: 7,5-Tonner. Ihre Sendung belegt rund '+fmt(ldm,1)+' Lademeter.';}
-    else if(ldm<=13.6){t='Empfehlung: Sattelzug (Komplettladung bis 13,6 Lademeter). Ihre Sendung belegt rund '+fmt(ldm,1)+' Lademeter.';}
-    else{t='Ihre Sendung belegt rund '+fmt(ldm,1)+' Lademeter, mehr als eine Komplettladung. Bitte aufteilen oder als Sondertransport anfragen.';}
+    else{
+      var tiers=[{n:'Sprinter oder Transporter',l:2.5,k:1200},{n:'7,5-Tonner',l:7,k:2800},{n:'Sattelzug (Komplettladung)',l:13.6,k:24000}],rec=null;
+      for(var i=0;i<tiers.length;i++){if(ldm<=tiers[i].l&&kg<=tiers[i].k){rec=tiers[i].n;break;}}
+      t=rec?(both+'Empfehlung: '+rec+'.'):(both+'Das ist mehr als eine Komplettladung. Bitte aufteilen oder als Sondertransport anfragen.');
+    }
     g('r-vehicle').textContent=t;
   }
   ['input','change'].forEach(function(ev){ids.forEach(function(i){if(el[i])el[i].addEventListener(ev,calc);});});
