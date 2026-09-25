@@ -789,6 +789,31 @@ ul.checks li strong{color:var(--navy)}
   }
   body{padding-bottom:74px}
 }
+
+/* == Geschäftsführer-Statement == */
+.gf-card{display:grid;grid-template-columns:260px 1fr;gap:36px;background:#fff;border:1px solid var(--grey-line);border-radius:20px;padding:36px;box-shadow:0 10px 34px rgba(22,32,56,.07);position:relative;overflow:hidden;margin-top:30px}
+.gf-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--green),var(--green-dark))}
+.gf-person{text-align:center}
+.gf-person img{width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 8px 22px rgba(22,32,56,.18);display:block;margin:0 auto 16px}
+.gf-name{font-size:19px;font-weight:900;color:var(--navy)}
+.gf-role{font-size:14px;color:var(--text-soft);margin-top:2px}
+.gf-socials{margin-top:14px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.gf-socials a{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:var(--navy);text-decoration:none;background:#fff;border:1px solid var(--grey-line);padding:7px 14px;border-radius:999px;transition:border-color .15s,color .15s}
+.gf-socials a:hover{border-color:var(--green);color:var(--green-dark)}
+.gf-socials svg{width:15px;height:15px}
+.gf-body{align-self:center}
+.gf-quote{position:relative;font-size:19px;line-height:1.62;color:var(--text);font-weight:500}
+.gf-quote::before{content:"\201C";position:absolute;left:-6px;top:-36px;font-family:Georgia,serif;font-size:74px;line-height:1;color:var(--green-light)}
+.gf-quote b{color:var(--navy);font-weight:800}
+.gf-points{display:flex;flex-wrap:wrap;gap:10px 20px;margin:22px 0 24px}
+.gf-points span{display:inline-flex;align-items:center;gap:9px;font-size:14.5px;font-weight:600;color:var(--navy)}
+.gf-points span svg{width:19px;height:19px;flex:none}
+.gf-cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.gf-btn{display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:15px;text-decoration:none;border-radius:11px;padding:13px 26px;background:var(--green-cta);color:#fff;box-shadow:0 6px 18px rgba(79,168,50,.28);transition:background .15s}
+.gf-btn:hover{background:var(--green-cta-dark)}
+.gf-ghost{display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:15px;text-decoration:none;border-radius:11px;padding:13px 24px;color:var(--navy);border:1.5px solid var(--grey-line);background:#fff;transition:border-color .15s,color .15s}
+.gf-ghost:hover{border-color:var(--green);color:var(--green-dark)}
+@media(max-width:760px){.gf-card{grid-template-columns:1fr;gap:22px;padding:26px}.gf-quote::before{display:none}}
 </style>
 <script type="application/ld+json">
 {
@@ -1207,6 +1232,39 @@ ul.checks li strong{color:var(--navy)}
     <div class="gf-box">
       <img src="assets/img/reinwald-625.png" alt="Tobias Reinwald, Gesch&auml;ftsf&uuml;hrer der Expresslogistik Reinwald GmbH" loading="lazy" decoding="async">
       <div class="txt"><strong>Tobias Reinwald, Gesch&auml;ftsf&uuml;hrer</strong><p>Pers&ouml;nlich erreichbar, wenn eine Komponente termingenau auf die Baustelle muss: <a href="tel:+4998347922033">+49 (0) 9834 79220-33</a></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GESCHAEFTSFUEHRER ================= -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">Aus erster Hand</span>
+      <h2>Warum uns der Anlagenbau am Herzen liegt</h2>
+    </div>
+    <div class="gf-card">
+      <div class="gf-person">
+        <img src="assets/img/reinwald-625.png" alt="Tobias Reinwald, Geschäftsführer der Expresslogistik Reinwald GmbH" width="150" height="150" loading="lazy" decoding="async">
+        <div class="gf-name">Tobias Reinwald</div>
+        <div class="gf-role">Geschäftsführer</div>
+        <div class="gf-socials">
+          <a href="https://www.xing.com/profile/Tobias_Reinwald" target="_blank" rel="noopener" aria-label="Tobias Reinwald auf Xing"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.6 3.6c-.4.2-.8.7-1.6 2.1 0 0-4.1 7.3-4.2 7.5l2.7 4.9c.1.2.3.3.6.3h2.4c.3 0 .4-.2.3-.4l-2.7-4.9v-.1l4.2-7.5c.1-.2 0-.4-.3-.4h-2.4c-.6 0-.9.2-1.3.9z"></path><path d="M8.7 8.2H6.3c-.3 0-.4.2-.3.4l1.3 2.2v.1l-2 3.5c-.1.2 0 .4.3.4h2.4c.6 0 .9-.3 1.2-.9l2-3.6s-1.3-2.3-1.4-2.5c-.3-.6-.6-.6-1.1-.6z"></path></svg>Xing</a>
+          <a href="https://de.linkedin.com/in/tobias-reinwald-49792a290" target="_blank" rel="noopener" aria-label="Tobias Reinwald auf LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.3A1.8 1.8 0 1 1 6.5 4.7a1.8 1.8 0 0 1 0 3.6zM19 19h-3v-4.7c0-1.1 0-2.6-1.6-2.6s-1.8 1.2-1.8 2.5V19h-3v-9h2.9v1.2h0a3.2 3.2 0 0 1 2.9-1.6c3.1 0 3.7 2 3.7 4.7z"></path></svg>LinkedIn</a>
+        </div>
+      </div>
+      <div class="gf-body">
+        <div class="gf-quote">Im Anlagenbau entscheidet der Termin über alles. Steht die Montage still, weil ein Bauteil fehlt, kostet jede Stunde bares Geld. Genau dafür sind wir da: Wir holen Ihre Komponente sofort ab und fahren sie <b>ohne Umladung direkt zur Baustelle</b>, deutschland- und europaweit. Ein Ansprechpartner, ein Festpreis, kein Callcenter, an 365 Tagen im Jahr.</div>
+        <div class="gf-points">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="#4FA832" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>Ein persönlicher Ansprechpartner</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="#4FA832" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>Direktfahrt ohne Umladung</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="#4FA832" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>Festpreis in 10 Minuten</span>
+        </div>
+        <div class="gf-cta-row">
+          <a class="gf-btn" href="direktanfrage-kurier.html">Direktanfrage stellen</a>
+          <a class="gf-ghost" href="tel:+4998347922033">Anrufen: +49 (0) 9834 79220-33</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
