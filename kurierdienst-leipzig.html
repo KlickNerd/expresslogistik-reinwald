@@ -613,7 +613,7 @@ th.hl{background:var(--green);color:#fff}
 .loc-top{display:grid;grid-template-columns:1.35fr 1fr;gap:34px;align-items:stretch}
 .loc-copy>p{margin-top:0}
 .loc-lead{font-size:18.5px;line-height:1.6;color:var(--navy);font-weight:600}
-.loc-feature{display:flex;flex-direction:column;border-radius:18px;overflow:hidden;border:1px solid #e3e8ef;box-shadow:0 14px 40px rgba(22,32,56,.10);background:#fff}
+.loc-feature{display:flex;flex-direction:column;border-radius:18px;overflow:hidden;border:1px solid #e3e8ef;box-shadow:var(--shadow);background:#fff}
 .loc-feature .photo{margin:0;flex:1;min-height:210px}
 .loc-feature .photo img{width:100%;height:100%;object-fit:cover;display:block;border-radius:0;box-shadow:none}
 .loc-feature .loc-know{margin:0;max-width:none;background:linear-gradient(180deg,#f2f9ec,#eaf6e4);border:0;border-top:1px solid #d9e8cd;border-radius:0;padding:20px 22px}
@@ -621,14 +621,14 @@ th.hl{background:var(--green);color:#fff}
 .loc-panel{margin-top:34px;background:#f5f7fa;border:1px solid #e3e8ef;border-radius:20px;padding:30px 30px 32px}
 .loc-panel>h3{margin:0;font-size:20px;color:var(--navy)}
 .loc-uses{list-style:none;padding:0;margin:20px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.loc-uses li{display:flex;flex-direction:column;gap:12px;background:#fff;border:1px solid #e3e8ef;border-radius:14px;padding:20px;margin:0;box-shadow:0 3px 12px rgba(22,32,56,.05);line-height:1.5;font-size:14.5px;color:var(--text-soft)}
+.loc-uses li{display:flex;flex-direction:column;gap:12px;background:#fff;border:1px solid #e3e8ef;border-radius:14px;padding:20px;margin:0;line-height:1.5;font-size:14.5px;color:var(--text-soft)}
 .loc-ic{width:46px;height:46px;border-radius:12px;background:#eaf6e4;display:flex;align-items:center;justify-content:center;flex:none}
 .loc-ic svg{width:24px;height:24px;fill:none;stroke:#3d8526;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .loc-uses li strong{color:var(--navy);font-size:16px;display:block}
 .loc-bottom{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px;align-items:start}
-.loc-card{background:#fff;border:1px solid #e3e8ef;border-radius:16px;padding:26px 28px;box-shadow:0 3px 12px rgba(22,32,56,.05)}
+.loc-card{background:#fff;border:1px solid #e3e8ef;border-radius:16px;padding:26px 28px}
 .loc-card>h3{margin:0 0 12px;font-size:19px;color:var(--navy)}
-.loc-card>p{margin:0}
+.loc-card p{margin:0 0 14px}.loc-card p:last-child{margin-bottom:0}.loc-copy p{margin:0 0 14px}.loc-copy p:last-child{margin-bottom:0}
 .loc-chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0}
 .loc-chips .chip{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;color:#1e2a44;background:#f2f7ee;border:1px solid #d9e8cd;padding:7px 13px;border-radius:999px}
 .loc-chips .chip::before{content:"";width:6px;height:6px;border-radius:50%;background:#4FA832;flex:none}
@@ -1131,7 +1131,7 @@ th.hl{background:var(--green);color:#fff}
     <div class="loc-top">
       <div class="loc-copy">
         <p class="loc-lead">Leipzig ist zum Motor der ostdeutschen Industrie geworden: Im BMW Group Werk im Leipziger Norden laufen seit 2005 komplette Fahrzeuge vom Band, gleich nebenan baut Porsche Macan, Panamera und Cayenne, und beide Werke leben von punktgenauer Anlieferung im Takt der Produktion. Fehlt an einer Linie ein Bauteil, zählt jede Stunde: Ein Anruf, 60 bis 120 Minuten später ist das Teil unterwegs.</p>
-        <p>Dazu kommt die Luft: Am Flughafen Leipzig/Halle in Schkeuditz betreibt DHL sein europäisches Frachtdrehkreuz, Leipzig/Halle ist der zweitgrößte Frachtflughafen Deutschlands und arbeitet rund um die Uhr. Amazon, das Güterverkehrszentrum GVZ Leipzig und zahllose Logistiker im Nordraum hängen an diesen Warenströmen. Am Schkeuditzer Kreuz treffen A9 und A14 aufeinander, die A38 führt südlich um die Stadt, die A72 bindet Chemnitz an. Genau dort setzen wir an: Wo Stückgut und Sammelverkehre zu langsam sind, fährt unsere Direktfahrt. Sofortige Disposition, keine Umladung, Zustellung quer durch Deutschland oder Europa, so schnell es die Straße erlaubt, bei Bedarf auch als kompletter <a href="maschinentransport.html">Maschinentransport</a>. Hier braucht Logistik kein Depot in der Innenstadt, sondern schnelle Fahrzeuge an den richtigen Achsen.</p>
+        <p>Dazu kommt die Luft: Am Flughafen Leipzig/Halle in Schkeuditz betreibt DHL sein europäisches Frachtdrehkreuz, Leipzig/Halle ist der zweitgrößte Frachtflughafen Deutschlands und arbeitet rund um die Uhr. Amazon, das Güterverkehrszentrum GVZ Leipzig und zahllose Logistiker im Nordraum hängen an diesen Warenströmen.</p><p>Am Schkeuditzer Kreuz treffen A9 und A14 aufeinander, die A38 führt südlich um die Stadt, die A72 bindet Chemnitz an. Genau dort setzen wir an: Wo Stückgut und Sammelverkehre zu langsam sind, fährt unsere Direktfahrt.</p><p>Sofortige Disposition, keine Umladung, Zustellung quer durch Deutschland oder Europa, so schnell es die Straße erlaubt, bei Bedarf auch als kompletter <a href="maschinentransport.html">Maschinentransport</a>. Hier braucht Logistik kein Depot in der Innenstadt, sondern schnelle Fahrzeuge an den richtigen Achsen.</p>
         </div>
       <aside class="loc-feature"><figure class="photo" style="margin-bottom:26px">
           <img src="assets/img/reinwald-465.png" alt="Tobias Reinwald mit Kollege aus der Disposition" loading="lazy" decoding="async">
@@ -1151,7 +1151,7 @@ th.hl{background:var(--green);color:#fff}
     <div class="loc-bottom">
       <div class="loc-card">
         <h3>Die Achsen, auf denen Leipzig fährt</h3>
-        <p>Kaum ein Standort in Mitteldeutschland ist so gut angebunden: Am Schkeuditzer Kreuz laufen A9 und A14 zusammen, dazu die A38 im Süden und die A72 Richtung Chemnitz. Für uns heißt das kurze Wege in jede Richtung. Ein Sprinter mit eiligem Automotive-Nachschub für BMW oder Porsche ist in Minuten im Nordraum, ein AOG-Teil erreicht das DHL-Drehkreuz am Flughafen Leipzig/Halle pünktlich zum nächsten Abflug, und schwere Baugruppen für den Kranbau von Kirow in Plagwitz oder Sendungen über den Hafen Leipzig-Lindenau holen wir mit dem passenden Fahrzeug ab. Typische Direktfahrten führen von Leipzig nach Dresden, Halle oder Berlin und ins Chemnitzer Industrierevier, genauso oft aber quer nach Süddeutschland zu den Werken in Bayern und Baden-Württemberg. Wo Warenströme rund um die Uhr laufen, an den Werkstoren im Norden wie am Frachtflughafen, disponieren wir rund um die Uhr mit.</p>
+        <p>Kaum ein Standort in Mitteldeutschland ist so gut angebunden: Am Schkeuditzer Kreuz laufen A9 und A14 zusammen, dazu die A38 im Süden und die A72 Richtung Chemnitz. Für uns heißt das kurze Wege in jede Richtung.</p><p>Ein Sprinter mit eiligem Automotive-Nachschub für BMW oder Porsche ist in Minuten im Nordraum, ein AOG-Teil erreicht das DHL-Drehkreuz am Flughafen Leipzig/Halle pünktlich zum nächsten Abflug, und schwere Baugruppen für den Kranbau von Kirow in Plagwitz oder Sendungen über den Hafen Leipzig-Lindenau holen wir mit dem passenden Fahrzeug ab. Typische Direktfahrten führen von Leipzig nach Dresden, Halle oder Berlin und ins Chemnitzer Industrierevier, genauso oft aber quer nach Süddeutschland zu den Werken in Bayern und Baden-Württemberg.</p><p>Wo Warenströme rund um die Uhr laufen, an den Werkstoren im Norden wie am Frachtflughafen, disponieren wir rund um die Uhr mit.</p>
       </div>
       <div class="loc-card">
         
