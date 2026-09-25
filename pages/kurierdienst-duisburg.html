@@ -608,6 +608,33 @@ th.hl{background:var(--green);color:#fff}
 .ee-note{font-size:14px;color:#aeb9d0}
 @media(max-width:860px){.ee-grid{grid-template-columns:1fr;gap:20px}.ee-portrait{min-height:340px}.ee-head h2{font-size:26px}.ee-quote{font-size:17.5px}.ee-quote-card{padding:26px 24px}.ee-trust{grid-template-columns:1fr 1fr}}
 @media(max-width:440px){.ee-trust{grid-template-columns:1fr}.ee-portrait{min-height:300px}}
+
+/* == Lokale Substanz: Designed (Panels + Icons) == */
+.loc-top{display:grid;grid-template-columns:1.35fr 1fr;gap:34px;align-items:stretch}
+.loc-copy>p{margin-top:0}
+.loc-lead{font-size:18.5px;line-height:1.6;color:var(--navy);font-weight:600}
+.loc-feature{display:flex;flex-direction:column;border-radius:18px;overflow:hidden;border:1px solid #e3e8ef;box-shadow:var(--shadow);background:#fff}
+.loc-feature .photo{margin:0;flex:1;min-height:210px}
+.loc-feature .photo img{width:100%;height:100%;object-fit:cover;display:block;border-radius:0;box-shadow:none}
+.loc-feature .loc-know{margin:0;max-width:none;background:linear-gradient(180deg,#f2f9ec,#eaf6e4);border:0;border-top:1px solid #d9e8cd;border-radius:0;padding:20px 22px}
+.loc-feature .loc-know .label{color:#3d8526}
+.loc-panel{margin-top:34px;background:#f5f7fa;border:1px solid #e3e8ef;border-radius:20px;padding:30px 30px 32px}
+.loc-panel>h3{margin:0;font-size:20px;color:var(--navy)}
+.loc-uses{list-style:none;padding:0;margin:20px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.loc-uses li{display:flex;flex-direction:column;gap:12px;background:#fff;border:1px solid #e3e8ef;border-radius:14px;padding:20px;margin:0;line-height:1.5;font-size:14.5px;color:var(--text-soft)}
+.loc-ic{width:46px;height:46px;border-radius:12px;background:#eaf6e4;display:flex;align-items:center;justify-content:center;flex:none}
+.loc-ic svg{width:24px;height:24px;fill:none;stroke:#3d8526;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.loc-uses li strong{color:var(--navy);font-size:16px;display:block}
+.loc-bottom{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px;align-items:start}
+.loc-card{background:#fff;border:1px solid #e3e8ef;border-radius:16px;padding:26px 28px}
+.loc-card>h3{margin:0 0 12px;font-size:19px;color:var(--navy)}
+.loc-card p{margin:0 0 14px}.loc-card p:last-child{margin-bottom:0}.loc-copy p{margin:0 0 14px}.loc-copy p:last-child{margin-bottom:0}
+.loc-chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0}
+.loc-chips .chip{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;color:#1e2a44;background:#f2f7ee;border:1px solid #d9e8cd;padding:7px 13px;border-radius:999px}
+.loc-chips .chip::before{content:"";width:6px;height:6px;border-radius:50%;background:#4FA832;flex:none}
+@media(max-width:900px){.loc-top{grid-template-columns:1fr;gap:24px}.loc-feature .photo{min-height:240px}.loc-uses{grid-template-columns:1fr 1fr}.loc-bottom{grid-template-columns:1fr;gap:18px}.loc-panel{padding:24px}}
+@media(max-width:560px){.loc-uses{grid-template-columns:1fr}}
+
 </style>
 <script type="application/ld+json">
 {
@@ -978,31 +1005,45 @@ th.hl{background:var(--green);color:#fff}
       <a class="btn btn-green" href="tel:+4998347922033"><svg class="ic-ph" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>Jetzt Abholung beauftragen</a>
     </div>
     <figure class="infobox" style="margin:0">
-      <svg viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ig1title">
+      <svg viewBox="0 0 560 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ig1title">
         <title id="ig1title">So schnell läuft Ihre Abholung in Duisburg ab</title>
-        <text x="280" y="36" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#162038">Von Ihrem Anruf bis zur Abholung</text>
-        <line x1="70" y1="80" x2="70" y2="360" stroke="#e3e8ef" stroke-width="4"></line>
-        <line x1="70" y1="80" x2="70" y2="360" stroke="#4FA832" stroke-width="4" stroke-dasharray="280"></line>
-        <circle cx="70" cy="90" r="16" fill="#4FA832"></circle>
-        <text x="70" y="96" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="900" fill="#fff">1</text>
-        <text x="104" y="84" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800" fill="#162038">Minute 0: Ihr Anruf</text>
-        <text x="104" y="104" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#5a6478">Sie schildern uns Sendung, Abholort</text>
-        <text x="104" y="121" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#5a6478">und Zeitfenster. Festpreis sofort.</text>
-        <circle cx="70" cy="180" r="16" fill="#4FA832"></circle>
-        <text x="70" y="186" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="900" fill="#fff">2</text>
-        <text x="104" y="174" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800" fill="#162038">Minute 5: Disposition</text>
-        <text x="104" y="194" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#5a6478">Wir aktivieren das nächstgelegene</text>
-        <text x="104" y="211" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#5a6478">Fahrzeug im Raum Duisburg.</text>
-        <circle cx="70" cy="270" r="16" fill="#4FA832"></circle>
-        <text x="70" y="276" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="900" fill="#fff">3</text>
-        <text x="104" y="264" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800" fill="#162038">Minute 60 bis 120: Abholung</text>
-        <text x="104" y="284" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#5a6478">Der Fahrer lädt bei Ihnen, dokumentiert</text>
-        <text x="104" y="301" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#5a6478">die Übernahme und fährt direkt los.</text>
-        <circle cx="70" cy="355" r="16" fill="#162038"></circle>
-        <text x="70" y="361" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="900" fill="#fff">4</text>
-        <text x="104" y="349" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800" fill="#162038">Zustellung: ohne Umladung</text>
-        <text x="104" y="369" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#5a6478">Nonstop zum Empfänger, deutschland-</text>
-        <text x="104" y="386" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#5a6478">und europaweit. Statusmeldung inklusive.</text>
+        <text x="280" y="30" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="800" fill="#162038">Von Ihrem Anruf bis zur Abholung</text>
+        <line x1="40" y1="98" x2="40" y2="374" stroke="#e3e8ef" stroke-width="3"></line>
+        <g font-family="Segoe UI, Arial, sans-serif">
+          <rect x="74" y="62" width="470" height="76" rx="13" fill="#f7f9fc" stroke="#eef1f6"></rect>
+          <circle cx="40" cy="100" r="17" fill="#4FA832"></circle>
+          <text x="40" y="105" text-anchor="middle" font-size="14" font-weight="900" fill="#fff">1</text>
+          <text x="98" y="90" font-size="16" font-weight="800" fill="#162038">Ihr Anruf</text>
+          <rect x="446" y="76" width="84" height="22" rx="11" fill="#eaf6e4"></rect>
+          <text x="488" y="91" text-anchor="middle" font-size="12" font-weight="800" fill="#3d8526">Minute 0</text>
+          <text x="98" y="112" font-size="13.5" fill="#5a6478">Sie schildern Sendung, Abholort und Zeitfenster.</text>
+          <text x="98" y="130" font-size="13.5" fill="#5a6478">Den Festpreis nennen wir sofort.</text>
+
+          <rect x="74" y="150" width="470" height="76" rx="13" fill="#f7f9fc" stroke="#eef1f6"></rect>
+          <circle cx="40" cy="188" r="17" fill="#4FA832"></circle>
+          <text x="40" y="193" text-anchor="middle" font-size="14" font-weight="900" fill="#fff">2</text>
+          <text x="98" y="178" font-size="16" font-weight="800" fill="#162038">Disposition</text>
+          <rect x="446" y="164" width="84" height="22" rx="11" fill="#eaf6e4"></rect>
+          <text x="488" y="179" text-anchor="middle" font-size="12" font-weight="800" fill="#3d8526">Minute 5</text>
+          <text x="98" y="200" font-size="13.5" fill="#5a6478">Wir aktivieren das nächstgelegene Fahrzeug</text>
+          <text x="98" y="218" font-size="13.5" fill="#5a6478">im Raum Duisburg.</text>
+
+          <rect x="74" y="238" width="470" height="76" rx="13" fill="#f7f9fc" stroke="#eef1f6"></rect>
+          <circle cx="40" cy="276" r="17" fill="#4FA832"></circle>
+          <text x="40" y="281" text-anchor="middle" font-size="14" font-weight="900" fill="#fff">3</text>
+          <text x="98" y="266" font-size="16" font-weight="800" fill="#162038">Abholung vor Ort</text>
+          <rect x="430" y="252" width="100" height="22" rx="11" fill="#eaf6e4"></rect>
+          <text x="480" y="267" text-anchor="middle" font-size="12" font-weight="800" fill="#3d8526">60 bis 120 Min.</text>
+          <text x="98" y="288" font-size="13.5" fill="#5a6478">Der Fahrer lädt bei Ihnen, dokumentiert die</text>
+          <text x="98" y="306" font-size="13.5" fill="#5a6478">Übernahme und fährt direkt los.</text>
+
+          <rect x="74" y="326" width="470" height="76" rx="13" fill="#f7f9fc" stroke="#eef1f6"></rect>
+          <circle cx="40" cy="364" r="17" fill="#162038"></circle>
+          <text x="40" y="369" text-anchor="middle" font-size="14" font-weight="900" fill="#fff">4</text>
+          <text x="98" y="354" font-size="16" font-weight="800" fill="#162038">Zustellung ohne Umladung</text>
+          <text x="98" y="376" font-size="13.5" fill="#5a6478">Nonstop zum Empfänger, deutschland- und</text>
+          <text x="98" y="394" font-size="13.5" fill="#5a6478">europaweit. Statusmeldung inklusive.</text>
+        </g>
       </svg>
       <figcaption>Ablauf einer Expressabholung in Duisburg: vom Anruf bis zur Zustellung</figcaption>
     </figure>
@@ -1101,36 +1142,39 @@ th.hl{background:var(--green);color:#fff}
       <span class="eyebrow">Warum Duisburg besondere Logistik braucht</span>
       <h2>Kurierlogistik für den Hafen- und Industriestandort Duisburg</h2>
     </div>
-    <div class="grid-2" style="align-items:start">
-      <div>
-        <p>Duisburg ist die Stadt des größten Binnenhafens Europas: duisport schlägt am Zusammenfluss von Rhein und Ruhr Container, Stahl und Massengut um und ist zugleich der westliche Endpunkt der Neuen Seidenstraße. Über das Silk-Road-Terminal in Rheinhausen laufen regelmäßig Ganzzüge aus China ein, deren Ladung von hier aus in ganz Europa verteilt wird. Wo Züge, Schiffe und Lkw im Takt zusammenkommen, entsteht ständig Bedarf an schnellen Direktfahrten: ein fehlendes Ladepapier, ein eiliges Muster, ein Ersatzteil für den Terminalkran. Ein Anruf, 60 bis 120 Minuten später ist die Sendung unterwegs.</p>
-        <p>Dazu kommt die Schwerindustrie: thyssenkrupp Steel Europe betreibt in Bruckhausen und Beeckerwerth eines der größten Stahlwerke des Kontinents, die Hüttenwerke Krupp Mannesmann (HKM) produzieren in Hüttenheim, Klöckner & Co steuert von Duisburg aus den Stahlhandel und Siemens Energy fertigt hier Gasturbinen. Über die A40 als Ruhrschnellweg, die A42, die A59 mitten durch die Stadt sowie die A3 und A57 ist der Standort in alle Richtungen angebunden, das Autobahnkreuz Kaiserberg verknüpft A3 und A40. Genau dort setzen wir an: Wo Stückgut und Sammelverkehre zu langsam sind, fährt unsere Direktfahrt. Sofortige Disposition, keine Umladung, Zustellung quer durch Deutschland oder Europa, so schnell es die Straße erlaubt, bei Bedarf auch als kompletter <a href="https://expresslogistik-reinwald.de/maschinentransport/">Maschinentransport</a>. Hier braucht Logistik kein Depot in der Innenstadt, sondern schnelle Fahrzeuge an den richtigen Achsen.</p>
-        <h3>Typische Einsätze unserer Kunden im Raum Duisburg</h3>
-        <ul class="checks">
-          <li><strong>Stahl und Metall:</strong> eilige Ersatzteile, Walzen und Werkzeuge für Hüttenwerke und Weiterverarbeiter, damit die Produktion nicht stillsteht</li>
-          <li><strong>Hafen und Terminal:</strong> Direktfahrten für Ladepapiere, Muster und Umschlagsgüter ab logport und den Terminals in Rheinhausen und Ruhrort</li>
-          <li><strong>Chemie und Recycling:</strong> termingerechte Fahrten für Betriebe in Hamborn und am Niederrhein, auf Wunsch mit Gefahrgut-Beipack</li>
-          <li><strong>Maschinen- und Anlagenbau:</strong> Ersatzteile, Baugruppen und Werkzeuge zu Serviceeinsätzen und Instandhaltungen im Ruhrgebiet</li>
-          <li><strong>Logistik und Handel:</strong> sofortige Direktfahrten ab den Gewerbegebieten am Hafen, wenn Stückgut zu langsam wäre</li>
-          <li><strong>Ganzzug und Seidenstraße:</strong> zeitkritische Begleitpapiere, Muster und Nachläufe für die China-Ganzzüge am Silk-Road-Terminal in Rheinhausen</li>
-          <li><strong>Luftfracht-Vorlauf:</strong> eilige Sendungen zum Flughafen Düsseldorf, in rund 20 Minuten ab Hafen und Innenstadt</li>
-        </ul>
-        <h3 style="margin-top:26px">Zwischen Werkstor, Terminal und Autobahn: Duisburgs Logistiktakt</h3>
-        <p>Kaum eine deutsche Stadt verdichtet Schwerindustrie und Umschlag so eng wie Duisburg. Auf dem Areal des früheren Krupp-Stahlwerks in Rheinhausen ist mit dem logport einer der größten Logistikstandorte Europas entstanden, direkt daneben laufen am Silk-Road-Terminal die Ganzzüge der Neuen Seidenstraße ein und aus. Nur wenige Kilometer entfernt gießen die Hüttenwerke Krupp Mannesmann in Hüttenheim und thyssenkrupp Steel in Beeckerwerth rund um die Uhr, Klöckner &amp; Co steuert von hier aus den Stahlhandel. Zwischen Werkstor, Containerterminal und Autobahn entstehen so täglich kurzfristige Transportbedarfe, die kein Linienverkehr auffängt: ein Teil, das jetzt an die Anlage muss, ein Papier, das den Zug nicht verpassen darf. Über die A40, die A42 und die A59 sowie das Autobahnkreuz Kaiserberg mit A3 und A57 bringen wir diese Direktfahrten schnell auf die richtige Achse, ob ins Ruhrgebiet, ins Rheinland oder über die Grenze in die Niederlande.</p>
-      </div>
-      <div>
-        <figure class="photo" style="margin-bottom:26px">
+    <div class="loc-top">
+      <div class="loc-copy">
+        <p class="loc-lead">Duisburg ist die Stadt des größten Binnenhafens Europas: duisport schlägt am Zusammenfluss von Rhein und Ruhr Container, Stahl und Massengut um und ist zugleich der westliche Endpunkt der Neuen Seidenstraße. Über das Silk-Road-Terminal in Rheinhausen laufen regelmäßig Ganzzüge aus China ein, deren Ladung von hier aus in ganz Europa verteilt wird.</p><p>Wo Züge, Schiffe und Lkw im Takt zusammenkommen, entsteht ständig Bedarf an schnellen Direktfahrten: ein fehlendes Ladepapier, ein eiliges Muster, ein Ersatzteil für den Terminalkran. Ein Anruf, 60 bis 120 Minuten später ist die Sendung unterwegs.</p>
+        <p>Dazu kommt die Schwerindustrie: thyssenkrupp Steel Europe betreibt in Bruckhausen und Beeckerwerth eines der größten Stahlwerke des Kontinents, die Hüttenwerke Krupp Mannesmann (HKM) produzieren in Hüttenheim, Klöckner & Co steuert von Duisburg aus den Stahlhandel und Siemens Energy fertigt hier Gasturbinen. Über die A40 als Ruhrschnellweg, die A42, die A59 mitten durch die Stadt sowie die A3 und A57 ist der Standort in alle Richtungen angebunden, das Autobahnkreuz Kaiserberg verknüpft A3 und A40.</p><p>Genau dort setzen wir an: Wo Stückgut und Sammelverkehre zu langsam sind, fährt unsere Direktfahrt. Sofortige Disposition, keine Umladung, Zustellung quer durch Deutschland oder Europa, so schnell es die Straße erlaubt, bei Bedarf auch als kompletter <a href="https://expresslogistik-reinwald.de/maschinentransport/">Maschinentransport</a>. Hier braucht Logistik kein Depot in der Innenstadt, sondern schnelle Fahrzeuge an den richtigen Achsen.</p>
+        </div>
+      <aside class="loc-feature"><figure class="photo" style="margin-bottom:26px">
           <img src="assets/img/reinwald-465.png" alt="Tobias Reinwald mit Kollege aus der Disposition" loading="lazy" decoding="async">
-        </figure>
-        <h3>Abholung in allen Duisburger Gewerbelagen</h3>
-        <p>Unser Kurierdienst deckt jede Adresse in Duisburg ab, dazu den ganzen Niederrhein und auf Wunsch ganz Nordrhein-Westfalen: vom einzelnen Paket über wichtige Unterlagen bis zur Palettenware, termingerechte Abholungen zum gewünschten Zeitpunkt eingeschlossen. Unsere Fahrzeuge holen unter anderem hier ab:</p>
-        <p style="font-size:15.5px;color:var(--text-soft)">
-          Innenstadt · Ruhrort · Hafen · Rheinhausen · logport · Homberg · Meiderich · Hamborn · Marxloh · Walsum · Hochfeld · Neudorf · Duissern · Hüttenheim · Wanheim · Buchholz · Rumeln-Kaldenhausen
-        </p>
-        <div class="kurz" style="margin:22px 0 0;max-width:none">
+        </figure><div class="kurz loc-know">
           <strong class="label">Gut zu wissen</strong>
           <p>Die Lage am Autobahnkreuz Kaiserberg ist Ihr Tempo-Vorteil: Unsere Fahrzeuge sind in Minuten auf der A3, der A40 oder der A59, Richtung Ruhrgebiet, Richtung Rheinland oder über die A57 zur niederländischen Grenze. Den Flughafen Düsseldorf erreichen wir für Luftfracht-Vor- und Nachläufe in rund 20 Minuten. Und wenn es schwer wird, disponieren wir den passenden Transporter mit Hebebühne gleich mit.</p>
-        </div>
+        </div></aside>
+    </div>
+    <div class="loc-panel"><h3>Typische Einsätze unserer Kunden im Raum Duisburg</h3>
+        <ul class="loc-uses">
+          <li><span class="loc-ic"><svg viewBox='0 0 24 24'><circle cx='12' cy='12' r='3'/><path d='M19.4 13a7.6 7.6 0 0 0 0-2l2-1.6-2-3.4-2.4 1a7.6 7.6 0 0 0-1.7-1L15 2.5h-4l-.3 2.5a7.6 7.6 0 0 0-1.7 1l-2.4-1-2 3.4L6.6 11a7.6 7.6 0 0 0 0 2l-2 1.6 2 3.4 2.4-1a7.6 7.6 0 0 0 1.7 1L11 21.5h4l.3-2.5a7.6 7.6 0 0 0 1.7-1l2.4 1 2-3.4z'/></svg></span><div><strong>Stahl und Metall:</strong> eilige Ersatzteile, Walzen und Werkzeuge für Hüttenwerke und Weiterverarbeiter, damit die Produktion nicht stillsteht</div></li>
+          <li><span class="loc-ic"><svg viewBox='0 0 24 24'><circle cx='12' cy='5' r='2.2'/><path d='M12 7.2V21M5 12a7 7 0 0 0 14 0M4 12h2M18 12h2'/></svg></span><div><strong>Hafen und Terminal:</strong> Direktfahrten für Ladepapiere, Muster und Umschlagsgüter ab logport und den Terminals in Rheinhausen und Ruhrort</div></li>
+          <li><span class="loc-ic"><svg viewBox='0 0 24 24'><path d='M9 3h6M10 3v6l-5.2 8.8A1.8 1.8 0 0 0 6.4 21h11.2a1.8 1.8 0 0 0 1.6-2.8L14 9V3'/><path d='M7.5 15h9'/></svg></span><div><strong>Chemie und Recycling:</strong> termingerechte Fahrten für Betriebe in Hamborn und am Niederrhein, auf Wunsch mit Gefahrgut-Beipack</div></li>
+          <li><span class="loc-ic"><svg viewBox='0 0 24 24'><circle cx='12' cy='12' r='3'/><path d='M19.4 13a7.6 7.6 0 0 0 0-2l2-1.6-2-3.4-2.4 1a7.6 7.6 0 0 0-1.7-1L15 2.5h-4l-.3 2.5a7.6 7.6 0 0 0-1.7 1l-2.4-1-2 3.4L6.6 11a7.6 7.6 0 0 0 0 2l-2 1.6 2 3.4 2.4-1a7.6 7.6 0 0 0 1.7 1L11 21.5h4l.3-2.5a7.6 7.6 0 0 0 1.7-1l2.4 1 2-3.4z'/></svg></span><div><strong>Maschinen- und Anlagenbau:</strong> Ersatzteile, Baugruppen und Werkzeuge zu Serviceeinsätzen und Instandhaltungen im Ruhrgebiet</div></li>
+          <li><span class="loc-ic"><svg viewBox='0 0 24 24'><path d='M21 8l-9-5-9 5 9 5 9-5z'/><path d='M3 8v8l9 5 9-5V8'/><path d='M12 13v8'/></svg></span><div><strong>Logistik und Handel:</strong> sofortige Direktfahrten ab den Gewerbegebieten am Hafen, wenn Stückgut zu langsam wäre</div></li>
+          <li><span class="loc-ic"><svg viewBox='0 0 24 24'><path d='M21 8l-9-5-9 5 9 5 9-5z'/><path d='M3 8v8l9 5 9-5V8'/><path d='M12 13v8'/></svg></span><div><strong>Ganzzug und Seidenstraße:</strong> zeitkritische Begleitpapiere, Muster und Nachläufe für die China-Ganzzüge am Silk-Road-Terminal in Rheinhausen</div></li>
+          <li><span class="loc-ic"><svg viewBox='0 0 24 24'><path d='M21 3L10 14'/><path d='M21 3l-6.5 18-4-8-8-4L21 3z'/></svg></span><div><strong>Luftfracht-Vorlauf:</strong> eilige Sendungen zum Flughafen Düsseldorf, in rund 20 Minuten ab Hafen und Innenstadt</div></li>
+        </ul></div>
+    <div class="loc-bottom">
+      <div class="loc-card">
+        <h3>Zwischen Werkstor, Terminal und Autobahn: Duisburgs Logistiktakt</h3>
+        <p>Kaum eine deutsche Stadt verdichtet Schwerindustrie und Umschlag so eng wie Duisburg. Auf dem Areal des früheren Krupp-Stahlwerks in Rheinhausen ist mit dem logport einer der größten Logistikstandorte Europas entstanden, direkt daneben laufen am Silk-Road-Terminal die Ganzzüge der Neuen Seidenstraße ein und aus.</p><p>Nur wenige Kilometer entfernt gießen die Hüttenwerke Krupp Mannesmann in Hüttenheim und thyssenkrupp Steel in Beeckerwerth rund um die Uhr, Klöckner &amp; Co steuert von hier aus den Stahlhandel. Zwischen Werkstor, Containerterminal und Autobahn entstehen so täglich kurzfristige Transportbedarfe, die kein Linienverkehr auffängt: ein Teil, das jetzt an die Anlage muss, ein Papier, das den Zug nicht verpassen darf.</p><p>Über die A40, die A42 und die A59 sowie das Autobahnkreuz Kaiserberg mit A3 und A57 bringen wir diese Direktfahrten schnell auf die richtige Achse, ob ins Ruhrgebiet, ins Rheinland oder über die Grenze in die Niederlande.</p>
+      </div>
+      <div class="loc-card">
+        
+        <h3>Abholung in allen Duisburger Gewerbelagen</h3>
+        <p>Unser Kurierdienst deckt jede Adresse in Duisburg ab, dazu den ganzen Niederrhein und auf Wunsch ganz Nordrhein-Westfalen: vom einzelnen Paket über wichtige Unterlagen bis zur Palettenware, termingerechte Abholungen zum gewünschten Zeitpunkt eingeschlossen. Unsere Fahrzeuge holen unter anderem hier ab:</p>
+        <div class="loc-chips"><span class="chip">Innenstadt</span><span class="chip">Ruhrort</span><span class="chip">Hafen</span><span class="chip">Rheinhausen</span><span class="chip">logport</span><span class="chip">Homberg</span><span class="chip">Meiderich</span><span class="chip">Hamborn</span><span class="chip">Marxloh</span><span class="chip">Walsum</span><span class="chip">Hochfeld</span><span class="chip">Neudorf</span><span class="chip">Duissern</span><span class="chip">Hüttenheim</span><span class="chip">Wanheim</span><span class="chip">Buchholz</span><span class="chip">Rumeln-Kaldenhausen</span></div>
+        
       </div>
     </div>
   </div>
@@ -1177,34 +1221,39 @@ th.hl{background:var(--green);color:#fff}
       </div>
     </aside>
     <figure class="infobox">
-      <svg viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ig2title">
+      <svg viewBox="0 0 920 384" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ig2title">
         <title id="ig2title">Das Reinwald-Prinzip: das nächstgelegene Fahrzeug fährt</title>
-        <text x="450" y="34" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="800" fill="#162038">Das Reinwald-Prinzip: nicht unser Standort entscheidet, sondern Ihre Adresse</text>
-        <text x="230" y="72" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15.5" font-weight="800" fill="#5a6478">Klassischer Kurier mit einem Depot</text>
-        <circle cx="230" cy="190" r="86" fill="none" stroke="#e3e8ef" stroke-width="2" stroke-dasharray="5 5"></circle>
-        <rect x="212" y="172" width="36" height="36" rx="7" fill="#5a6478"></rect>
-        <text x="230" y="196" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#fff" font-weight="900">D</text>
-        <text x="230" y="242" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" fill="#5a6478">Depot</text>
-        <line x1="264" y1="176" x2="352" y2="112" stroke="#5a6478" stroke-width="2.5" stroke-dasharray="6 5"></line>
-        <circle cx="360" cy="106" r="11" fill="#162038"></circle>
-        <text x="360" y="88" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" fill="#162038" font-weight="800">Ihr Standort</text>
-        <text x="318" y="158" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" fill="#c0392b" font-weight="800">langer Anfahrtsweg</text>
-        <text x="230" y="308" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#5a6478">Das Fahrzeug startet immer am Depot,</text>
-        <text x="230" y="326" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#5a6478">egal wie weit Ihr Standort entfernt ist.</text>
-        <line x1="450" y1="60" x2="450" y2="330" stroke="#e3e8ef" stroke-width="2"></line>
-        <text x="675" y="72" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15.5" font-weight="800" fill="#3d8526">Reinwald-Partnernetzwerk</text>
-        <circle cx="675" cy="190" r="13" fill="#162038"></circle>
-        <text x="675" y="165" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" fill="#162038" font-weight="800">Ihr Standort in Duisburg</text>
-        <circle cx="560" cy="130" r="10" fill="#a9d59a"></circle>
-        <circle cx="790" cy="140" r="10" fill="#a9d59a"></circle>
-        <circle cx="565" cy="260" r="10" fill="#a9d59a"></circle>
-        <circle cx="795" cy="255" r="10" fill="#a9d59a"></circle>
-        <circle cx="675" cy="300" r="10" fill="#a9d59a"></circle>
-        <circle cx="620" cy="228" r="13" fill="#4FA832"></circle>
-        <line x1="631" y1="219" x2="662" y2="198" stroke="#4FA832" stroke-width="4"></line>
-        <polygon points="668,194 654,198 660,208" fill="#4FA832"></polygon>
-        <text x="592" y="256" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" fill="#3d8526" font-weight="800">nächstes Fahrzeug fährt</text>
-        <text x="675" y="326" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#5a6478">Wir disponieren das Fahrzeug, das Ihnen am nächsten ist: Abholung in 60 bis 120 Minuten.</text>
+        <defs>
+          <g id="ig2van"><rect x="-11" y="-5" width="15" height="10" rx="2"/><path d="M4 -5h4l4 4v1h-8z"/><circle cx="-6" cy="6" r="2.3" fill="#2f6e1c"/><circle cx="7" cy="6" r="2.3" fill="#2f6e1c"/></g>
+          <g id="ig2pin"><path d="M0 0c-6-9-13-14-13-22a13 13 0 1 1 26 0c0 8-7 13-13 22z"/><circle cx="0" cy="-22" r="5" fill="#fff"/></g>
+        </defs>
+        <text x="460" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#162038">Das Reinwald-Prinzip: nicht unser Standort entscheidet, sondern Ihre Adresse</text>
+        <rect x="28" y="56" width="418" height="300" rx="18" fill="#f6f8fb" stroke="#e6ebf3"/>
+        <text x="237" y="88" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="800" fill="#5a6478">Klassischer Kurier &#183; ein Depot</text>
+        <polygon points="70,220 104,196 138,220" fill="#6b7486"/>
+        <rect x="80" y="220" width="48" height="40" rx="3" fill="#8a93a5"/>
+        <rect x="96" y="236" width="16" height="24" fill="#f6f8fb"/>
+        <text x="104" y="278" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#5a6478">Depot</text>
+        <path d="M140 228 L356 176" stroke="#c7ccd6" stroke-width="2.5" stroke-dasharray="6 5" fill="none"/>
+        <text x="250" y="188" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#c0392b" transform="rotate(-14 250 188)">langer Anfahrtsweg</text>
+        <use href="#ig2pin" x="368" y="184" fill="#162038"/>
+        <text x="368" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" fill="#162038">Ihr Standort</text>
+        <text x="237" y="324" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" fill="#5a6478">Das Fahrzeug startet immer am Depot,</text>
+        <text x="237" y="342" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" fill="#5a6478">egal wie weit Ihr Standort entfernt ist.</text>
+        <rect x="474" y="56" width="418" height="300" rx="18" fill="#f1f8ec" stroke="#dceccf"/>
+        <text x="683" y="88" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="800" fill="#3d8526" letter-spacing="0.4">REINWALD &#183; Partnernetzwerk</text>
+        <use href="#ig2van" x="560" y="150" fill="#a9d59a"/>
+        <use href="#ig2van" x="818" y="150" fill="#a9d59a"/>
+        <use href="#ig2van" x="818" y="296" fill="#a9d59a"/>
+        <use href="#ig2van" x="766" y="240" fill="#a9d59a"/>
+        <text x="688" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="800" fill="#162038">Ihr Standort in Duisburg</text>
+        <use href="#ig2pin" x="688" y="214" fill="#162038"/>
+        <path d="M624 264 L666 230" stroke="#4FA832" stroke-width="3.5" fill="none"/>
+        <polygon points="672,226 656,228 663,239" fill="#4FA832"/>
+        <use href="#ig2van" x="608" y="272" fill="#4FA832"/>
+        <text x="608" y="304" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" fill="#3d8526">nächstes Fahrzeug fährt</text>
+        <text x="683" y="330" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#3d8526">Wir schicken das nächstgelegene Fahrzeug.</text>
+        <text x="683" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" fill="#5a6478">Abholung in 60 bis 120 Minuten.</text>
       </svg>
       <figcaption>Ein Depot gegen ein Netzwerk: darum ist Reinwald in Duisburg schneller vor Ort</figcaption>
     </figure>
