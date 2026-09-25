@@ -376,6 +376,64 @@
 
   <p>Wer eine Teilladung oder mehrere Paletten bei einer Spedition anfragt, stößt sofort auf den Begriff Lademeter. Der Wert entscheidet mit darüber, wie viel Platz die Sendung im Fahrzeug belegt und was der Transport kostet. Dieser Ratgeber erklärt die Definition, zeigt die Formel mit Beispielen, liefert eine Tabelle für alle gängigen Ladungsträger und stellt einen Rechner bereit, mit dem Sie die Lademeter Ihrer Sendung direkt ermitteln.</p>
 
+  <!-- H2-3: RECHNER -->
+  <h2>Lademeter-Rechner: Online und kostenlos berechnen</h2>
+  <p>Tragen Sie einfach die Stückzahlen Ihrer Ladungsträger ein. Der Online-Rechner summiert die Lademeter, rechnet das frachtpflichtige Gewicht um und zeigt, welche Fahrzeugklasse zu Ihrer Sendung passt.</p>
+
+  <div class="calc" id="ldm-rechner">
+    <div class="calc-head"><span class="ic">=</span> Lademeter-Rechner</div>
+    <div class="calc-body">
+      <div class="row">
+        <div class="row-label"><b>Europalette</b><span>1,20 x 0,80 m</span></div>
+        <input type="number" id="c-euro" min="0" max="99" value="0" inputmode="numeric" aria-label="Anzahl Europaletten">
+        <div class="row-ldm">0,40 LDM / Stück</div>
+      </div>
+      <div class="row">
+        <div class="row-label"><b>Industriepalette</b><span>1,20 x 1,00 m</span></div>
+        <input type="number" id="c-indu" min="0" max="99" value="0" inputmode="numeric" aria-label="Anzahl Industriepaletten">
+        <div class="row-ldm">0,50 LDM / Stück</div>
+      </div>
+      <div class="row">
+        <div class="row-label"><b>Halbpalette</b><span>0,60 x 0,80 m</span></div>
+        <input type="number" id="c-halb" min="0" max="99" value="0" inputmode="numeric" aria-label="Anzahl Halbpaletten">
+        <div class="row-ldm">0,20 LDM / Stück</div>
+      </div>
+      <div class="row">
+        <div class="row-label"><b>Gitterbox</b><span>1,24 x 0,835 m</span></div>
+        <input type="number" id="c-gibo" min="0" max="99" value="0" inputmode="numeric" aria-label="Anzahl Gitterboxen">
+        <div class="row-ldm">0,43 LDM / Stück</div>
+      </div>
+      <div class="row" style="display:block">
+        <div class="row-label" style="margin-bottom:6px"><b>Eigenes Maß</b><span>Sondergröße, Kiste oder Maschine</span></div>
+        <div class="custom-grid">
+          <div><label for="c-len">Länge (m)</label><input type="number" id="c-len" min="0" step="0.1" value="0" inputmode="decimal"></div>
+          <div><label for="c-wid">Breite (m)</label><input type="number" id="c-wid" min="0" step="0.1" value="0" inputmode="decimal"></div>
+          <div><label for="c-cnt">Anzahl</label><input type="number" id="c-cnt" min="0" max="99" value="0" inputmode="numeric"></div>
+        </div>
+      </div>
+      <div class="stack-row">
+        <label for="c-stack"><strong>Stapelfaktor:</strong></label>
+        <select id="c-stack" aria-label="Stapelfaktor wählen">
+          <option value="1" selected="">nicht stapelbar (Faktor 1)</option>
+          <option value="2">zweifach stapelbar (Faktor 2)</option>
+          <option value="3">dreifach stapelbar (Faktor 3)</option>
+        </select>
+      </div>
+    </div>
+    <div class="result" aria-live="polite">
+      <div class="r-item">
+        <div class="r-val" id="r-ldm">0,00 <small>LDM</small></div>
+        <div class="r-lab">Lademeter gesamt</div>
+      </div>
+      <div class="r-item">
+        <div class="r-val" id="r-kg">0 <small>kg</small></div>
+        <div class="r-lab">Frachtpflichtiges Gewicht (1 LDM = 1.750 kg)</div>
+      </div>
+    </div>
+    <div class="vehicle" id="r-vehicle">Geben Sie Ihre Ladungsträger ein, um eine Fahrzeugempfehlung zu erhalten.</div>
+    <div class="hint">Der Rechner liefert Richtwerte auf Basis der Standardformel (Länge x Breite / 2,4) ohne Berücksichtigung von Ladelücken. Verbindlich ist immer die Kalkulation der Spedition. Der Rechner ersetzt damit auch die klassische Excel-Vorlage zur Lademeter-Berechnung.</div>
+  </div>
+
   <!-- H2-1 -->
   <h2>Was ist ein Lademeter? Definition und Prinzip</h2>
   <p>Ein Lademeter, abgekürzt LDM oder Lm, ist die genormte Maßeinheit für den Platzbedarf einer Ladung im Straßengüterverkehr. Er beschreibt einen Meter Ladefläche in Längsrichtung des Fahrzeugs, und zwar über die gesamte nutzbare Breite. Als Standard gilt die Innenbreite eines 40-Tonner-Sattelzugs von 2,40 Metern. Ein Lademeter entspricht damit einer Fläche von 2,4 Quadratmetern, unabhängig davon, ob ein einzelnes Packstück oder mehrere Paletten darauf stehen.</p>
@@ -451,64 +509,6 @@
     <li><b>Formel anwenden:</b> Länge x Breite rechnen und das Ergebnis durch 2,4 teilen.</li>
     <li><b>Summe und Stapelfaktor:</b> Wert mit der Stückzahl multiplizieren und bei stapelbarer Ware durch den Stapelfaktor teilen.</li>
   </ol>
-
-  <!-- H2-3: RECHNER -->
-  <h2>Lademeter-Rechner: Online und kostenlos berechnen</h2>
-  <p>Tragen Sie einfach die Stückzahlen Ihrer Ladungsträger ein. Der Online-Rechner summiert die Lademeter, rechnet das frachtpflichtige Gewicht um und zeigt, welche Fahrzeugklasse zu Ihrer Sendung passt.</p>
-
-  <div class="calc" id="ldm-rechner">
-    <div class="calc-head"><span class="ic">=</span> Lademeter-Rechner</div>
-    <div class="calc-body">
-      <div class="row">
-        <div class="row-label"><b>Europalette</b><span>1,20 x 0,80 m</span></div>
-        <input type="number" id="c-euro" min="0" max="99" value="0" inputmode="numeric" aria-label="Anzahl Europaletten">
-        <div class="row-ldm">0,40 LDM / Stück</div>
-      </div>
-      <div class="row">
-        <div class="row-label"><b>Industriepalette</b><span>1,20 x 1,00 m</span></div>
-        <input type="number" id="c-indu" min="0" max="99" value="0" inputmode="numeric" aria-label="Anzahl Industriepaletten">
-        <div class="row-ldm">0,50 LDM / Stück</div>
-      </div>
-      <div class="row">
-        <div class="row-label"><b>Halbpalette</b><span>0,60 x 0,80 m</span></div>
-        <input type="number" id="c-halb" min="0" max="99" value="0" inputmode="numeric" aria-label="Anzahl Halbpaletten">
-        <div class="row-ldm">0,20 LDM / Stück</div>
-      </div>
-      <div class="row">
-        <div class="row-label"><b>Gitterbox</b><span>1,24 x 0,835 m</span></div>
-        <input type="number" id="c-gibo" min="0" max="99" value="0" inputmode="numeric" aria-label="Anzahl Gitterboxen">
-        <div class="row-ldm">0,43 LDM / Stück</div>
-      </div>
-      <div class="row" style="display:block">
-        <div class="row-label" style="margin-bottom:6px"><b>Eigenes Maß</b><span>Sondergröße, Kiste oder Maschine</span></div>
-        <div class="custom-grid">
-          <div><label for="c-len">Länge (m)</label><input type="number" id="c-len" min="0" step="0.1" value="0" inputmode="decimal"></div>
-          <div><label for="c-wid">Breite (m)</label><input type="number" id="c-wid" min="0" step="0.1" value="0" inputmode="decimal"></div>
-          <div><label for="c-cnt">Anzahl</label><input type="number" id="c-cnt" min="0" max="99" value="0" inputmode="numeric"></div>
-        </div>
-      </div>
-      <div class="stack-row">
-        <label for="c-stack"><strong>Stapelfaktor:</strong></label>
-        <select id="c-stack" aria-label="Stapelfaktor wählen">
-          <option value="1" selected="">nicht stapelbar (Faktor 1)</option>
-          <option value="2">zweifach stapelbar (Faktor 2)</option>
-          <option value="3">dreifach stapelbar (Faktor 3)</option>
-        </select>
-      </div>
-    </div>
-    <div class="result" aria-live="polite">
-      <div class="r-item">
-        <div class="r-val" id="r-ldm">0,00 <small>LDM</small></div>
-        <div class="r-lab">Lademeter gesamt</div>
-      </div>
-      <div class="r-item">
-        <div class="r-val" id="r-kg">0 <small>kg</small></div>
-        <div class="r-lab">Frachtpflichtiges Gewicht (1 LDM = 1.750 kg)</div>
-      </div>
-    </div>
-    <div class="vehicle" id="r-vehicle">Geben Sie Ihre Ladungsträger ein, um eine Fahrzeugempfehlung zu erhalten.</div>
-    <div class="hint">Der Rechner liefert Richtwerte auf Basis der Standardformel (Länge x Breite / 2,4) ohne Berücksichtigung von Ladelücken. Verbindlich ist immer die Kalkulation der Spedition. Der Rechner ersetzt damit auch die klassische Excel-Vorlage zur Lademeter-Berechnung.</div>
-  </div>
 
   <!-- H2-4 -->
   <h2>Lademeter-Tabelle: Europalette, Gitterbox und Co.</h2>
