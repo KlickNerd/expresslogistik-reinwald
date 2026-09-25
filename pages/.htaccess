@@ -1,0 +1,54 @@
+# .htaccess - Expresslogistik Reinwald (statische Website)
+# Docroot = dieser Ordner (pages/). WordPress bleibt davon unberuehrt.
+
+Options -Indexes
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # ============================================================
+  # 1) 301-Weiterleitungen (alte URLs -> neue URLs)
+  #    Grundgeruest. Vollstaendige Liste folgt nach Sitemap-Abgleich.
+  # ============================================================
+  RewriteRule ^kurierdienst-kosten/?$        /ratgeber/was-kostet-ein-kurierdienst/ [R=301,L]
+  RewriteRule ^kurierdienst-leistungen/?$    /leistungen/ [R=301,L]
+
+  # ============================================================
+  # 2) Relative Asset-Pfade aus /slug/-URLs auf /assets/ zurueckfuehren
+  #    (Seiten referenzieren Bilder relativ als assets/...; bei /slug/-URLs
+  #     wuerde das sonst auf /slug/assets/... zeigen und 404 liefern.)
+  # ============================================================
+  RewriteCond %{REQUEST_URI} !^/assets/
+  RewriteRule ^.+/(assets/.+)$ /$1 [L]
+
+  # ============================================================
+  # 3) Pretty URLs -> flache HTML-Dateien
+  # ============================================================
+  # Ratgeber:  /ratgeber/<slug>/  ->  ratgeber-<slug>.html
+  RewriteCond %{DOCUMENT_ROOT}/ratgeber-$1.html -f
+  RewriteRule ^ratgeber/([^/]+)/?$ ratgeber-$1.html [L]
+
+  # Kurierdienst-Unterseiten:  /kurierdienst/<sub>/  ->  kurierdienst-<sub>.html
+  RewriteCond %{DOCUMENT_ROOT}/kurierdienst-$1.html -f
+  RewriteRule ^kurierdienst/([^/]+)/?$ kurierdienst-$1.html [L]
+
+  # Alle uebrigen einteiligen Slugs:  /<slug>/  ->  <slug>.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^([^/]+)/?$ $1.html [L]
+</IfModule>
+
+# ============================================================
+# 4) Optional: leichte Caching-Header fuer Assets
+# ============================================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+</IfModule>
