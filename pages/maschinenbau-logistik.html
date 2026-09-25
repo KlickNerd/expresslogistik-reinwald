@@ -789,6 +789,48 @@ ul.checks li strong{color:var(--navy)}
   }
   body{padding-bottom:74px}
 }
+
+/* == Aus erster Hand: E-E-A-T Band (dunkel) == */
+.ee-sec{position:relative;overflow:hidden;color:#fff;background:radial-gradient(1100px 520px at 86% -12%,rgba(79,168,50,.24),transparent 58%),radial-gradient(760px 460px at 4% 118%,rgba(79,168,50,.12),transparent 60%),linear-gradient(158deg,#1b2a4d 0%,#0f1830 100%)}
+.ee-sec::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% -10%,rgba(255,255,255,.05),transparent 42%);pointer-events:none}
+.ee-head{text-align:center;max-width:780px;margin:0 auto 40px;position:relative;z-index:1}
+.ee-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:#9fe08a}
+.ee-eyebrow::before{content:"";width:26px;height:3px;border-radius:2px;background:var(--green)}
+.ee-head h2{font-size:34px;line-height:1.13;font-weight:900;color:#fff;letter-spacing:-.5px;margin:14px 0 0}
+.ee-head h2 b{color:#9fe08a;font-weight:900}
+.ee-grid{display:grid;grid-template-columns:360px 1fr;gap:30px;position:relative;z-index:1;align-items:stretch}
+/* Portrait links */
+.ee-portrait{position:relative;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 26px 60px rgba(0,0,0,.36);min-height:430px}
+.ee-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.ee-portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(9,14,27,.92) 4%,rgba(9,14,27,.2) 40%,transparent 62%)}
+.ee-plate{position:absolute;left:0;right:0;bottom:0;padding:24px 24px 22px;z-index:2}
+.ee-plate .nm{font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px}
+.ee-plate .rl{font-size:13.5px;color:#cbd4e6;margin-top:4px}
+.ee-plate .so{display:flex;gap:8px;margin-top:14px}
+.ee-plate .so a{width:40px;height:40px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.24);transition:background .15s,color .15s,border-color .15s}
+.ee-plate .so a:hover{color:#0f1830;background:#9fe08a;border-color:#9fe08a}
+.ee-plate .so svg{width:18px;height:18px}
+/* Rechte Spalte: Zitat */
+.ee-quote-card{background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:34px 36px;position:relative;box-shadow:0 18px 44px rgba(0,0,0,.24);display:flex;flex-direction:column;justify-content:center}
+.ee-mark{font-family:Georgia,serif;font-size:60px;line-height:.1;color:rgba(159,224,138,.55);display:block;height:22px}
+.ee-quote{font-size:19px;line-height:1.62;color:#eef3fb;font-weight:500;margin:12px 0 0}
+.ee-quote b{color:#fff;font-weight:800}
+.ee-quote-foot{display:flex;align-items:center;gap:9px;margin-top:22px;font-size:14px;font-weight:700;color:#9fe08a}
+.ee-quote-foot svg{width:18px;height:18px;flex:none}
+/* Trust-Leiste (volle Breite) */
+.ee-trust{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px;position:relative;z-index:1}
+.ee-tile{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:17px 16px;transition:background .15s,border-color .15s}
+.ee-tile:hover{border-color:rgba(159,224,138,.55);background:rgba(255,255,255,.1)}
+.ee-tile .ei{width:38px;height:38px;border-radius:11px;background:rgba(79,168,50,.2);display:flex;align-items:center;justify-content:center;margin-bottom:11px}
+.ee-tile .ei svg{width:19px;height:19px}
+.ee-tile .n{font-size:19px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1}
+.ee-tile .l{font-size:12.5px;color:#b7c2d8;margin-top:5px;line-height:1.42}
+.ee-cta{display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:34px;position:relative;z-index:1}
+.ee-btn{display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:15.5px;text-decoration:none;border-radius:12px;padding:15px 30px;background:var(--green-cta);color:#fff;box-shadow:0 12px 28px rgba(79,168,50,.42);transition:background .15s,transform .15s}
+.ee-btn:hover{background:var(--green-cta-dark);transform:translateY(-1px)}
+.ee-note{font-size:14px;color:#aeb9d0}
+@media(max-width:860px){.ee-grid{grid-template-columns:1fr;gap:20px}.ee-portrait{min-height:340px}.ee-head h2{font-size:26px}.ee-quote{font-size:17.5px}.ee-quote-card{padding:26px 24px}.ee-trust{grid-template-columns:1fr 1fr}}
+@media(max-width:440px){.ee-trust{grid-template-columns:1fr}.ee-portrait{min-height:300px}}
 </style>
 <script type="application/ld+json">
 {
@@ -1323,6 +1365,44 @@ mfG Maik Frommherz</blockquote>
         <strong>Tobias Reinwald, Gesch&auml;ftsf&uuml;hrer</strong>
         <p>Pers&ouml;nlich erreichbar, wenn ein Teil schnell und sicher ans Ziel muss: <a href="tel:+4998347922033">+49 (0) 9834 79220-33</a></p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GESCHAEFTSFUEHRER (E-E-A-T) ================= -->
+<section class="ee-sec">
+  <div class="wrap">
+    <div class="ee-head">
+      <span class="ee-eyebrow">Aus erster Hand</span>
+      <h2>Warum der Maschinenbau bei uns in <b>den richtigen H&auml;nden</b> ist</h2>
+    </div>
+    <div class="ee-grid">
+      <div class="ee-portrait">
+        <img src="assets/img/reinwald-625.png" alt="Tobias Reinwald, Gesch&auml;ftsf&uuml;hrer der Expresslogistik Reinwald GmbH" loading="lazy" decoding="async">
+        <div class="ee-plate">
+          <div class="nm">Tobias Reinwald</div>
+          <div class="rl">Gesch&auml;ftsf&uuml;hrer, seit 2005 im Einsatz</div>
+          <div class="so">
+            <a href="https://www.xing.com/profile/Tobias_Reinwald" target="_blank" rel="noopener" aria-label="Tobias Reinwald auf Xing"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.6 3.6c-.4.2-.8.7-1.6 2.1 0 0-4.1 7.3-4.2 7.5l2.7 4.9c.1.2.3.3.6.3h2.4c.3 0 .4-.2.3-.4l-2.7-4.9v-.1l4.2-7.5c.1-.2 0-.4-.3-.4h-2.4c-.6 0-.9.2-1.3.9z"></path><path d="M8.7 8.2H6.3c-.3 0-.4.2-.3.4l1.3 2.2v.1l-2 3.5c-.1.2 0 .4.3.4h2.4c.6 0 .9-.3 1.2-.9l2-3.6s-1.3-2.3-1.4-2.5c-.3-.6-.6-.6-1.1-.6z"></path></svg></a>
+            <a href="https://de.linkedin.com/in/tobias-reinwald-49792a290" target="_blank" rel="noopener" aria-label="Tobias Reinwald auf LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.3A1.8 1.8 0 1 1 6.5 4.7a1.8 1.8 0 0 1 0 3.6zM19 19h-3v-4.7c0-1.1 0-2.6-1.6-2.6s-1.8 1.2-1.8 2.5V19h-3v-9h2.9v1.2h0a3.2 3.2 0 0 1 2.9-1.6c3.1 0 3.7 2 3.7 4.7z"></path></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="ee-quote-card">
+        <span class="ee-mark">&ldquo;</span>
+        <p class="ee-quote">Steht eine Maschine still, wartet der Kunde und die Kosten laufen. Wir bringen das fehlende Ersatzteil im Direkttransport <b>ohne Umladung genau dorthin, wo es gebraucht wird</b>, deutschland- und europaweit. Ein Ansprechpartner, ein Festpreis, kein Callcenter, an 365 Tagen im Jahr.</p>
+        <div class="ee-quote-foot"><svg viewBox="0 0 24 24" fill="none" stroke="#9fe08a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>Pers&ouml;nlich verantwortlich f&uuml;r jede Direktfahrt</div>
+      </div>
+    </div>
+    <div class="ee-trust">
+      <div class="ee-tile"><span class="ei"><svg viewBox="0 0 24 24" fill="none" stroke="#9fe08a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg></span><div class="n">20+ Jahre</div><div class="l">Erfahrung im Zeitfracht-Gesch&auml;ft, seit 2005</div></div>
+      <div class="ee-tile"><span class="ei"><svg viewBox="0 0 24 24" fill="none" stroke="#9fe08a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"></path><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path></svg></span><div class="n">ISO 9001</div><div class="l">Zertifizierte Qualit&auml;ts- und Prozesssicherheit</div></div>
+      <div class="ee-tile"><span class="ei"><svg viewBox="0 0 24 24" fill="#9fe08a" stroke="none"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z"></path></svg></span><div class="n">5,0 &#9733;</div><div class="l">Durchgehend Bestnote bei Google</div></div>
+      <div class="ee-tile"><span class="ei"><svg viewBox="0 0 24 24" fill="none" stroke="#9fe08a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span><div class="n">500+ Kunden</div><div class="l">Aus Maschinen- und Anlagenbau</div></div>
+    </div>
+    <div class="ee-cta">
+      <a class="ee-btn" href="https://expresslogistik-reinwald.de/direktanfrage-kurier/">Direktanfrage stellen &rarr;</a>
+      <span class="ee-note">Verbindlicher Festpreis in rund 10 Minuten, per E-Mail.</span>
     </div>
   </div>
 </section>
