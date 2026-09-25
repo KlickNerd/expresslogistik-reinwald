@@ -1,5 +1,5 @@
 # .htaccess - Expresslogistik Reinwald (statische Website)
-# Docroot = dieser Ordner (pages/). WordPress bleibt davon unberuehrt.
+# Docroot = dieser Ordner (pages/).
 
 Options -Indexes
 DirectoryIndex index.html
@@ -7,24 +7,62 @@ DirectoryIndex index.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # ============================================================
-  # 1) 301-Weiterleitungen (alte URLs -> neue URLs)
-  #    Grundgeruest. Vollstaendige Liste folgt nach Sitemap-Abgleich.
-  # ============================================================
-  RewriteRule ^kurierdienst-kosten/?$        /ratgeber/was-kostet-ein-kurierdienst/ [R=301,L]
-  RewriteRule ^kurierdienst-leistungen/?$    /leistungen/ [R=301,L]
+  # ==========================================================
+  # 1) 301-Weiterleitungen: alte WordPress-URLs -> neue URLs
+  #    (Alle alten URLs, die es neu nicht mehr 1:1 gibt.)
+  # ==========================================================
 
-  # ============================================================
+  # --- Leistungs-/Seiten-Umbenennungen ---
+  RewriteRule ^kurierdienst-leistungen/?$   /leistungen/ [R=301,L]
+  RewriteRule ^maschinentransporte/?$       /maschinentransport/ [R=301,L]
+  RewriteRule ^lkw-transporte-2/?$          /lkw-transporte/ [R=301,L]
+  RewriteRule ^direkttransporte/?$          /eiltransporte/ [R=301,L]
+  RewriteRule ^expresstransport/?$          /eiltransporte/ [R=301,L]
+  RewriteRule ^expressversand/?$            /eiltransporte/ [R=301,L]
+
+  # --- Wegfallende Hilfs-/Systemseiten ---
+  RewriteRule ^downloads/?$                 / [R=301,L]
+  RewriteRule ^html-sitemap/?$              / [R=301,L]
+  RewriteRule ^spielwiese/?$                / [R=301,L]
+  RewriteRule ^vielen-dank-fuer-ihre-direktanfrage/?$ /direktanfrage-kurier/ [R=301,L]
+
+  # --- Alte Stadtseiten ohne neues Pendant -> Standorte-Hub ---
+  RewriteRule ^kurierdienst-bochum/?$       /kurierdienst-deutschland/ [R=301,L]
+  RewriteRule ^kurierdienst-chemnitz/?$     /kurierdienst-deutschland/ [R=301,L]
+  RewriteRule ^kurierdienst-freiburg/?$     /kurierdienst-deutschland/ [R=301,L]
+  RewriteRule ^kurierdienst-kiel/?$         /kurierdienst-deutschland/ [R=301,L]
+  RewriteRule ^kurierdienst-wuppertal/?$    /kurierdienst-deutschland/ [R=301,L]
+
+  # --- Jobs -> Karriere (Hub + alle Unterseiten) ---
+  RewriteRule ^jobs(/.*)?$                  /karriere/ [R=301,L]
+
+  # --- Blog: gezielte Treffer, dann Rest auf Ratgeber-Hub ---
+  RewriteRule ^blog/kurierfahrt-preise/?$   /ratgeber/was-kostet-ein-kurierdienst/ [R=301,L]
+  RewriteRule ^blog/was-ist-ein-kurierdienst/?$ /ratgeber/was-ist-eine-kurierfahrt/ [R=301,L]
+  RewriteRule ^blog/sondertransporte/?$     /sondertransporte/ [R=301,L]
+  RewriteRule ^blog/teilladung/?$           /ratgeber/beiladung/ [R=301,L]
+  RewriteRule ^(blog|news)(/.*)?$           /ratgeber/ [R=301,L]
+
+  # --- Logistik-Lexikon aufgeloest: gezielte Treffer, Rest auf Ratgeber ---
+  RewriteRule ^logistik-lexikon/beiladung/?$   /ratgeber/beiladung/ [R=301,L]
+  RewriteRule ^logistik-lexikon/cmr/?$         /ratgeber/cmr-frachtbrief/ [R=301,L]
+  RewriteRule ^logistik-lexikon/incoterms/?$   /ratgeber/incoterms-uebersicht/ [R=301,L]
+  RewriteRule ^logistik-lexikon/sperrgut/?$    /ratgeber/sperrguttransport/ [R=301,L]
+  RewriteRule ^logistik-lexikon/europalette/?$ /ratgeber/palette-versenden/ [R=301,L]
+  RewriteRule ^logistik-lexikon(/.*)?$         /ratgeber/ [R=301,L]
+
+  # --- Sonstige alte Detailpfade ---
+  RewriteRule ^kurierdienst-kosten/?$       /ratgeber/was-kostet-ein-kurierdienst/ [R=301,L]
+
+  # ==========================================================
   # 2) Relative Asset-Pfade aus /slug/-URLs auf /assets/ zurueckfuehren
-  #    (Seiten referenzieren Bilder relativ als assets/...; bei /slug/-URLs
-  #     wuerde das sonst auf /slug/assets/... zeigen und 404 liefern.)
-  # ============================================================
+  # ==========================================================
   RewriteCond %{REQUEST_URI} !^/assets/
   RewriteRule ^.+/(assets/.+)$ /$1 [L]
 
-  # ============================================================
+  # ==========================================================
   # 3) Pretty URLs -> flache HTML-Dateien
-  # ============================================================
+  # ==========================================================
   # Ratgeber:  /ratgeber/<slug>/  ->  ratgeber-<slug>.html
   RewriteCond %{DOCUMENT_ROOT}/ratgeber-$1.html -f
   RewriteRule ^ratgeber/([^/]+)/?$ ratgeber-$1.html [L]
@@ -40,9 +78,9 @@ DirectoryIndex index.html
   RewriteRule ^([^/]+)/?$ $1.html [L]
 </IfModule>
 
-# ============================================================
-# 4) Optional: leichte Caching-Header fuer Assets
-# ============================================================
+# ==========================================================
+# 4) Caching-Header fuer Assets
+# ==========================================================
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/jpeg "access plus 30 days"
