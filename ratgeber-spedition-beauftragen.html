@@ -301,6 +301,24 @@
     .hero{padding:34px 0 110px}
     .author{flex-direction:column}
   }
+
+  /* == Anfrage-Checkliste == */
+  .checklist{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 6px 22px rgba(22,32,56,.07);overflow:hidden;margin:26px 0}
+  .cl-head{display:flex;align-items:center;gap:11px;background:#162038;color:#fff;padding:16px 20px;font-weight:800;font-size:16.5px}
+  .cl-head .ic{width:26px;height:26px;border-radius:8px;background:var(--green);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:900;flex:none}
+  .cl-progress{height:6px;background:var(--line)}
+  .cl-bar{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--green-dark));transition:width .3s ease}
+  .cl-body{padding:6px 0}
+  .cl-item{display:flex;align-items:flex-start;gap:14px;padding:14px 20px;border-bottom:1px solid var(--line);cursor:pointer;transition:background .15s}
+  .cl-item:last-child{border-bottom:0}
+  .cl-item:hover{background:#f7f9fc}
+  .cl-check{width:22px;height:22px;accent-color:var(--green);flex:none;margin:1px 0 0;cursor:pointer}
+  .cl-item b{display:block;color:#162038;font-size:15.5px;line-height:1.35;margin-bottom:3px}
+  .cl-item span{display:block;font-size:14px;color:var(--muted);line-height:1.5}
+  .cl-item.done{background:var(--green-tint)}
+  .cl-item.done b{color:var(--green-dark)}
+  .cl-status{padding:14px 20px;background:var(--navy-tint);border-top:1px solid var(--line);font-size:14px;color:var(--muted);line-height:1.5}
+  @media(max-width:560px){.cl-item{padding:13px 16px}.cl-head{padding:14px 16px;font-size:15.5px}}
 </style>
 <!-- ============ HERO ============ -->
 </head>
@@ -601,6 +619,27 @@ function init(){var b=document.getElementById("cookieConsent");if(!b)return;var 
 b.addEventListener("click",function(e){var t=e.target.closest("[data-cc]");if(t){save(t.getAttribute("data-cc")==="all")}});
 document.querySelectorAll("[data-cc-open]").forEach(function(el){el.addEventListener("click",function(e){e.preventDefault();b.hidden=false})})}
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",init)}else{init()}})();
+</script>
+<script>
+(function(){
+  var cl=document.getElementById('anfrage-checkliste'); if(!cl) return;
+  var checks=cl.querySelectorAll('.cl-check');
+  var bar=document.getElementById('cl-bar');
+  var status=document.getElementById('cl-status');
+  var total=checks.length;
+  function upd(){
+    var done=0;
+    checks.forEach(function(c){ if(c.checked) done++; var l=c.closest('.cl-item'); if(l) l.classList.toggle('done', c.checked); });
+    if(bar) bar.style.width=(total? (done/total*100):0)+'%';
+    if(status){
+      status.textContent = (done===total)
+        ? ('Alle '+total+' Punkte erledigt. Ihre Anfrage ist komplett, so erhalten Sie am schnellsten ein belastbares Angebot.')
+        : (done+' von '+total+' Punkten erledigt. Je vollst\u00e4ndiger Ihre Angaben, desto schneller erhalten Sie ein belastbares Angebot.');
+    }
+  }
+  checks.forEach(function(c){ c.addEventListener('change', upd); });
+  upd();
+})();
 </script>
 </body>
 </html>
