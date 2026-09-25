@@ -695,7 +695,7 @@ if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded"
   function n(x){return parseFloat(x&&x.value)||0;}
   function fmt(v,d){return v.toLocaleString('de-DE',{minimumFractionDigits:d,maximumFractionDigits:d});}
   function calc(){
-    var a=Math.max(n(anz),0), ldm=(n(typ)*a)/(n(sta)||1);
+    var a=Math.max(n(anz),0), ldm=n(typ)*Math.ceil(a/(n(sta)||1));
     var kg=Math.max(n(gew),Math.round(ldm*1750));
     g('pc-zahlen').textContent=fmt(ldm,1)+' Lademeter | '+kg.toLocaleString('de-DE')+' kg frachtpflichtig';
     var t;
