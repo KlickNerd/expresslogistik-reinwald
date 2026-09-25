@@ -800,8 +800,8 @@ ul.checks li strong{color:var(--navy)}
 .ee-head h2 b{color:#9fe08a;font-weight:900}
 .ee-grid{display:grid;grid-template-columns:360px 1fr;gap:30px;position:relative;z-index:1;align-items:stretch}
 /* Portrait links */
-.ee-portrait{position:relative;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 26px 60px rgba(0,0,0,.36);min-height:440px}
-.ee-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.ee-portrait{position:relative;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 26px 60px rgba(0,0,0,.36);min-height:430px}
+.ee-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
 .ee-portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(9,14,27,.92) 4%,rgba(9,14,27,.2) 40%,transparent 62%)}
 .ee-plate{position:absolute;left:0;right:0;bottom:0;padding:24px 24px 22px;z-index:2}
 .ee-plate .nm{font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px}
@@ -810,13 +810,15 @@ ul.checks li strong{color:var(--navy)}
 .ee-plate .so a{width:40px;height:40px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.24);transition:background .15s,color .15s,border-color .15s}
 .ee-plate .so a:hover{color:#0f1830;background:#9fe08a;border-color:#9fe08a}
 .ee-plate .so svg{width:18px;height:18px}
-/* Rechte Spalte */
-.ee-right{display:flex;flex-direction:column;gap:16px;min-width:0}
-.ee-quote-card{background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:30px 32px;position:relative;box-shadow:0 18px 44px rgba(0,0,0,.24)}
-.ee-mark{font-family:Georgia,serif;font-size:58px;line-height:.1;color:rgba(159,224,138,.55);display:block;height:20px}
-.ee-quote{font-size:18.5px;line-height:1.58;color:#eef3fb;font-weight:500;margin:10px 0 0}
+/* Rechte Spalte: Zitat */
+.ee-quote-card{background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:34px 36px;position:relative;box-shadow:0 18px 44px rgba(0,0,0,.24);display:flex;flex-direction:column;justify-content:center}
+.ee-mark{font-family:Georgia,serif;font-size:60px;line-height:.1;color:rgba(159,224,138,.55);display:block;height:22px}
+.ee-quote{font-size:19px;line-height:1.62;color:#eef3fb;font-weight:500;margin:12px 0 0}
 .ee-quote b{color:#fff;font-weight:800}
-.ee-trust{display:grid;grid-template-columns:1fr 1fr;gap:13px;align-content:start}
+.ee-quote-foot{display:flex;align-items:center;gap:9px;margin-top:22px;font-size:14px;font-weight:700;color:#9fe08a}
+.ee-quote-foot svg{width:18px;height:18px;flex:none}
+/* Trust-Leiste (volle Breite) */
+.ee-trust{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px;position:relative;z-index:1}
 .ee-tile{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:17px 16px;transition:background .15s,border-color .15s}
 .ee-tile:hover{border-color:rgba(159,224,138,.55);background:rgba(255,255,255,.1)}
 .ee-tile .ei{width:38px;height:38px;border-radius:11px;background:rgba(79,168,50,.2);display:flex;align-items:center;justify-content:center;margin-bottom:11px}
@@ -827,8 +829,8 @@ ul.checks li strong{color:var(--navy)}
 .ee-btn{display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:15.5px;text-decoration:none;border-radius:12px;padding:15px 30px;background:var(--green-cta);color:#fff;box-shadow:0 12px 28px rgba(79,168,50,.42);transition:background .15s,transform .15s}
 .ee-btn:hover{background:var(--green-cta-dark);transform:translateY(-1px)}
 .ee-note{font-size:14px;color:#aeb9d0}
-@media(max-width:860px){.ee-grid{grid-template-columns:1fr;gap:20px}.ee-portrait{min-height:360px}.ee-head h2{font-size:26px}.ee-quote{font-size:17.5px}.ee-quote-card{padding:26px 24px}}
-@media(max-width:440px){.ee-trust{grid-template-columns:1fr}.ee-portrait{min-height:320px}}
+@media(max-width:860px){.ee-grid{grid-template-columns:1fr;gap:20px}.ee-portrait{min-height:340px}.ee-head h2{font-size:26px}.ee-quote{font-size:17.5px}.ee-quote-card{padding:26px 24px}.ee-trust{grid-template-columns:1fr 1fr}}
+@media(max-width:440px){.ee-trust{grid-template-columns:1fr}.ee-portrait{min-height:300px}}
 </style>
 <script type="application/ld+json">
 {
@@ -1270,18 +1272,17 @@ ul.checks li strong{color:var(--navy)}
           </div>
         </div>
       </div>
-      <div class="ee-right">
-        <div class="ee-quote-card">
-          <span class="ee-mark">&ldquo;</span>
-          <p class="ee-quote">Im Anlagenbau entscheidet der Termin &uuml;ber alles. Steht die Montage still, weil ein Bauteil fehlt, kostet jede Stunde bares Geld. Genau daf&uuml;r sind wir da: Wir holen Ihre Komponente sofort ab und fahren sie <b>ohne Umladung direkt zur Baustelle</b>, deutschland- und europaweit. Ein Ansprechpartner, ein Festpreis, kein Callcenter, an 365 Tagen im Jahr.</p>
-        </div>
-        <div class="ee-trust">
-          <div class="ee-tile"><span class="ei"><svg viewBox="0 0 24 24" fill="none" stroke="#9fe08a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg></span><div class="n">20+ Jahre</div><div class="l">Erfahrung im Zeitfracht-Gesch&auml;ft, seit 2005</div></div>
-          <div class="ee-tile"><span class="ei"><svg viewBox="0 0 24 24" fill="none" stroke="#9fe08a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"></path><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path></svg></span><div class="n">ISO 9001</div><div class="l">Zertifizierte Qualit&auml;ts- und Prozesssicherheit</div></div>
-          <div class="ee-tile"><span class="ei"><svg viewBox="0 0 24 24" fill="#9fe08a" stroke="none"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z"></path></svg></span><div class="n">5,0 &#9733;</div><div class="l">64 Google-Bewertungen, durchgehend Bestnote</div></div>
-          <div class="ee-tile"><span class="ei"><svg viewBox="0 0 24 24" fill="none" stroke="#9fe08a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span><div class="n">500+ Kunden</div><div class="l">Aus Anlagenbau, Industrie und Fertigung</div></div>
-        </div>
+      <div class="ee-quote-card">
+        <span class="ee-mark">&ldquo;</span>
+        <p class="ee-quote">Im Anlagenbau entscheidet der Termin &uuml;ber alles. Steht die Montage still, weil ein Bauteil fehlt, kostet jede Stunde bares Geld. Genau daf&uuml;r sind wir da: Wir holen Ihre Komponente sofort ab und fahren sie <b>ohne Umladung direkt zur Baustelle</b>, deutschland- und europaweit. Ein Ansprechpartner, ein Festpreis, kein Callcenter, an 365 Tagen im Jahr.</p>
+        <div class="ee-quote-foot"><svg viewBox="0 0 24 24" fill="none" stroke="#9fe08a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>Pers&ouml;nlich verantwortlich f&uuml;r jede Direktfahrt</div>
       </div>
+    </div>
+    <div class="ee-trust">
+      <div class="ee-tile"><span class="ei"><svg viewBox="0 0 24 24" fill="none" stroke="#9fe08a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg></span><div class="n">20+ Jahre</div><div class="l">Erfahrung im Zeitfracht-Gesch&auml;ft, seit 2005</div></div>
+      <div class="ee-tile"><span class="ei"><svg viewBox="0 0 24 24" fill="none" stroke="#9fe08a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"></path><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path></svg></span><div class="n">ISO 9001</div><div class="l">Zertifizierte Qualit&auml;ts- und Prozesssicherheit</div></div>
+      <div class="ee-tile"><span class="ei"><svg viewBox="0 0 24 24" fill="#9fe08a" stroke="none"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z"></path></svg></span><div class="n">5,0 &#9733;</div><div class="l">64 Google-Bewertungen, durchgehend Bestnote</div></div>
+      <div class="ee-tile"><span class="ei"><svg viewBox="0 0 24 24" fill="none" stroke="#9fe08a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span><div class="n">500+ Kunden</div><div class="l">Aus Anlagenbau, Industrie und Fertigung</div></div>
     </div>
     <div class="ee-cta">
       <a class="ee-btn" href="direktanfrage-kurier.html">Direktanfrage stellen &rarr;</a>
