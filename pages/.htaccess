@@ -26,12 +26,6 @@ DirectoryIndex index.html
   RewriteRule ^spielwiese/?$                / [R=301,L]
   RewriteRule ^vielen-dank-fuer-ihre-direktanfrage/?$ /direktanfrage-kurier/ [R=301,L]
 
-  # --- Alte Stadtseiten ohne neues Pendant -> Standorte-Hub ---
-  RewriteRule ^kurierdienst-bochum/?$       /kurierdienst-deutschland/ [R=301,L]
-  RewriteRule ^kurierdienst-chemnitz/?$     /kurierdienst-deutschland/ [R=301,L]
-  RewriteRule ^kurierdienst-freiburg/?$     /kurierdienst-deutschland/ [R=301,L]
-  RewriteRule ^kurierdienst-kiel/?$         /kurierdienst-deutschland/ [R=301,L]
-  RewriteRule ^kurierdienst-wuppertal/?$    /kurierdienst-deutschland/ [R=301,L]
 
   # --- Jobs -> Karriere (Hub + alle Unterseiten) ---
   RewriteRule ^jobs(/.*)?$                  /karriere/ [R=301,L]
