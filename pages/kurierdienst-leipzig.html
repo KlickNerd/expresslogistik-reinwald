@@ -608,6 +608,16 @@ th.hl{background:var(--green);color:#fff}
 .ee-note{font-size:14px;color:#aeb9d0}
 @media(max-width:860px){.ee-grid{grid-template-columns:1fr;gap:20px}.ee-portrait{min-height:340px}.ee-head h2{font-size:26px}.ee-quote{font-size:17.5px}.ee-quote-card{padding:26px 24px}.ee-trust{grid-template-columns:1fr 1fr}}
 @media(max-width:440px){.ee-trust{grid-template-columns:1fr}.ee-portrait{min-height:300px}}
+
+/* == Lokale Substanz: bessere Lesbarkeit == */
+.loc-lead{font-size:18px;line-height:1.62;color:var(--navy);font-weight:600}
+.loc-uses{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:11px}
+.loc-uses li{display:flex;gap:13px;align-items:flex-start;background:#f7f9fc;border:1px solid #e6ebf3;border-radius:13px;padding:14px 16px;margin:0;line-height:1.5}
+.loc-uses li::before{content:"";flex:none;width:24px;height:24px;border-radius:8px;background:#eaf6e4;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234FA832' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6L9 17l-5-5'/></svg>");background-repeat:no-repeat;background-position:center;background-size:14px;margin-top:1px}
+.loc-uses li strong{color:var(--navy)}
+.loc-chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.loc-chips .chip{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;color:#1e2a44;background:#f2f7ee;border:1px solid #d9e8cd;padding:7px 13px;border-radius:999px}
+.loc-chips .chip::before{content:"";width:6px;height:6px;border-radius:50%;background:#4FA832;flex:none}
 </style>
 <script type="application/ld+json">
 {
@@ -1103,10 +1113,10 @@ th.hl{background:var(--green);color:#fff}
     </div>
     <div class="grid-2" style="align-items:start">
       <div>
-        <p>Leipzig ist zum Motor der ostdeutschen Industrie geworden: Im BMW Group Werk im Leipziger Norden laufen seit 2005 komplette Fahrzeuge vom Band, gleich nebenan baut Porsche Macan, Panamera und Cayenne, und beide Werke leben von punktgenauer Anlieferung im Takt der Produktion. Fehlt an einer Linie ein Bauteil, zählt jede Stunde: Ein Anruf, 60 bis 120 Minuten später ist das Teil unterwegs.</p>
+        <p class="loc-lead">Leipzig ist zum Motor der ostdeutschen Industrie geworden: Im BMW Group Werk im Leipziger Norden laufen seit 2005 komplette Fahrzeuge vom Band, gleich nebenan baut Porsche Macan, Panamera und Cayenne, und beide Werke leben von punktgenauer Anlieferung im Takt der Produktion. Fehlt an einer Linie ein Bauteil, zählt jede Stunde: Ein Anruf, 60 bis 120 Minuten später ist das Teil unterwegs.</p>
         <p>Dazu kommt die Luft: Am Flughafen Leipzig/Halle in Schkeuditz betreibt DHL sein europäisches Frachtdrehkreuz, Leipzig/Halle ist der zweitgrößte Frachtflughafen Deutschlands und arbeitet rund um die Uhr. Amazon, das Güterverkehrszentrum GVZ Leipzig und zahllose Logistiker im Nordraum hängen an diesen Warenströmen. Am Schkeuditzer Kreuz treffen A9 und A14 aufeinander, die A38 führt südlich um die Stadt, die A72 bindet Chemnitz an. Genau dort setzen wir an: Wo Stückgut und Sammelverkehre zu langsam sind, fährt unsere Direktfahrt. Sofortige Disposition, keine Umladung, Zustellung quer durch Deutschland oder Europa, so schnell es die Straße erlaubt, bei Bedarf auch als kompletter <a href="https://expresslogistik-reinwald.de/maschinentransport/">Maschinentransport</a>. Hier braucht Logistik kein Depot in der Innenstadt, sondern schnelle Fahrzeuge an den richtigen Achsen.</p>
         <h3>Typische Einsätze unserer Kunden im Raum Leipzig</h3>
-        <ul class="checks">
+        <ul class="loc-uses">
           <li><strong>Automotive:</strong> JIT- und JIS-Nachschub sowie Bandstopp-Vermeidung für BMW, Porsche und Zulieferer im Leipziger Nordraum</li>
           <li><strong>Luftfracht:</strong> Vor- und Nachläufe zum Flughafen Leipzig/Halle, eilige Airfreight-Sendungen und AOG-Teile rund um die Uhr</li>
           <li><strong>E-Commerce und Logistik:</strong> sofortige Direktfahrten ab GVZ Leipzig, Amazon-Standorten und den Logistikzentren im Norden</li>
@@ -1122,9 +1132,7 @@ th.hl{background:var(--green);color:#fff}
         </figure>
         <h3>Abholung in allen Leipziger Gewerbelagen</h3>
         <p>Unser Kurierdienst deckt jede Adresse in Leipzig ab, dazu das gesamte Umland und auf Wunsch ganz Sachsen: vom einzelnen Paket über wichtige Unterlagen bis zur Palettenware, termingerechte Abholungen zum gewünschten Zeitpunkt eingeschlossen. Unsere Fahrzeuge holen unter anderem hier ab:</p>
-        <p style="font-size:15.5px;color:var(--text-soft)">
-          Zentrum · Plagwitz · Lindenau · Leutzsch · Gohlis · Möckern · Wahren · Mockau · Paunsdorf · Engelsdorf · Grünau · Connewitz · Schkeuditz · GVZ Leipzig · Industriepark Nord
-        </p>
+        <div class="loc-chips"><span class="chip">Zentrum</span><span class="chip">Plagwitz</span><span class="chip">Lindenau</span><span class="chip">Leutzsch</span><span class="chip">Gohlis</span><span class="chip">Möckern</span><span class="chip">Wahren</span><span class="chip">Mockau</span><span class="chip">Paunsdorf</span><span class="chip">Engelsdorf</span><span class="chip">Grünau</span><span class="chip">Connewitz</span><span class="chip">Schkeuditz</span><span class="chip">GVZ Leipzig</span><span class="chip">Industriepark Nord</span></div>
         <div class="kurz" style="margin:22px 0 0;max-width:none">
           <strong class="label">Gut zu wissen</strong>
           <p>Die Lage am Schkeuditzer Kreuz ist Ihr Tempo-Vorteil: Unsere Fahrzeuge sind in Minuten auf der A9 Richtung Berlin oder München, auf der A14 Richtung Dresden und Halle oder über die A38 ins Umland. Den Flughafen Leipzig/Halle erreichen wir für Luftfracht-Vor- und Nachläufe in rund 20 Minuten. Und wenn es schwer wird, disponieren wir den passenden Transporter mit Hebebühne gleich mit.</p>
